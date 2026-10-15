@@ -5,12 +5,12 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Sticky Navigation on Scroll
-  const header = document.getElementById('header');
+  const navbar = document.getElementById('navbar') || document.querySelector('.navbar');
   const handleScroll = () => {
     if (window.scrollY > 20) {
-      header.classList.add('scrolled');
+      navbar.classList.add('scrolled');
     } else {
-      header.classList.remove('scrolled');
+      navbar.classList.remove('scrolled');
     }
   };
   window.addEventListener('scroll', handleScroll, { passive: true });
@@ -130,9 +130,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // 5. Contact Form Submission via AJAX (FormSubmit)
   const contactForm = document.getElementById('contactForm');
   const submitBtn = document.getElementById('submitBtn');
-  const formStatus = document.getElementById('formStatus');
+  const formFeedback = document.getElementById('formFeedback') || document.getElementById('formStatus');
 
-  if (contactForm && submitBtn && formStatus) {
+  if (contactForm && submitBtn && formFeedback) {
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
@@ -140,8 +140,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const originalBtnText = submitBtn.innerHTML;
       submitBtn.disabled = true;
       submitBtn.innerHTML = '<span>Wird gesendet...</span>';
-      formStatus.className = 'form-status';
-      formStatus.style.display = 'none';
+      formFeedback.className = 'form-feedback';
+      formFeedback.style.display = 'none';
 
       // Collect form data
       const formData = new FormData(contactForm);
@@ -158,18 +158,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (response.ok) {
-          formStatus.textContent = 'Vielen Dank für Ihre Anfrage! Wir haben Ihre Nachricht erhalten und melden uns innerhalb von 24 Stunden bei Ihnen.';
-          formStatus.className = 'form-status success';
-          formStatus.style.display = 'block';
+          formFeedback.textContent = 'Vielen Dank für Ihre Anfrage! Wir haben Ihre Nachricht erhalten und melden uns innerhalb von 24 Stunden bei Ihnen.';
+          formFeedback.className = 'form-feedback success';
+          formFeedback.style.display = 'block';
           contactForm.reset();
         } else {
           throw new Error('Server-Fehler bei der Übertragung');
         }
       } catch (err) {
         // Fallback: standard form submit if AJAX is blocked or fails
-        formStatus.textContent = 'Hinweis: Ihre Nachricht wird übermittelt...';
-        formStatus.className = 'form-status';
-        formStatus.style.display = 'block';
+        formFeedback.textContent = 'Hinweis: Ihre Nachricht wird übermittelt...';
+        formFeedback.className = 'form-feedback';
+        formFeedback.style.display = 'block';
         contactForm.submit();
       } finally {
         submitBtn.disabled = false;

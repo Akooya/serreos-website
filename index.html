@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Serreos Raumpflegeservice | Professionelle Reinigung in Aschaffenburg &amp; Umgebung</title>
+  <title>Serreos Raumpflegeservice | Professionelle Reinigung in Aschaffenburg</title>
   <meta name="description"
-    content="Ihr zuverlässiger Partner für Büroreinigung, Praxisreinigung, Glasreinigung, Unterhaltsreinigung &amp; Grundreinigung in Aschaffenburg und Umgebung. Jetzt kostenloses Angebot einholen!" />
+    content="Ihr zuverlässiger Partner für Büroreinigung, Praxisreinigung, Glasreinigung, Unterhaltsreinigung &amp; Grundreinigung in Aschaffenburg &amp; Umgebung." />
   <link rel="icon" type="image/png" href="assets/favicon.png" />
 
-  <!-- OpenGraph / Social Media -->
+  <!-- OpenGraph -->
   <meta property="og:title" content="Serreos Raumpflegeservice | Professionelle Reinigung" />
   <meta property="og:description"
     content="Zuverlässige Büro-, Praxis-, Glas- und Unterhaltsreinigung in Aschaffenburg &amp; Umgebung. Faire Festpreise &amp; umweltfreundliche Reinigung." />
@@ -19,7 +19,7 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Schema.org Structured Data for Local Business -->
+  <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -35,13 +35,7 @@
       "postalCode": "63741",
       "addressCountry": "DE"
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 49.9744,
-      "longitude": 9.1504
-    },
-    "areaServed": ["Aschaffenburg", "Miltenberg", "Alzenau", "Hanau", "Rhein-Main-Gebiet"],
-    "priceRange": "$$",
+    "areaServed": ["Aschaffenburg", "Miltenberg", "Alzenau", "Rhein-Main-Gebiet"],
     "openingHours": "Mo-Sa 07:00-19:00"
   }
   </script>
@@ -49,450 +43,288 @@
 
 <body>
 
-  <!-- ==========================================================================
-       Header & Navigation
-       ========================================================================== -->
-  <header class="header" id="header">
-    <div class="container nav-container">
-      <a href="#home" class="brand-logo" aria-label="Serreos Raumpflegeservice Startseite">
-        <img src="assets/Color logo - no background.svg" alt="Serreos Raumpflegeservice Logo" />
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="logo">
+      <a href="#home" aria-label="Startseite">
+        <img src="assets/Color logo - no background.svg" alt="Serreos Logo" />
       </a>
-
-      <nav>
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#home">Startseite</a></li>
-          <li><a href="#services">Leistungen</a></li>
-          <li><a href="#warum-serreos">Warum Serreos</a></li>
-          <li><a href="#ablauf">Ablauf</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
-        </ul>
-      </nav>
-
-      <div class="nav-actions">
-        <a href="tel:01716107094" class="nav-phone" title="Direkt anrufen">
-          <span>📞</span> 0171 6107094
-        </a>
-        <a href="#kontakt" class="btn btn-primary btn-sm">Angebot anfragen</a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false">
-          ☰
-        </button>
-      </div>
     </div>
-  </header>
 
-  <!-- ==========================================================================
-       Hero Section
-       ========================================================================== -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Startseite</a></li>
+      <li><a href="#services">Leistungen</a></li>
+      <li><a href="#about">Über uns</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+
+    <div class="nav-cta">
+      <a href="tel:01716107094" class="nav-phone-link">
+        <span>📞</span> 0171 6107094
+      </a>
+      <a href="#contact" class="btn-primary btn-sm">Angebot anfragen</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false">
+        ☰
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
   <section id="home" class="hero">
-    <div class="container hero-grid">
-      <div class="hero-content fade-in-up">
-        <div class="hero-badge">
-          <span>✦</span> Ihr zuverlässiger Reinigungspartner in Aschaffenburg &amp; Umgebung
-        </div>
-        <h1>Erstklassige Sauberkeit für Ihre Räumlichkeiten</h1>
-        <p class="hero-p">
-          Ob Büro, Arztpraxis, Glasfassade oder regelmäßige Unterhaltsreinigung:
-          <strong>Serreos Raumpflegeservice</strong> sorgt für meisterhafte Hygiene, höchste Diskretion und transparente Konditionen.
+    <div class="hero-content fade-in-up">
+      <span class="hero-tag">Raumpflegeservice Aschaffenburg &amp; Umgebung</span>
+      <h1>Ihr Partner für <br /><span class="highlight">saubere Räume</span></h1>
+      <p>
+        Professioneller Raumpflegeservice für höchste Ansprüche. Zuverlässig, gründlich und diskret für Gewerbeobjekte, Praxen und Privathaushalte.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary">Jetzt Angebot einholen</a>
+        <a href="tel:01716107094" class="btn-secondary">📞 0171 6107094</a>
+      </div>
+      <ul class="hero-badges-row">
+        <li>✓ <strong>100% Zuverlässig &amp; diskret</strong></li>
+        <li>✓ <strong>Öko-Reinigungsmittel</strong></li>
+        <li>✓ <strong>Kostenlose Erstbesichtigung</strong></li>
+        <li>✓ <strong>Feste Ansprechpartner</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services section-padding">
+    <div class="section-header fade-in-up">
+      <h2>Unsere Leistungen</h2>
+      <p>Wir bieten maßgeschneiderte Reinigungskonzepte für Ihr Unternehmen und Zuhause.</p>
+    </div>
+
+    <div class="services-grid">
+      <!-- 1. Büroreinigung -->
+      <div class="service-card fade-in-up">
+        <div class="icon">🏢</div>
+        <h3>Büroreinigung</h3>
+        <p>Ein sauberes Arbeitsumfeld fördert die Produktivität und das Wohlbefinden Ihres Teams und schafft einen repräsentativen Eindruck bei Kunden.</p>
+        <ul class="service-details">
+          <li>Schreibtische &amp; Arbeitsplätze</li>
+          <li>Küchen- &amp; Sanitärbereiche</li>
+          <li>Flexible Reinigungszeiten</li>
+        </ul>
+        <a href="#contact" class="service-cta-link">Anfrage stellen &rarr;</a>
+      </div>
+
+      <!-- 2. Praxisreinigung -->
+      <div class="service-card fade-in-up">
+        <div class="icon">🏥</div>
+        <h3>Praxisreinigung</h3>
+        <p>Höchste Hygienestandards und vorschriftsmäßige Flächendesinfektion für Arztpraxen, Zahnärzte und medizinische Einrichtungen.</p>
+        <ul class="service-details">
+          <li>Vorschriftsmäßige Desinfektion</li>
+          <li>Behandlungs- &amp; Wartezimmer</li>
+          <li>Geschultes, diskretes Personal</li>
+        </ul>
+        <a href="#contact" class="service-cta-link">Anfrage stellen &rarr;</a>
+      </div>
+
+      <!-- 3. Glas- & Fensterreinigung -->
+      <div class="service-card fade-in-up">
+        <div class="icon">🪟</div>
+        <h3>Glasreinigung</h3>
+        <p>Streifenfreie Sauberkeit und kristallklare Durchsicht für Fenster, Schaufenster, Wintergärten und Glasfassaden im Innen- und Außenbereich.</p>
+        <ul class="service-details">
+          <li>Streifenfreie Glasflächen</li>
+          <li>Inkl. Rahmen &amp; Fensterbänke</li>
+          <li>Gewerbe- &amp; Privatgebäude</li>
+        </ul>
+        <a href="#contact" class="service-cta-link">Anfrage stellen &rarr;</a>
+      </div>
+
+      <!-- 4. Unterhaltsreinigung -->
+      <div class="service-card fade-in-up">
+        <div class="icon">✨</div>
+        <h3>Unterhaltsreinigung</h3>
+        <p>Regelmäßige und verlässliche Pflege in festen Intervallen für den optimalen Werterhalt Ihrer Immobilien und Räumlichkeiten.</p>
+        <ul class="service-details">
+          <li>Feste Reinigungszyklen</li>
+          <li>Gleichbleibende Bezugsperson</li>
+          <li>Langfristiger Werterhalt</li>
+        </ul>
+        <a href="#contact" class="service-cta-link">Anfrage stellen &rarr;</a>
+      </div>
+
+      <!-- 5. Grundreinigung -->
+      <div class="service-card fade-in-up">
+        <div class="icon">🧹</div>
+        <h3>Grundreinigung</h3>
+        <p>Intensive Tiefenreinigung für schwer zugängliche Bereiche und hartnäckige Verschmutzungen – ideal vor Einzug, nach Umzug oder Renovierung.</p>
+        <ul class="service-details">
+          <li>Beseitigung alter Pflegefilme</li>
+          <li>Tiefenreinigung aller Ecken</li>
+          <li>Frischekur für strapazierte Böden</li>
+        </ul>
+        <a href="#contact" class="service-cta-link">Anfrage stellen &rarr;</a>
+      </div>
+
+      <!-- 6. Sonderreinigung -->
+      <div class="service-card fade-in-up">
+        <div class="icon">🧽</div>
+        <h3>Sonderreinigung</h3>
+        <p>Spezielle Reinigungsaufgaben nach individuellem Bedarf: Professionelle Teppich- und Polstershampoonierung sowie Bauabschlussreinigung.</p>
+        <ul class="service-details">
+          <li>Teppich- &amp; Polstertiefenreinigung</li>
+          <li>Bauendreinigung</li>
+          <li>Treppenhäuser &amp; Eingangsbereiche</li>
+        </ul>
+        <a href="#contact" class="service-cta-link">Anfrage stellen &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section-padding">
+    <div class="about fade-in-up">
+      <div class="about-content">
+        <h2>Warum Serreos?</h2>
+        <p>
+          Mit jahrelanger Erfahrung und persönlicher Hingabe sorgen wir für glänzende Ergebnisse. Als inhabergeführter Dienstleister stehen Qualität, Verlässlichkeit und Kundenzufriedenheit bei uns an erster Stelle.
         </p>
-        <div class="hero-buttons">
-          <a href="#kontakt" class="btn btn-primary">Kostenloses Angebot anfordern</a>
-          <a href="tel:01716107094" class="btn btn-outline">📞 0171 6107094</a>
-        </div>
-        <ul class="hero-badges-list">
-          <li><span class="icon-check">✓</span> 100% Zuverlässig &amp; diskret</li>
-          <li><span class="icon-check">✓</span> Umweltfreundliche Reinigungsmittel</li>
-          <li><span class="icon-check">✓</span> Kostenlose Besichtigung vor Ort</li>
-          <li><span class="icon-check">✓</span> Feste Ansprechpartner</li>
+        <ul class="features-list">
+          <li>
+            <span class="check-icon">✓</span>
+            <div>
+              <strong>Inhabergeführt &amp; persönlich</strong>
+              <p>Direkte Absprachen ohne Callcenter, vertraute Gesichter und Betreuung mit Herz.</p>
+            </div>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <div>
+              <strong>Umweltfreundliche Reinigung</strong>
+              <p>Geprüfte, schonende Öko-Reinigungsmittel zum Schutz von Gesundheit und Oberflächen.</p>
+            </div>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <div>
+              <strong>Flexible Einsatzzeiten</strong>
+              <p>Frühmorgens vor Geschäftsbeginn, diskret nach Feierabend oder flexibel am Wochenende.</p>
+            </div>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <div>
+              <strong>Transparente Festpreise</strong>
+              <p>Kostenlose Vor-Ort-Besichtigung und klare, faire Angebote ohne versteckte Nebenkosten.</p>
+            </div>
+          </li>
         </ul>
       </div>
 
-      <div class="hero-card fade-in-up">
-        <div class="hero-card-header">
-          <div class="hero-card-avatar">✨</div>
-          <div>
-            <h4>Serreos Qualitätsgarantie</h4>
-            <p>Ihr regionaler Familienbetrieb mit Handschlagqualität</p>
+      <div class="about-card">
+        <h3>Ihr regionaler Partner</h3>
+        <p>Zuverlässiger Service in Aschaffenburg, Miltenberg, Alzenau und im gesamten Rhein-Main-Gebiet.</p>
+        <div class="about-card-stats">
+          <div class="about-stat">
+            <h4>24h</h4>
+            <span>Reaktionszeit</span>
           </div>
-        </div>
-        <p>
-          Wir stehen für Sauberkeit, auf die Sie sich verlassen können. Jedes Objekt wird mit geschultem Blick, modernstem Equipment und persönlichem Engagement gepflegt.
-        </p>
-        <div class="hero-stats-grid">
-          <div class="stat-item">
-            <span class="stat-number">100%</span>
-            <span class="stat-label">Kundenzufriedenheit</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">24h</span>
-            <span class="stat-label">Schnelle Reaktionszeit</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">6+</span>
-            <span class="stat-label">Spezialisierte Leistungen</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">0 €</span>
-            <span class="stat-label">Unverbindliche Erstberatung</span>
+          <div class="about-stat">
+            <h4>0 €</h4>
+            <span>Kostenlose Besichtigung</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================================================
-       Services Section (6 Cards)
-       ========================================================================== -->
-  <section id="services" class="services-section section-padding">
-    <div class="container">
-      <div class="section-header fade-in-up">
-        <span class="badge">Unsere Leistungen</span>
-        <h2>Maßgeschneiderte Reinigungskonzepte</h2>
-        <p>Vom gepflegten Arbeitsplatz bis zur hygienischen Arztpraxis: Entdecken Sie unser umfassendes Leistungsspektrum für Gewerbe- und Privatkunden.</p>
-      </div>
-
-      <div class="services-grid">
-        <!-- 1. Büroreinigung -->
-        <div class="service-card fade-in-up">
-          <div class="service-icon-box">🏢</div>
-          <h3>Büroreinigung</h3>
-          <p>
-            Ein makellos sauberes Arbeitsumfeld fördert die Motivation, Gesundheit und Konzentration Ihres Teams und hinterlässt bei Kunden einen perfekten ersten Eindruck.
-          </p>
-          <ul class="service-bullets">
-            <li>Schreibtische, Monitore &amp; Arbeitsplätze</li>
-            <li>Küchen-, Aufenthalts- &amp; Sanitärbereiche</li>
-            <li>Regelmäßige Abfallentsorgung &amp; Bodenpflege</li>
-          </ul>
-          <a href="#kontakt" class="service-link">Leistung anfragen &rarr;</a>
-        </div>
-
-        <!-- 2. Praxisreinigung -->
-        <div class="service-card fade-in-up">
-          <div class="service-icon-box">🏥</div>
-          <h3>Praxisreinigung</h3>
-          <p>
-            Höchste hygienische Standards und lückenlose Desinfektion für Arztpraxen, Zahnärzte und therapeutische Einrichtungen gemäß den Vorgaben des Infektionsschutzgesetzes.
-          </p>
-          <ul class="service-bullets">
-            <li>Vorschriftsmäßige Flächendesinfektion</li>
-            <li>Behandlungsräume, Empfang &amp; Wartezimmer</li>
-            <li>Sensibler Umgang mit Patientenumgebungen</li>
-          </ul>
-          <a href="#kontakt" class="service-link">Leistung anfragen &rarr;</a>
-        </div>
-
-        <!-- 3. Glas- & Fensterreinigung -->
-        <div class="service-card fade-in-up">
-          <div class="service-icon-box">🪟</div>
-          <h3>Glas- &amp; Fensterreinigung</h3>
-          <p>
-            Kristallklare Sicht und streifenfreier Glanz für Fenster, Schaufenster, Wintergärten und Glasfassaden im Innen- und Außenbereich inklusive Rahmen- und Falzreinigung.
-          </p>
-          <ul class="service-bullets">
-            <li>Streifenfreie Reinigung ohne Rückstände</li>
-            <li>Gründliche Reinigung von Rahmen &amp; Fensterbänken</li>
-            <li>Für Geschäftsgebäude, Praxen und Privathäuser</li>
-          </ul>
-          <a href="#kontakt" class="service-link">Leistung anfragen &rarr;</a>
-        </div>
-
-        <!-- 4. Unterhaltsreinigung -->
-        <div class="service-card fade-in-up">
-          <div class="service-icon-box">✨</div>
-          <h3>Unterhaltsreinigung</h3>
-          <p>
-            Die kontinuierliche, verlässliche Pflege Ihrer Immobilien in festen Zyklen – ob täglich, wöchentlich oder nach individuellem Turnus für langfristigen Werterhalt.
-          </p>
-          <ul class="service-bullets">
-            <li>Individueller Reinigungs- &amp; Turnusplan</li>
-            <li>Feste, vertraute Reinigungskräfte</li>
-            <li>Werterhalt von Böden, Mobiliar &amp; Oberflächen</li>
-          </ul>
-          <a href="#kontakt" class="service-link">Leistung anfragen &rarr;</a>
-        </div>
-
-        <!-- 5. Grundreinigung -->
-        <div class="service-card fade-in-up">
-          <div class="service-icon-box">🧹</div>
-          <h3>Grundreinigung</h3>
-          <p>
-            Die intensive Tiefenreinigung für besonders hartnäckige Verschmutzungen. Ideal vor dem Einzug, nach Umzügen, Renovierungsarbeiten oder im Rahmen des Frühjahrsputzes.
-          </p>
-          <ul class="service-bullets">
-            <li>Beseitigung alter Pflegefilme &amp; Verkrustungen</li>
-            <li>Intensive Reinigung schwer zugänglicher Ecken</li>
-            <li>Frischekur für strapazierte Böden und Fliesen</li>
-          </ul>
-          <a href="#kontakt" class="service-link">Leistung anfragen &rarr;</a>
-        </div>
-
-        <!-- 6. Sonderreinigung -->
-        <div class="service-card fade-in-up">
-          <div class="service-icon-box">🧽</div>
-          <h3>Sonderreinigung</h3>
-          <p>
-            Spezielle Herausforderungen erfordern gezielte Profi-Lösungen: Teppichshampoonierung, Polsterreinigung, Bauendreinigung oder gezielte Treppenhaushygiene.
-          </p>
-          <ul class="service-bullets">
-            <li>Teppich- &amp; Polster-Tiefenreinigung</li>
-            <li>Bauabschluss- &amp; Renovierungsreinigung</li>
-            <li>Treppenhäuser &amp; Eingangsbereiche</li>
-          </ul>
-          <a href="#kontakt" class="service-link">Leistung anfragen &rarr;</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       Why Serreos Section
-       ========================================================================== -->
-  <section id="warum-serreos" class="section-padding">
-    <div class="container">
-      <div class="section-header fade-in-up">
-        <span class="badge">Ihre Vorteile</span>
-        <h2>Warum Serreos Raumpflegeservice?</h2>
-        <p>Sauberkeit ist Vertrauenssache. Wir kombinieren professionelles Handwerk mit persönlicher Nähe und Verlässlichkeit.</p>
-      </div>
-
-      <div class="why-us-grid">
-        <div class="why-card fade-in-up">
-          <span class="why-icon">🤝</span>
-          <h3>Familienbetrieb mit Herz</h3>
-          <p>Bei uns sind Sie keine anonyme Nummer. Feste Ansprechpartner und direkte Betreuung durch den Inhaber garantieren höchste Zuverlässigkeit.</p>
-        </div>
-
-        <div class="why-card fade-in-up">
-          <span class="why-icon">🌿</span>
-          <h3>Ökologische Reinigung</h3>
-          <p>Wir verwenden geprüfte, umweltschonende Reinigungsmittel. Das schützt die Gesundheit Ihrer Mitarbeiter und schont empfindliche Materialien.</p>
-        </div>
-
-        <div class="why-card fade-in-up">
-          <span class="why-icon">⏰</span>
-          <h3>Flexible Arbeitszeiten</h3>
-          <p>Ob frühmorgens vor Betriebsbeginn, diskret nach Feierabend oder am Wochenende: Wir reinigen genau dann, wenn es Ihren Ablauf nicht stört.</p>
-        </div>
-
-        <div class="why-card fade-in-up">
-          <span class="why-icon">💶</span>
-          <h3>Faire &amp; feste Preise</h3>
-          <p>Keine versteckten Gebühren oder bösen Überraschungen. Wir kalkulieren transparent und fair nach einer kostenlosen Vor-Ort-Besichtigung.</p>
-        </div>
-      </div>
-
-      <!-- Regional Banner -->
-      <div class="regional-banner fade-in-up">
-        <div>
-          <h3>Vor Ort in Aschaffenburg &amp; im Rhein-Main-Gebiet</h3>
-          <p>Wir betreuen Unternehmen, Praxen, Kanzleien und Privathaushalte in Aschaffenburg, Miltenberg, Alzenau und der umliegenden Region.</p>
-        </div>
-        <div class="regional-actions">
-          <a href="#kontakt" class="btn btn-accent">Termin vereinbaren</a>
-          <a href="tel:01716107094" class="btn btn-outline" style="color: #ffffff; border-color: rgba(255,255,255,0.4);">0171 6107094</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       How it works (Ablauf)
-       ========================================================================== -->
-  <section id="ablauf" class="steps-section section-padding">
-    <div class="container">
-      <div class="section-header fade-in-up">
-        <span class="badge">In 3 einfachen Schritten</span>
-        <h2>So unkompliziert starten wir</h2>
-        <p>Schnell, strukturiert und völlig unverbindlich zu glänzend sauberen Räumlichkeiten.</p>
-      </div>
-
-      <div class="steps-grid">
-        <div class="step-card fade-in-up">
-          <div class="step-number">1</div>
-          <h3>Anfrage stellen</h3>
-          <p>Kontaktieren Sie uns per Kontaktformular, E-Mail oder rufen Sie uns direkt an. Teilen Sie uns kurz Ihre Anforderungen mit.</p>
-        </div>
-
-        <div class="step-card fade-in-up">
-          <div class="step-number">2</div>
-          <h3>Kostenlose Besichtigung</h3>
-          <p>Wir besichtigen Ihr Objekt vor Ort, ermitteln den genauen Bedarf und erstellen Ihnen ein transparentes, maßgeschneidertes Festpreisangebot.</p>
-        </div>
-
-        <div class="step-card fade-in-up">
-          <div class="step-number">3</div>
-          <h3>Perfekte Sauberkeit</h3>
-          <p>Nach Ihrer Freigabe starten wir pünktlich zum vereinbarten Wunschtermin mit der fachgerechten und gründlichen Ausführung.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       Contact Section & Form
-       ========================================================================== -->
-  <section id="kontakt" class="contact-section section-padding">
-    <div class="container">
-      <div class="section-header fade-in-up">
-        <span class="badge">Kontakt aufnehmen</span>
+  <!-- Contact Section -->
+  <section id="contact" class="contact section-padding">
+    <div class="contact-container fade-in-up">
+      <div class="section-header">
         <h2>Lassen Sie uns sprechen</h2>
-        <p>Haben Sie Fragen oder möchten ein unverbindliches Angebot anfordern? Wir freuen uns auf Ihre Nachricht!</p>
+        <p>Interessiert an einem unverbindlichen Angebot? Kontaktieren Sie uns direkt oder nutzen Sie unser Anfrageformular.</p>
       </div>
 
-      <div class="contact-layout">
-        <!-- Info Card -->
-        <div class="contact-info-card fade-in-up">
-          <h3>Direkter Kontakt</h3>
-          <p>Wir beraten Sie gerne persönlich zu Ihrem Reinigungsbedarf in Aschaffenburg und Umgebung.</p>
+      <div class="contact-methods">
+        <div class="contact-info">
+          <h3>Direkt erreichen</h3>
+          <p>Wir freuen uns auf Ihre Anfrage und beraten Sie gerne persönlich vor Ort.</p>
 
           <div class="contact-item">
-            <div class="contact-icon">📍</div>
-            <div class="contact-item-content">
-              <h4>Anschrift</h4>
-              <p>Ulmenweg 43<br />63741 Aschaffenburg</p>
-            </div>
+            <span>Telefon / Mobil</span>
+            <a href="tel:01716107094">0171 6107094</a>
           </div>
 
           <div class="contact-item">
-            <div class="contact-icon">📞</div>
-            <div class="contact-item-content">
-              <h4>Telefon / Mobil</h4>
-              <a href="tel:01716107094">0171 6107094</a>
-            </div>
+            <span>E-Mail</span>
+            <a href="mailto:serreos.raumpflegeservice@web.de">serreos.raumpflegeservice@web.de</a>
           </div>
 
           <div class="contact-item">
-            <div class="contact-icon">✉️</div>
-            <div class="contact-item-content">
-              <h4>E-Mail</h4>
-              <a href="mailto:serreos.raumpflegeservice@web.de">serreos.raumpflegeservice@web.de</a>
-            </div>
+            <span>Standort</span>
+            <p>Ulmenweg 43<br />63741 Aschaffenburg</p>
           </div>
 
           <div class="contact-item">
-            <div class="contact-icon">🕒</div>
-            <div class="contact-item-content">
-              <h4>Erreichbarkeit</h4>
-              <p>Montag bis Samstag: 07:00 – 19:00 Uhr</p>
-            </div>
+            <span>Erreichbarkeit</span>
+            <p>Montag bis Samstag: 07:00 – 19:00 Uhr</p>
           </div>
         </div>
 
-        <!-- Formular -->
-        <div class="contact-form-box fade-in-up">
-          <h3>Unverbindliche Anfrage</h3>
-          <p>Füllen Sie einfach das Formular aus. Wir melden uns innerhalb von 24 Stunden bei Ihnen zurück.</p>
+        <form class="contact-form" id="contactForm" action="https://formsubmit.co/serreos.raumpflegeservice@web.de" method="POST">
+          <!-- FormSubmit Optionen -->
+          <input type="hidden" name="_subject" value="Neue Reinigungsanfrage über serreos-raumpflegeservice.de" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
 
-          <form id="contactForm" action="https://formsubmit.co/serreos.raumpflegeservice@web.de" method="POST">
-            <!-- FormSubmit Konfiguration -->
-            <input type="hidden" name="_subject" value="Neue Reinigungsanfrage über serreos-raumpflegeservice.de" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="false" />
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Ihr Name / Unternehmen *" required />
+            <input type="email" name="email" placeholder="Ihre E-Mail-Adresse *" required />
+          </div>
 
-            <div class="form-grid">
-              <div class="form-group">
-                <label for="name">Ihr Name / Unternehmen *</label>
-                <input type="text" id="name" name="name" class="form-control" placeholder="z. B. Max Mustermann" required />
-              </div>
+          <div class="form-row">
+            <input type="tel" name="phone" placeholder="Telefonnummer (für Rückruf)" />
+            <select name="leistung" required>
+              <option value="" disabled selected>Gewünschte Leistung wählen *</option>
+              <option value="Büroreinigung">Büroreinigung</option>
+              <option value="Praxisreinigung">Praxisreinigung</option>
+              <option value="Glasreinigung">Glas- &amp; Fensterreinigung</option>
+              <option value="Unterhaltsreinigung">Unterhaltsreinigung</option>
+              <option value="Grundreinigung">Grundreinigung</option>
+              <option value="Sonderreinigung">Sonderreinigung / Teppich</option>
+              <option value="Sonstiges">Sonstige Anfrage</option>
+            </select>
+          </div>
 
-              <div class="form-group">
-                <label for="email">Ihre E-Mail-Adresse *</label>
-                <input type="email" id="email" name="email" class="form-control" placeholder="ihre-adresse@web.de" required />
-              </div>
+          <textarea name="nachricht" rows="4" placeholder="Ihre Nachricht / Objektbeschreibung (z. B. ungefähre m², Turnus)..." required></textarea>
 
-              <div class="form-group">
-                <label for="phone">Telefonnummer (für schnellen Rückruf)</label>
-                <input type="tel" id="phone" name="phone" class="form-control" placeholder="0171 1234567" />
-              </div>
+          <div class="checkbox-wrap">
+            <input type="checkbox" id="privacy" name="datenschutz" required />
+            <label for="privacy">
+              Ich stimme zu, dass meine Angaben zur Bearbeitung meiner Anfrage erhoben werden. Siehe <a href="#" id="openDatenschutzInline">Datenschutzerklärung</a>.
+            </label>
+          </div>
 
-              <div class="form-group">
-                <label for="service">Gewünschte Leistung *</label>
-                <select id="service" name="leistung" class="form-control" required>
-                  <option value="" disabled selected>Bitte Leistung auswählen...</option>
-                  <option value="Büroreinigung">Büroreinigung</option>
-                  <option value="Praxisreinigung">Praxisreinigung</option>
-                  <option value="Glasreinigung">Glas- &amp; Fensterreinigung</option>
-                  <option value="Unterhaltsreinigung">Unterhaltsreinigung</option>
-                  <option value="Grundreinigung">Grundreinigung</option>
-                  <option value="Sonderreinigung">Sonderreinigung / Teppich</option>
-                  <option value="Sonstiges">Sonstige Anfrage</option>
-                </select>
-              </div>
-
-              <div class="form-group full-width">
-                <label for="message">Ihre Nachricht / Objektbeschreibung *</label>
-                <textarea id="message" name="nachricht" class="form-control" placeholder="Beschreiben Sie kurz Ihr Objekt (z. B. ungefähre Fläche in m², Häufigkeit, Besonderheiten)..." required></textarea>
-              </div>
-            </div>
-
-            <div class="checkbox-group">
-              <input type="checkbox" id="privacy" name="datenschutz" required />
-              <label for="privacy">
-                Ich stimme zu, dass meine Angaben zur Bearbeitung meiner Anfrage und Kontaktaufnahme erhoben und verarbeitet werden. Weitere Details entnehmen Sie unserer <a href="#" id="openDatenschutzInline">Datenschutzerklärung</a>.
-              </label>
-            </div>
-
-            <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%;">
-              <span>Nachricht absenden</span> &rarr;
-            </button>
-
-            <div id="formStatus" class="form-status" role="alert"></div>
-          </form>
-        </div>
+          <button type="submit" id="submitBtn" class="btn-primary submit-btn">Nachricht senden</button>
+          <div id="formFeedback" class="form-feedback" role="alert"></div>
+        </form>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================================================
-       Footer
-       ========================================================================== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="assets/White logo - no background.svg" alt="Serreos Raumpflegeservice" />
-          <p>
-            Professioneller Raumpflegeservice für Büro, Praxis, Glas und Gewerbe in Aschaffenburg und Umgebung. Qualität, Zuverlässigkeit und Diskretion aus Meisterhand.
-          </p>
-        </div>
-
-        <div class="footer-col">
-          <h4>Leistungen</h4>
-          <ul>
-            <li><a href="#services">Büroreinigung</a></li>
-            <li><a href="#services">Praxisreinigung</a></li>
-            <li><a href="#services">Glas- &amp; Fensterreinigung</a></li>
-            <li><a href="#services">Unterhaltsreinigung</a></li>
-            <li><a href="#services">Grundreinigung</a></li>
-            <li><a href="#services">Sonderreinigung</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Kontakt &amp; Standort</h4>
-          <ul>
-            <li>Serreos Raumpflegeservice</li>
-            <li>Inhaber: Thomas Charistes</li>
-            <li>Ulmenweg 43, 63741 Aschaffenburg</li>
-            <li><a href="tel:01716107094">Tel: 0171 6107094</a></li>
-            <li><a href="mailto:serreos.raumpflegeservice@web.de">serreos.raumpflegeservice@web.de</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <img src="assets/White logo - no background.svg" alt="Serreos Raumpflegeservice Logo" />
         <p>&copy; 2026 Serreos Raumpflegeservice. Alle Rechte vorbehalten.</p>
-        <div>
-          <a href="#" id="openImpressum">Impressum</a>
-          <a href="#" id="openDatenschutz">Datenschutz</a>
-        </div>
+      </div>
+      <div class="footer-links">
+        <a href="#" id="openImpressum">Impressum</a>
+        <a href="#" id="openDatenschutz">Datenschutz</a>
       </div>
     </div>
   </footer>
 
-  <!-- ==========================================================================
-       Modal: Impressum
-       ========================================================================== -->
+  <!-- Modal: Impressum -->
   <div class="modal-backdrop" id="modalImpressum" role="dialog" aria-modal="true" aria-labelledby="impressumTitle">
     <div class="modal-content">
       <button class="modal-close" id="closeImpressum" aria-label="Schließen">&times;</button>
@@ -535,9 +367,7 @@
     </div>
   </div>
 
-  <!-- ==========================================================================
-       Modal: Datenschutzerklärung
-       ========================================================================== -->
+  <!-- Modal: Datenschutz -->
   <div class="modal-backdrop" id="modalDatenschutz" role="dialog" aria-modal="true" aria-labelledby="datenschutzTitle">
     <div class="modal-content">
       <button class="modal-close" id="closeDatenschutz" aria-label="Schließen">&times;</button>
@@ -546,12 +376,11 @@
 
         <h3>1. Datenschutz auf einen Blick</h3>
         <p>
-          Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften (DSGVO, BDSG) sowie dieser Datenschutzerklärung.
+          Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Wir behandeln Ihre Daten vertraulich und entsprechend den gesetzlichen Vorschriften (DSGVO, BDSG).
         </p>
 
         <h3>2. Verantwortliche Stelle</h3>
         <p>
-          Verantwortlich für die Datenverarbeitung auf dieser Webseite ist:<br />
           <strong>Serreos Raumpflegeservice</strong><br />
           Inhaber: Thomas Charistes<br />
           Ulmenweg 43, 63741 Aschaffenburg<br />
@@ -560,21 +389,18 @@
         </p>
 
         <h3>3. Datenerfassung auf dieser Webseite</h3>
-        <p><strong>Lokales Hosting von Schriftarten:</strong> Zur einheitlichen Darstellung nutzen wir Schriftarten, die lokal auf unserem Server bzw. GitHub Pages gehostet werden. Es findet keine Verbindung zu externen Google-Servern statt und es werden keine IP-Adressen an Dritte übertragen.</p>
-        <p><strong>Keine Tracking-Cookies:</strong> Diese Webseite verzichtet bewusst auf Analyse- und Tracking-Cookies oder Werbetracker Dritter.</p>
-        <p><strong>Server-Log-Dateien:</strong> Der Provider der Seiten (GitHub Pages / GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) erhebt und speichert automatisch Informationen in Log-Dateien (z. B. Browsertyp, Betriebssystem, Uhrzeit der Serveranfrage, IP-Adresse) zur Gewährleistung des sicheren und störungsfreien Betriebs der Webseite.</p>
+        <p><strong>Lokales Hosting von Schriftarten:</strong> Zur optischen Gestaltung nutzen wir Schriftarten, die lokal auf unserem Webspace liegen. Es findet keinerlei Datenübertragung an externe Server (wie Google) statt.</p>
+        <p><strong>Keine Tracking-Cookies:</strong> Diese Webseite setzt bewusst keine zustimmungspflichtigen Tracking-, Analyse- oder Marketing-Cookies ein.</p>
+        <p><strong>Server-Log-Dateien:</strong> Der Hostinganbieter erhebt automatisch Verbindungsdaten (z. B. IP-Adresse, Browsertyp, Uhrzeit), um den sicheren Betrieb der Webseite zu gewährleisten.</p>
 
-        <h3>4. Kontaktformular und E-Mail-Kontakt</h3>
+        <h3>4. Kontaktformular</h3>
         <p>
-          Wenn Sie uns per Kontaktformular oder E-Mail Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns verarbeitet und gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
-        </p>
-        <p>
-          Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).
+          Daten aus dem Kontaktformular verarbeiten wir ausschließlich zur Beantwortung Ihrer Anfrage auf Grundlage von Art. 6 Abs. 1 lit. b bzw. f DSGVO. Eine Weitergabe an unbefugte Dritte erfolgt nicht.
         </p>
 
         <h3>5. Ihre Rechte</h3>
         <p>
-          Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit unter der im Impressum angegebenen Adresse an uns wenden. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Datenschutzaufsichtsbehörde zu.
+          Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung oder Einschränkung der Verarbeitung Ihrer Daten sowie das Recht auf Beschwerde bei der zuständigen Datenschutzbehörde.
         </p>
       </div>
     </div>
