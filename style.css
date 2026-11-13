@@ -502,25 +502,24 @@ html[data-palette="warm"] .navbar-shell.scrolled {
 .hero-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  background: var(--surface-glass-strong);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--border-subtle);
-  padding: 0.48rem 1rem;
-  border-radius: var(--radius-full);
-  font-size: 0.84rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  gap: 0.55rem;
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
   color: var(--text-light);
-  margin-bottom: 1.4rem;
-  box-shadow: 0 6px 20px -10px rgba(17, 24, 39, 0.12);
+  margin-bottom: 1.15rem;
+  box-shadow: none;
 }
 
 .pulse-dot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
   border-radius: 50%;
   background: var(--accent-cta);
   box-shadow: 0 0 0 4px var(--glow-primary);
@@ -1855,9 +1854,11 @@ footer {
   }
 
   .hero-pill {
-    font-size: 0.74rem;
-    padding: 0.42rem 0.85rem;
-    margin-bottom: 1.05rem;
+    font-size: 0.71rem;
+    letter-spacing: 0.045em;
+    gap: 0.5rem;
+    padding: 0;
+    margin-bottom: 0.85rem;
   }
 
   h1 {
