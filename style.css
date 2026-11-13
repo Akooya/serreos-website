@@ -188,18 +188,6 @@ a {
   color: var(--text-dark);
 }
 
-.highlight::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0.08em;
-  height: 0.22em;
-  border-radius: 999px;
-  background: var(--glow-primary);
-  z-index: -1;
-}
-
 /* Kicker Tags */
 .section-kicker {
   display: inline-flex;
