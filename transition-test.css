@@ -85,7 +85,7 @@ body {
   inset: 0;
   width: 100%;
   height: 100%;
-  transform: scale(calc(1.05 - var(--tr-hero-p, 0) * 0.05));
+  transform: scale(calc(1.016 - var(--tr-hero-p, 0) * 0.016));
   will-change: transform;
 }
 
@@ -103,7 +103,7 @@ body {
     transform: scale(1);
   }
   to {
-    transform: scale(1.04);
+    transform: scale(1.015);
   }
 }
 
