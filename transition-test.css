@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Serreos × Vollbild-Einstieg (Ohne Kasten · 100vw × 100svh · Scroll-Transition)
+   Serreos × Vollbild-Einstieg (Ohne Kasten · 1 Motiv → direkte Transition)
    Nur für transition-test.html (noindex)
    ========================================================================== */
 
@@ -29,7 +29,7 @@ body {
   border-radius: var(--sr-radius-pill);
   border: 1px solid rgba(17, 24, 39, 0.12);
   background: rgba(248, 250, 252, 0.85);
-  color: var(--sr-muted);
+  color: var(--sr-ink-soft);
   font-size: 0.78rem;
   font-weight: 600;
   white-space: nowrap;
@@ -39,7 +39,7 @@ body {
 .tr-nav-live-link:hover {
   color: var(--sr-ink);
   border-color: rgba(17, 24, 39, 0.28);
-  background: #ffffff;
+  background: var(--sr-white);
 }
 
 .tr-drawer-live-item {
@@ -47,15 +47,15 @@ body {
 }
 
 /* ==========================================================================
-   1. Vollbild-Öffnung ohne Kasten (100vw × 100svh Sticky Track)
+   1. Vollbild-Öffnung ohne Kasten (100vw × 100svh · Direkte Licht-Transition)
    ========================================================================== */
 .tr-opening-track {
   position: relative;
   width: 100%;
-  height: 165svh;
+  height: 145svh;
   margin: 0;
   padding: 0;
-  background: var(--sr-bg);
+  background: var(--sr-white);
 }
 
 .tr-opening-stage {
@@ -85,18 +85,8 @@ body {
   inset: 0;
   width: 100%;
   height: 100%;
-  will-change: opacity, transform;
-}
-
-.tr-opening-layer--dawn {
-  z-index: 1;
-  transform: scale(calc(1.04 - var(--tr-day-op, 0) * 0.04));
-}
-
-.tr-opening-layer--day {
-  z-index: 2;
-  opacity: var(--tr-day-op, 0);
-  transform: scale(calc(1.07 - var(--tr-day-op, 0) * 0.07));
+  transform: scale(calc(1.05 - var(--tr-hero-p, 0) * 0.05));
+  will-change: transform;
 }
 
 .tr-opening-slide {
@@ -105,9 +95,6 @@ body {
   object-fit: cover;
   object-position: center 48%;
   display: block;
-}
-
-.tr-opening-layer--dawn .tr-opening-slide {
   animation: trDawnBreath 16s ease-in-out infinite alternate;
 }
 
@@ -116,11 +103,11 @@ body {
     transform: scale(1);
   }
   to {
-    transform: scale(1.045);
+    transform: scale(1.04);
   }
 }
 
-/* Sanfter optischer Kontrast ohne sichtbare Kante */
+/* Sanfter optischer Kontrast ohne Kasten oder sichtbare Kante */
 .tr-opening-scrim {
   position: absolute;
   inset: 0;
@@ -128,20 +115,20 @@ body {
   background:
     radial-gradient(ellipse 68% 58% at 50% 45%, rgba(12, 18, 28, 0.42) 0%, rgba(12, 18, 28, 0.14) 68%, rgba(12, 18, 28, 0.06) 100%),
     linear-gradient(180deg, rgba(12, 18, 28, 0.34) 0%, rgba(12, 18, 28, 0.08) 42%, rgba(12, 18, 28, 0.42) 100%);
-  opacity: calc(1 - var(--tr-day-op, 0) * 0.55);
+  opacity: calc(1 - var(--tr-veil-op, 0) * 0.85);
   pointer-events: none;
 }
 
-/* Nach oben aufsteigender Lichtschleier für kantenlosen Übergang ins helle Seiten-Layout */
+/* Kantenloser Aufhellungs-Schleier direkt zu #ffffff (identisch zu body / #heroStatement) */
 .tr-opening-veil {
   position: absolute;
   inset: 0;
   z-index: 6;
   background: linear-gradient(
     180deg,
-    rgba(247, 249, 252, 0.08) 0%,
-    rgba(247, 249, 252, 0.56) 46%,
-    #f7f9fc 88%
+    rgba(255, 255, 255, 0.14) 0%,
+    rgba(255, 255, 255, 0.68) 46%,
+    #ffffff 88%
   );
   opacity: var(--tr-veil-op, 0);
   pointer-events: none;
@@ -151,7 +138,7 @@ body {
   position: absolute;
   inset: 0;
   z-index: 7;
-  background: var(--sr-bg);
+  background: var(--sr-white);
   opacity: var(--tr-solid-op, 0);
   pointer-events: none;
 }
@@ -257,18 +244,18 @@ body {
 }
 
 /* ==========================================================================
-   2. Kernaussage direkt im aufhellenden Nebel-Übergang
+   2. Kernaussage direkt im aufhellenden #ffffff-Übergang (keine Nahtkante)
    ========================================================================== */
 .tr-statement-sec {
   position: relative;
   z-index: 8;
-  margin-top: -32vh;
-  padding: calc(18vh + clamp(2rem, 4vh, 3rem)) 0 clamp(4.2rem, 7.5vh, 5.8rem);
+  margin-top: -30vh;
+  padding: calc(16vh + clamp(2rem, 4vh, 3rem)) 0 clamp(4.2rem, 7.5vh, 5.8rem);
   background: linear-gradient(
     180deg,
-    rgba(247, 249, 252, 0) 0%,
-    rgba(247, 249, 252, 0.88) 14vh,
-    var(--sr-bg) 26vh
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.9) 13vh,
+    var(--sr-white) 24vh
   );
   scroll-margin-top: 72px;
 }
@@ -278,7 +265,7 @@ body {
    ========================================================================== */
 @media (max-width: 820px) {
   .tr-opening-track {
-    height: 150svh;
+    height: 135svh;
   }
 
   .tr-nav-live-link {
@@ -302,13 +289,13 @@ body {
   }
 
   .tr-statement-sec {
-    margin-top: -26vh;
-    padding-top: calc(14vh + 1.8rem);
+    margin-top: -24vh;
+    padding-top: calc(13vh + 1.8rem);
     background: linear-gradient(
       180deg,
-      rgba(247, 249, 252, 0) 0%,
-      rgba(247, 249, 252, 0.9) 12vh,
-      var(--sr-bg) 22vh
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.92) 11vh,
+      var(--sr-white) 21vh
     );
   }
 }
@@ -322,7 +309,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .tr-opening-layer--dawn .tr-opening-slide,
+  .tr-opening-slide,
   .tr-scroll-hint-arrow {
     animation: none;
   }

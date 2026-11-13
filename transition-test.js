@@ -1,5 +1,5 @@
 // ==========================================================================
-// Serreos × Vollbild-Einstieg: Kantenloses Dämmerung→Tageslicht-Morphing
+// Serreos × Vollbild-Einstieg: Direktes Aufklaren von einem klaren Startmotiv
 // + Logo-Übergang in die schwebende Navigation (transition-test.js)
 // ==========================================================================
 
@@ -26,16 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
   let ticking = false;
 
   const applyVars = (p) => {
-    const dayOp = smoothstep(0.06, 0.54, p);
-    const logoOp = 1 - smoothstep(0.06, 0.44, p);
-    const logoShift = smoothstep(0.02, 0.48, p);
-    const navShow = smoothstep(0.24, 0.62, p);
-    const veilOp = smoothstep(0.48, 0.95, p);
-    const solidOp = smoothstep(0.84, 1.0, p) * 0.45;
-    const cueOp = 1 - smoothstep(0.01, 0.14, p);
+    const logoOp = 1 - smoothstep(0.06, 0.56, p);
+    const logoShift = smoothstep(0.02, 0.62, p);
+    const navShow = smoothstep(0.24, 0.72, p);
+    const veilOp = smoothstep(0.26, 0.92, p);
+    const solidOp = smoothstep(0.76, 1.0, p) * 0.65;
+    const cueOp = 1 - smoothstep(0.01, 0.16, p);
 
     stage.style.setProperty('--tr-hero-p', p.toFixed(4));
-    stage.style.setProperty('--tr-day-op', dayOp.toFixed(4));
     stage.style.setProperty('--tr-logo-op', logoOp.toFixed(4));
     stage.style.setProperty('--tr-logo-shift', logoShift.toFixed(4));
     stage.style.setProperty('--tr-veil-op', veilOp.toFixed(4));
@@ -54,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ticking = false;
     if (prefersReducedMotion) {
       stage.style.setProperty('--tr-hero-p', '0');
-      stage.style.setProperty('--tr-day-op', '0');
       stage.style.setProperty('--tr-logo-op', '1');
       stage.style.setProperty('--tr-logo-shift', '0');
       stage.style.setProperty('--tr-veil-op', '0');
