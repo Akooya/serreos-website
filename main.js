@@ -9,9 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
     window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
   // ------------------------------------------------------------------------
-  // 1. Scroll-Fortschrittsleiste, Sticky Navbar & Subtiler Bild-Parallax
+  // 1. Scroll-Fortschrittsleiste, Vollbild-Übergang & Subtiler Bild-Parallax
   // ------------------------------------------------------------------------
+  const siteHeader = document.querySelector('.hr-header');
   const navShell = document.getElementById('hrNavShell');
+  const openingTrack = document.getElementById('home');
+  const openingStage = document.getElementById('hrOpeningStage');
+  const scrollHint = document.querySelector('.hr-scroll-hint');
+  const heroHeading = document.querySelector('#heroStatement h1');
+  const heroCtas = document.querySelector('#heroStatement .hr-hero-ctas');
   const scrollProgress = document.getElementById('hrScrollProgress');
   const mobileQuickBar = document.getElementById('mobileQuickBar');
   const processSection = document.getElementById('process');
@@ -19,6 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const contactSection = document.getElementById('contact');
 
   const clamp01 = (val) => Math.min(1, Math.max(0, val));
+  const smoothstep = (edge0, edge1, x) => {
+    const t = clamp01((x - edge0) / (edge1 - edge0));
+    return t * t * (3 - 2 * t);
+  };
 
   let scrollTicking = false;
   const updateScrollEffects = () => {
@@ -31,8 +41,55 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navShell) {
       navShell.classList.toggle('is-scrolled', y > 24);
     }
+
+    if (openingTrack && openingStage) {
+      if (prefersReducedMotion) {
+        openingStage.style.setProperty('--sr-hero-p', '0');
+        openingStage.style.setProperty('--sr-logo-op', '1');
+        openingStage.style.setProperty('--sr-logo-shift', '0');
+        openingStage.style.setProperty('--sr-veil-op', '0');
+        openingStage.style.setProperty('--sr-solid-op', '0');
+        openingStage.style.setProperty('--sr-cue-op', '1');
+        if (siteHeader) {
+          siteHeader.style.setProperty('--sr-nav-show', '1');
+          siteHeader.classList.add('is-nav-visible');
+        }
+      } else {
+        const rect = openingTrack.getBoundingClientRect();
+        const travel = Math.max(1, openingTrack.offsetHeight - openingStage.offsetHeight);
+        const p = clamp01(-rect.top / travel);
+
+        const logoOp = 1 - smoothstep(0.06, 0.54, p);
+        const logoShift = smoothstep(0.02, 0.6, p);
+        const navShow = smoothstep(0.2, 0.66, p);
+        const veilOp = smoothstep(0.24, 0.88, p);
+        const solidOp = smoothstep(0.68, 0.96, p);
+        const cueOp = 1 - smoothstep(0.01, 0.16, p);
+
+        openingStage.style.setProperty('--sr-hero-p', p.toFixed(4));
+        openingStage.style.setProperty('--sr-logo-op', logoOp.toFixed(4));
+        openingStage.style.setProperty('--sr-logo-shift', logoShift.toFixed(4));
+        openingStage.style.setProperty('--sr-veil-op', veilOp.toFixed(4));
+        openingStage.style.setProperty('--sr-solid-op', solidOp.toFixed(4));
+        openingStage.style.setProperty('--sr-cue-op', cueOp.toFixed(4));
+
+        if (siteHeader) {
+          const finalNav = document.body.classList.contains('nav-open') ? 1 : navShow;
+          siteHeader.style.setProperty('--sr-nav-show', finalNav.toFixed(4));
+          siteHeader.classList.toggle('is-nav-visible', finalNav > 0.22);
+        }
+      }
+    } else if (siteHeader) {
+      siteHeader.style.setProperty('--sr-nav-show', '1');
+      siteHeader.classList.add('is-nav-visible');
+    }
+
     if (mobileQuickBar) {
-      mobileQuickBar.classList.toggle('is-visible', y > 360);
+      const pastHeroCtas = heroCtas ? heroCtas.getBoundingClientRect().bottom < 96 : y > 880;
+      const inContactZone = contactSection
+        ? contactSection.getBoundingClientRect().top < window.innerHeight * 0.85
+        : false;
+      mobileQuickBar.classList.toggle('is-visible', pastHeroCtas && !inContactZone);
     }
 
     if (processSection && contactSection) {
@@ -62,16 +119,16 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollTicking = false;
   };
 
-  window.addEventListener(
-    'scroll',
-    () => {
-      if (!scrollTicking) {
-        window.requestAnimationFrame(updateScrollEffects);
-        scrollTicking = true;
-      }
-    },
-    { passive: true }
-  );
+  const requestScrollUpdate = () => {
+    if (!scrollTicking) {
+      window.requestAnimationFrame(updateScrollEffects);
+      scrollTicking = true;
+    }
+  };
+
+  window.addEventListener('scroll', requestScrollUpdate, { passive: true });
+  window.addEventListener('resize', requestScrollUpdate, { passive: true });
+  window.addEventListener('load', updateScrollEffects);
   updateScrollEffects();
 
   // ------------------------------------------------------------------------
@@ -135,69 +192,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ------------------------------------------------------------------------
-  // 4. Hero Kapsel-Foto-Wechsel (Sanfter Crossfade + Klick-Impuls)
+  // 4. Vollbild-Scroll-Hinweis „Entdecken ↓“
   // ------------------------------------------------------------------------
-  const capsuleWrap = document.getElementById('hrHeroCapsule');
-  if (capsuleWrap) {
-    const capsuleImgs = Array.from(capsuleWrap.querySelectorAll('img'));
-    let capsuleIndex = 0;
-
-    const showCapsule = (idx) => {
-      capsuleIndex = (idx + capsuleImgs.length) % capsuleImgs.length;
-      capsuleImgs.forEach((img, i) => img.classList.toggle('is-active', i === capsuleIndex));
-    };
-
-    capsuleWrap.addEventListener('click', () => showCapsule(capsuleIndex + 1));
-
-    if (!prefersReducedMotion && capsuleImgs.length > 1) {
-      setInterval(() => showCapsule(capsuleIndex + 1), 3800);
-    }
-  }
-
-  // ------------------------------------------------------------------------
-  // 5. Großer Hero Panorama-Slider (Tabs + sanfter Auto-Wechsel)
-  // ------------------------------------------------------------------------
-  const panoWrap = document.getElementById('hrPanorama');
-  if (panoWrap) {
-    const slides = Array.from(panoWrap.querySelectorAll('.hr-panorama-slide'));
-    const tabs = Array.from(panoWrap.querySelectorAll('.hr-pano-tab'));
-    const captionTitle = document.getElementById('hrPanoTitle');
-    const captionSub = document.getElementById('hrPanoSub');
-    let panoIndex = 0;
-    let panoPaused = false;
-
-    const activatePano = (idx) => {
-      panoIndex = (idx + slides.length) % slides.length;
-      slides.forEach((slide, i) => slide.classList.toggle('is-active', i === panoIndex));
-      tabs.forEach((tab, i) => {
-        const active = i === panoIndex;
-        tab.classList.toggle('is-active', active);
-        tab.setAttribute('aria-selected', String(active));
+  if (scrollHint && heroHeading) {
+    scrollHint.addEventListener('click', (event) => {
+      event.preventDefault();
+      const targetTop = heroHeading.getBoundingClientRect().top + window.scrollY - 120;
+      window.scrollTo({
+        top: Math.max(0, targetTop),
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
       });
-
-      const currentSlide = slides[panoIndex];
-      if (currentSlide && captionTitle && captionSub) {
-        captionTitle.textContent = currentSlide.dataset.title || '';
-        captionSub.textContent = currentSlide.dataset.sub || '';
-      }
-    };
-
-    tabs.forEach((tab, i) => {
-      tab.addEventListener('click', () => activatePano(i));
     });
-
-    panoWrap.addEventListener('mouseenter', () => {
-      panoPaused = true;
-    });
-    panoWrap.addEventListener('mouseleave', () => {
-      panoPaused = false;
-    });
-
-    if (!prefersReducedMotion && slides.length > 1) {
-      setInterval(() => {
-        if (!panoPaused) activatePano(panoIndex + 1);
-      }, 4800);
-    }
   }
 
   // ------------------------------------------------------------------------
