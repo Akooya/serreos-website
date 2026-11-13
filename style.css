@@ -95,15 +95,24 @@ html {
   font-family: var(--font-family);
   color: var(--text-dark);
   background-color: var(--bg-color);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 body {
   background-color: var(--bg-color);
   line-height: 1.65;
-  overflow-x: hidden;
+  overflow-x: clip;
+  max-width: 100%;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
   transition: background-color 0.45s ease, color 0.35s ease;
+}
+
+img {
+  max-width: 100%;
 }
 
 section {
