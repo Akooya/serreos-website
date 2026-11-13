@@ -186,6 +186,10 @@ a {
   position: relative;
   display: inline-block;
   color: var(--text-dark);
+  font-family: Georgia, "Book Antiqua", "Palatino Linotype", serif;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 /* Kicker Tags */
@@ -673,7 +677,55 @@ html[data-palette="warm"] .navbar-shell.scrolled {
 .glass-card-sub {
   font-size: 0.94rem;
   line-height: 1.55;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.05rem;
+}
+
+.glass-photo-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.55rem;
+  margin-bottom: 1.1rem;
+}
+
+.glass-photo-pill {
+  position: relative;
+  display: block;
+  height: 68px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.glass-photo-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -10px rgba(17, 24, 39, 0.28);
+}
+
+.glass-photo-pill img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.glass-photo-pill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 35%, rgba(15, 23, 42, 0.58) 100%);
+  pointer-events: none;
+}
+
+.glass-photo-pill span {
+  position: absolute;
+  left: 0.55rem;
+  bottom: 0.35rem;
+  z-index: 1;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #ffffff;
 }
 
 .glass-metrics {
@@ -1628,17 +1680,37 @@ html[data-palette="warm"] .glass-float-bottom {
    Footer
    ========================================================================== */
 footer {
+  position: relative;
+  overflow: hidden;
   background-color: var(--surface-dark);
   color: #ffffff;
-  padding: 3.4rem 5% 2.6rem;
+  padding: 3.4rem 5% 4.2rem;
 }
 
 .footer-inner {
+  position: relative;
+  z-index: 2;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+.footer-giant-wordmark {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 1.6rem auto -4.4rem;
+  text-align: center;
+  font-family: Georgia, "Book Antiqua", "Palatino Linotype", serif;
+  font-weight: 700;
+  font-size: clamp(4.2rem, 15.5vw, 12.2rem);
+  line-height: 0.78;
+  letter-spacing: -0.025em;
+  color: rgba(255, 255, 255, 0.045);
+  user-select: none;
+  pointer-events: none;
 }
 
 .footer-top {
@@ -2232,6 +2304,11 @@ footer {
 
   .footer-links a {
     margin: 0 0.9rem;
+  }
+
+  .footer-giant-wordmark {
+    margin-top: 1.2rem;
+    margin-bottom: -3.2rem;
   }
 
   .faq-trigger {
