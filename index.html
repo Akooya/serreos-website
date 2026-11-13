@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-palette="mono">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f4f5f8" />
   <title>Serreos Raumpflegeservice | Professionelle Reinigung in Aschaffenburg</title>
   <meta name="description"
     content="Ihr zuverlässiger Partner für Büroreinigung, Praxisreinigung, Glasreinigung, Unterhaltsreinigung &amp; Grundreinigung in Aschaffenburg &amp; Umgebung." />
   <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
 
   <!-- OpenGraph -->
   <meta property="og:title" content="Serreos Raumpflegeservice | Professionelle Reinigung" />
   <meta property="og:description"
     content="Zuverlässige Büro-, Praxis-, Glas- und Unterhaltsreinigung in Aschaffenburg &amp; Umgebung. Faire Festpreise &amp; umweltfreundliche Reinigung." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.serreos-raumpflegeservice.de/" />
+  <meta property="og:url" content="https://akooya.github.io/serreos-website/" />
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
@@ -23,9 +25,9 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "HomeAndConstructionBusiness",
+    "@type": "LocalBusiness",
     "name": "Serreos Raumpflegeservice",
-    "image": "https://www.serreos-raumpflegeservice.de/assets/Color%20logo%20-%20no%20background.svg",
+    "image": "https://akooya.github.io/serreos-website/assets/Color%20logo%20-%20no%20background.svg",
     "telephone": "+491716107094",
     "email": "serreos.raumpflegeservice@web.de",
     "address": {
@@ -35,204 +37,506 @@
       "postalCode": "63741",
       "addressCountry": "DE"
     },
-    "areaServed": ["Aschaffenburg", "Miltenberg", "Alzenau", "Rhein-Main-Gebiet"],
+    "areaServed": ["Aschaffenburg", "Direkte Umgebung Aschaffenburg"],
     "openingHours": "Mo-Sa 07:00-19:00"
   }
   </script>
 </head>
 
 <body>
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+  </div>
 
-  <!-- Navigation -->
-  <nav class="navbar" id="navbar">
-    <div class="logo">
-      <a href="#home" aria-label="Startseite">
-        <img src="assets/Color logo - no background.svg" alt="Serreos Logo" />
-      </a>
-    </div>
+  <!-- Floating Glassmorphism Navigation -->
+  <header class="navbar-shell" id="navbarShell">
+    <nav class="navbar" id="navbar" aria-label="Hauptnavigation">
+      <div class="logo">
+        <a href="#home" aria-label="Startseite">
+          <img src="assets/Color logo - no background.svg" alt="Serreos Logo" />
+        </a>
+      </div>
 
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home">Startseite</a></li>
-      <li><a href="#services">Leistungen</a></li>
-      <li><a href="#about">Über uns</a></li>
-      <li><a href="#contact">Kontakt</a></li>
-    </ul>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Startseite</a></li>
+        <li><a href="#services">Leistungen</a></li>
+        <li><a href="#process">Ablauf</a></li>
+        <li><a href="#about">Über uns</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+        <li class="mobile-nav-actions">
+          <a href="tel:01716107094" class="btn-secondary">
+            <svg class="icon-phone" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>0171 6107094</span>
+          </a>
+          <a href="#contact" class="btn-primary">Angebot anfragen</a>
+        </li>
+      </ul>
 
-    <div class="nav-cta">
-      <a href="tel:01716107094" class="nav-phone-link">
-        <svg class="icon-phone" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-        <span>0171 6107094</span>
-      </a>
-      <a href="#contact" class="btn-primary btn-sm">Angebot anfragen</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false">
-        ☰
-      </button>
-    </div>
-  </nav>
+      <div class="nav-cta">
+        <a href="tel:01716107094" class="nav-phone-link">
+          <svg class="icon-phone" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          <span>0171 6107094</span>
+        </a>
+        <a href="#contact" class="btn-primary btn-sm">Angebot anfragen</a>
+        <a href="tel:01716107094" class="mobile-call-btn" aria-label="Jetzt anrufen: 0171 6107094">
+          <svg class="icon-phone" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+            <line x1="4" y1="7" x2="20" y2="7"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="17" x2="20" y2="17"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
 
   <!-- Hero Section -->
   <section id="home" class="hero">
-    <div class="hero-content fade-in-up">
-      <span class="hero-tag">Raumpflegeservice Aschaffenburg &amp; Umgebung</span>
-      <h1>Ihr Partner für <br /><span class="highlight">saubere Räume</span></h1>
-      <p>
-        Professioneller Raumpflegeservice für höchste Ansprüche. Zuverlässig, gründlich und diskret für Gewerbeobjekte, Praxen und Privathaushalte.
-      </p>
-      <div class="hero-buttons">
-        <a href="#contact" class="btn-primary">Jetzt Angebot einholen</a>
-        <a href="tel:01716107094" class="btn-secondary">
-          <svg class="icon-phone" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-          0171 6107094
-        </a>
+    <!-- Subtle architectural radial rings echoing logo crest -->
+    <div class="hero-backdrop" aria-hidden="true">
+      <div class="hero-glow hero-glow-primary"></div>
+      <div class="hero-glow hero-glow-secondary"></div>
+      <svg class="hero-rings" viewBox="0 0 900 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="620" cy="420" r="190" stroke="currentColor" stroke-width="1" stroke-dasharray="4 8" />
+        <circle cx="620" cy="420" r="290" stroke="currentColor" stroke-width="1" />
+        <circle cx="620" cy="420" r="400" stroke="currentColor" stroke-width="1" stroke-dasharray="2 10" />
+        <line x1="220" y1="420" x2="1020" y2="420" stroke="currentColor" stroke-width="0.75" />
+        <line x1="620" y1="20" x2="620" y2="820" stroke="currentColor" stroke-width="0.75" />
+      </svg>
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-content reveal-up">
+        <div class="hero-pill">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          <span>Raumpflegeservice Aschaffenburg &amp; Umgebung</span>
+        </div>
+
+        <h1>Ihr Partner für <br /><span class="highlight">saubere Räume</span></h1>
+
+        <p class="hero-lead">
+          Professioneller Raumpflegeservice für höchste Ansprüche. Zuverlässig, gründlich und diskret für Gewerbeobjekte, Praxen und Privathaushalte.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#contact" class="btn-primary">
+            <span>Jetzt Angebot einholen</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </a>
+          <a href="tel:01716107094" class="btn-secondary">
+            <svg class="icon-phone" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>0171 6107094</span>
+          </a>
+        </div>
+
+        <ul class="hero-badges-grid">
+          <li>
+            <span class="badge-check" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </span>
+            <span><strong>100 % Zuverlässig</strong> &amp; diskret</span>
+          </li>
+          <li>
+            <span class="badge-check" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </span>
+            <span><strong>Öko-Reinigungsmittel</strong></span>
+          </li>
+          <li>
+            <span class="badge-check" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </span>
+            <span><strong>Kostenlose</strong> Erstbesichtigung</span>
+          </li>
+          <li>
+            <span class="badge-check" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </span>
+            <span><strong>Feste</strong> Ansprechpartner</span>
+          </li>
+        </ul>
       </div>
-      <ul class="hero-badges-row">
-        <li>✓ <strong>100% Zuverlässig &amp; diskret</strong></li>
-        <li>✓ <strong>Öko-Reinigungsmittel</strong></li>
-        <li>✓ <strong>Kostenlose Erstbesichtigung</strong></li>
-        <li>✓ <strong>Feste Ansprechpartner</strong></li>
-      </ul>
+
+      <!-- Right Column: Layered Glassmorphism Bento Showcase -->
+      <div class="hero-visual reveal-right" aria-label="Überblick unserer Qualitätsstandards">
+        <div class="showcase-aura" aria-hidden="true"></div>
+
+        <!-- Floating Upper Glass Badge -->
+        <div class="glass-float glass-float-top" data-parallax="-0.14">
+          <div class="float-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
+          </div>
+          <div>
+            <strong>Inhabergeführt</strong>
+            <span>Direkte Absprachen ohne Callcenter</span>
+          </div>
+        </div>
+
+        <!-- Main Central Frosted Card -->
+        <div class="hero-glass-main" data-parallax="0.06">
+          <div class="glass-card-head">
+            <div class="glass-brand-chip">
+              <span class="sparkle-dot" aria-hidden="true"></span>
+              <span>Qualitätsstandard Serreos</span>
+            </div>
+            <span class="glass-status-pill">Mo–Sa · 07–19 Uhr</span>
+          </div>
+
+          <h2 class="glass-card-title">Sauberkeit nach Maß für Büro, Praxis &amp; Objekt</h2>
+          <p class="glass-card-sub">
+            Feste Reinigungskräfte, geprüfte Öko-Mittel und verlässliche Festpreise direkt in Aschaffenburg &amp; Umgebung.
+          </p>
+
+          <div class="glass-metrics">
+            <div class="glass-metric-box">
+              <span class="metric-value" data-count="24" data-suffix="h">24h</span>
+              <span class="metric-label">Reaktionszeit</span>
+            </div>
+            <div class="glass-metric-box">
+              <span class="metric-value" data-count="0" data-suffix=" €">0 €</span>
+              <span class="metric-label">Erstbesichtigung</span>
+            </div>
+            <div class="glass-metric-box">
+              <span class="metric-value" data-count="6" data-suffix="">6</span>
+              <span class="metric-label">Fachbereiche</span>
+            </div>
+          </div>
+
+          <div class="glass-service-tags">
+            <a href="#services" class="tag-chip">Büroreinigung</a>
+            <a href="#services" class="tag-chip">Praxisreinigung</a>
+            <a href="#services" class="tag-chip">Glas &amp; Fenster</a>
+            <a href="#services" class="tag-chip">Unterhalt</a>
+            <a href="#services" class="tag-chip">Grundreinigung</a>
+            <a href="#services" class="tag-chip">Sonderreinigung</a>
+          </div>
+        </div>
+
+        <!-- Floating Lower Dark Glass Card -->
+        <div class="glass-float glass-float-bottom" data-parallax="0.16">
+          <div class="float-icon float-icon-dark">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <div>
+            <strong>Vor Ort für Sie da</strong>
+            <span>Aschaffenburg &amp; direkte Umgebung</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Services Section -->
   <section id="services" class="services section-padding">
-    <div class="section-header fade-in-up">
-      <h2>Unsere Leistungen</h2>
-      <p>Wir bieten maßgeschneiderte Reinigungskonzepte für Ihr Unternehmen und Zuhause.</p>
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-kicker">Leistungsportfolio</span>
+        <h2>Unsere Leistungen</h2>
+        <p>Wir bieten maßgeschneiderte Reinigungskonzepte für Ihr Unternehmen und Zuhause.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- 1. Büroreinigung -->
+        <article class="service-card reveal-up">
+          <div class="service-media">
+            <img src="assets/images/buero.jpg" alt="Modernes, makellos gereinigtes Großraumbüro mit klaren Linien" loading="lazy" />
+            <div class="service-icon-box" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                <path d="M9 22v-4h6v4"></path>
+                <path d="M8 6h.01"></path>
+                <path d="M16 6h.01"></path>
+                <path d="M12 6h.01"></path>
+                <path d="M12 10h.01"></path>
+                <path d="M12 14h.01"></path>
+                <path d="M16 10h.01"></path>
+                <path d="M16 14h.01"></path>
+                <path d="M8 10h.01"></path>
+                <path d="M8 14h.01"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="service-body">
+            <h3>Büroreinigung</h3>
+            <p>Ein sauberes Arbeitsumfeld fördert die Produktivität und das Wohlbefinden Ihres Teams und schafft einen repräsentativen Eindruck bei Kunden.</p>
+            <ul class="service-details">
+              <li>Schreibtische &amp; Arbeitsplätze</li>
+              <li>Küchen- &amp; Sanitärbereiche</li>
+              <li>Flexible Reinigungszeiten</li>
+            </ul>
+            <a href="#contact" class="service-cta-link" data-service="Büroreinigung">
+              <span>Anfrage stellen</span>
+              <span class="arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 2. Praxisreinigung -->
+        <article class="service-card reveal-up">
+          <div class="service-media">
+            <img src="assets/images/praxis.jpg" alt="Heller, hygienisch sauberer Empfangsbereich einer modernen Arztpraxis" loading="lazy" />
+            <div class="service-icon-box" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="M12 8v8"></path>
+                <path d="M8 12h8"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="service-body">
+            <h3>Praxisreinigung</h3>
+            <p>Höchste Hygienestandards und vorschriftsmäßige Flächendesinfektion für Arztpraxen, Zahnärzte und medizinische Einrichtungen.</p>
+            <ul class="service-details">
+              <li>Vorschriftsmäßige Desinfektion</li>
+              <li>Behandlungs- &amp; Wartezimmer</li>
+              <li>Geschultes, diskretes Personal</li>
+            </ul>
+            <a href="#contact" class="service-cta-link" data-service="Praxisreinigung">
+              <span>Anfrage stellen</span>
+              <span class="arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 3. Glasreinigung -->
+        <article class="service-card reveal-up">
+          <div class="service-media">
+            <img src="assets/images/glas.jpg" alt="Kristallklare, streifenfrei gereinigte Glasfassade mit viel Tageslicht" loading="lazy" />
+            <div class="service-icon-box" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="3"></rect>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="12" y1="3" x2="12" y2="21"></line>
+              </svg>
+            </div>
+          </div>
+          <div class="service-body">
+            <h3>Glasreinigung</h3>
+            <p>Streifenfreie Sauberkeit und kristallklare Durchsicht für Fenster, Schaufenster, Wintergärten und Glasfassaden im Innen- und Außenbereich.</p>
+            <ul class="service-details">
+              <li>Streifenfreie Glasflächen</li>
+              <li>Inkl. Rahmen &amp; Fensterbänke</li>
+              <li>Gewerbe- &amp; Privatgebäude</li>
+            </ul>
+            <a href="#contact" class="service-cta-link" data-service="Glasreinigung">
+              <span>Anfrage stellen</span>
+              <span class="arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 4. Unterhaltsreinigung -->
+        <article class="service-card reveal-up">
+          <div class="service-media">
+            <img src="assets/images/unterhalt.jpg" alt="Gepflegtes Foyer und makelloser Natursteinboden in einem Geschäftshaus" loading="lazy" />
+            <div class="service-icon-box" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+                <path d="M5 3v4"></path>
+                <path d="M19 17v4"></path>
+                <path d="M3 5h4"></path>
+                <path d="M17 19h4"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="service-body">
+            <h3>Unterhaltsreinigung</h3>
+            <p>Regelmäßige und verlässliche Pflege in festen Intervallen für den optimalen Werterhalt Ihrer Immobilien und Räumlichkeiten.</p>
+            <ul class="service-details">
+              <li>Feste Reinigungszyklen</li>
+              <li>Gleichbleibende Bezugsperson</li>
+              <li>Langfristiger Werterhalt</li>
+            </ul>
+            <a href="#contact" class="service-cta-link" data-service="Unterhaltsreinigung">
+              <span>Anfrage stellen</span>
+              <span class="arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 5. Grundreinigung -->
+        <article class="service-card reveal-up">
+          <div class="service-media">
+            <img src="assets/images/grund.jpg" alt="Tiefengereinigter heller Innenraum mit frisch gepflegtem Holzboden" loading="lazy" />
+            <div class="service-icon-box" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+          </div>
+          <div class="service-body">
+            <h3>Grundreinigung</h3>
+            <p>Intensive Tiefenreinigung für schwer zugängliche Bereiche und hartnäckige Verschmutzungen – ideal vor Einzug, nach Umzug oder Renovierung.</p>
+            <ul class="service-details">
+              <li>Beseitigung alter Pflegefilme</li>
+              <li>Tiefenreinigung aller Ecken</li>
+              <li>Frischekur für strapazierte Böden</li>
+            </ul>
+            <a href="#contact" class="service-cta-link" data-service="Grundreinigung">
+              <span>Anfrage stellen</span>
+              <span class="arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 6. Sonderreinigung -->
+        <article class="service-card reveal-up">
+          <div class="service-media">
+            <img src="assets/images/sonder.jpg" alt="Architektonisches Treppenhaus und sauber gepflegter Lounge-Bereich" loading="lazy" />
+            <div class="service-icon-box" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="service-body">
+            <h3>Sonderreinigung</h3>
+            <p>Spezielle Reinigungsaufgaben nach individuellem Bedarf: Professionelle Teppich- und Polstershampoonierung sowie Bauabschlussreinigung.</p>
+            <ul class="service-details">
+              <li>Teppich- &amp; Polstertiefenreinigung</li>
+              <li>Bauendreinigung</li>
+              <li>Treppenhäuser &amp; Eingangsbereiche</li>
+            </ul>
+            <a href="#contact" class="service-cta-link" data-service="Sonderreinigung">
+              <span>Anfrage stellen</span>
+              <span class="arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </article>
+      </div>
     </div>
+  </section>
 
-    <div class="services-grid">
-      <!-- 1. Büroreinigung -->
-      <div class="service-card fade-in-up">
-        <div class="icon">🏢</div>
-        <h3>Büroreinigung</h3>
-        <p>Ein sauberes Arbeitsumfeld fördert die Produktivität und das Wohlbefinden Ihres Teams und schafft einen repräsentativen Eindruck bei Kunden.</p>
-        <ul class="service-details">
-          <li>Schreibtische &amp; Arbeitsplätze</li>
-          <li>Küchen- &amp; Sanitärbereiche</li>
-          <li>Flexible Reinigungszeiten</li>
-        </ul>
-        <a href="#contact" class="service-cta-link">Anfrage stellen &rarr;</a>
-      </div>
+  <!-- Process / Dark Showcase Section (Scroll-Animated Fanned Bento Band) -->
+  <section id="process" class="process-section section-padding">
+    <div class="container">
+      <div class="process-showcase">
+        <div class="process-glow" aria-hidden="true"></div>
+        <div class="section-header process-header reveal-up">
+          <span class="section-kicker section-kicker-dark">In drei Schritten</span>
+          <h2>So unkompliziert starten wir zusammen</h2>
+          <p>Von der ersten Anfrage bis zur festen Betreuung – transparent, persönlich und ohne versteckte Kosten.</p>
+        </div>
 
-      <!-- 2. Praxisreinigung -->
-      <div class="service-card fade-in-up">
-        <div class="icon">🏥</div>
-        <h3>Praxisreinigung</h3>
-        <p>Höchste Hygienestandards und vorschriftsmäßige Flächendesinfektion für Arztpraxen, Zahnärzte und medizinische Einrichtungen.</p>
-        <ul class="service-details">
-          <li>Vorschriftsmäßige Desinfektion</li>
-          <li>Behandlungs- &amp; Wartezimmer</li>
-          <li>Geschultes, diskretes Personal</li>
-        </ul>
-        <a href="#contact" class="service-cta-link">Anfrage stellen &rarr;</a>
-      </div>
+        <div class="process-cards" id="processCards">
+          <div class="process-card process-card-left">
+            <div class="process-step-num">01</div>
+            <h3>Kostenlose Besichtigung</h3>
+            <p>Wir schauen uns Ihr Objekt unverbindlich vor Ort an und besprechen exakt Ihre Anforderungen und Wunschzeiten.</p>
+            <span class="process-pill">0 € · Vor Ort</span>
+          </div>
 
-      <!-- 3. Glas- & Fensterreinigung -->
-      <div class="service-card fade-in-up">
-        <div class="icon">🪟</div>
-        <h3>Glasreinigung</h3>
-        <p>Streifenfreie Sauberkeit und kristallklare Durchsicht für Fenster, Schaufenster, Wintergärten und Glasfassaden im Innen- und Außenbereich.</p>
-        <ul class="service-details">
-          <li>Streifenfreie Glasflächen</li>
-          <li>Inkl. Rahmen &amp; Fensterbänke</li>
-          <li>Gewerbe- &amp; Privatgebäude</li>
-        </ul>
-        <a href="#contact" class="service-cta-link">Anfrage stellen &rarr;</a>
-      </div>
+          <div class="process-card process-card-center">
+            <div class="process-step-num">02</div>
+            <h3>Festpreis-Angebot in 24h</h3>
+            <p>Sie erhalten innerhalb von 24 Stunden ein klares, faires Angebot ohne Kleingedrucktes oder Überraschungen.</p>
+            <span class="process-pill">24h · Transparenter Festpreis</span>
+          </div>
 
-      <!-- 4. Unterhaltsreinigung -->
-      <div class="service-card fade-in-up">
-        <div class="icon">✨</div>
-        <h3>Unterhaltsreinigung</h3>
-        <p>Regelmäßige und verlässliche Pflege in festen Intervallen für den optimalen Werterhalt Ihrer Immobilien und Räumlichkeiten.</p>
-        <ul class="service-details">
-          <li>Feste Reinigungszyklen</li>
-          <li>Gleichbleibende Bezugsperson</li>
-          <li>Langfristiger Werterhalt</li>
-        </ul>
-        <a href="#contact" class="service-cta-link">Anfrage stellen &rarr;</a>
-      </div>
-
-      <!-- 5. Grundreinigung -->
-      <div class="service-card fade-in-up">
-        <div class="icon">🧹</div>
-        <h3>Grundreinigung</h3>
-        <p>Intensive Tiefenreinigung für schwer zugängliche Bereiche und hartnäckige Verschmutzungen – ideal vor Einzug, nach Umzug oder Renovierung.</p>
-        <ul class="service-details">
-          <li>Beseitigung alter Pflegefilme</li>
-          <li>Tiefenreinigung aller Ecken</li>
-          <li>Frischekur für strapazierte Böden</li>
-        </ul>
-        <a href="#contact" class="service-cta-link">Anfrage stellen &rarr;</a>
-      </div>
-
-      <!-- 6. Sonderreinigung -->
-      <div class="service-card fade-in-up">
-        <div class="icon">🧽</div>
-        <h3>Sonderreinigung</h3>
-        <p>Spezielle Reinigungsaufgaben nach individuellem Bedarf: Professionelle Teppich- und Polstershampoonierung sowie Bauabschlussreinigung.</p>
-        <ul class="service-details">
-          <li>Teppich- &amp; Polstertiefenreinigung</li>
-          <li>Bauendreinigung</li>
-          <li>Treppenhäuser &amp; Eingangsbereiche</li>
-        </ul>
-        <a href="#contact" class="service-cta-link">Anfrage stellen &rarr;</a>
+          <div class="process-card process-card-right">
+            <div class="process-step-num">03</div>
+            <h3>Feste Betreuung</h3>
+            <p>Gleichbleibende Bezugspersonen reinigen gründlich, diskret und mit schonenden Öko-Mitteln nach Ihrem Plan.</p>
+            <span class="process-pill">100 % · Fester Ansprechpartner</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- About Section -->
   <section id="about" class="section-padding">
-    <div class="about fade-in-up">
-      <div class="about-content">
-        <h2>Warum Serreos?</h2>
-        <p>
-          Mit jahrelanger Erfahrung und persönlicher Hingabe sorgen wir für glänzende Ergebnisse. Als inhabergeführter Dienstleister stehen Qualität, Verlässlichkeit und Kundenzufriedenheit bei uns an erster Stelle.
-        </p>
-        <ul class="features-list">
-          <li>
-            <span class="check-icon">✓</span>
-            <div>
-              <strong>Inhabergeführt &amp; persönlich</strong>
-              <p>Direkte Absprachen ohne Callcenter, vertraute Gesichter und Betreuung mit Herz.</p>
-            </div>
-          </li>
-          <li>
-            <span class="check-icon">✓</span>
-            <div>
-              <strong>Umweltfreundliche Reinigung</strong>
-              <p>Geprüfte, schonende Öko-Reinigungsmittel zum Schutz von Gesundheit und Oberflächen.</p>
-            </div>
-          </li>
-          <li>
-            <span class="check-icon">✓</span>
-            <div>
-              <strong>Flexible Einsatzzeiten</strong>
-              <p>Frühmorgens vor Geschäftsbeginn, diskret nach Feierabend oder flexibel am Wochenende.</p>
-            </div>
-          </li>
-          <li>
-            <span class="check-icon">✓</span>
-            <div>
-              <strong>Transparente Festpreise</strong>
-              <p>Kostenlose Vor-Ort-Besichtigung und klare, faire Angebote ohne versteckte Nebenkosten.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <div class="about-card">
-        <h3>Ihr regionaler Partner</h3>
-        <p>Zuverlässiger Service in Aschaffenburg, Miltenberg, Alzenau und im gesamten Rhein-Main-Gebiet.</p>
-        <div class="about-card-stats">
-          <div class="about-stat">
-            <h4>24h</h4>
-            <span>Reaktionszeit</span>
+    <div class="container">
+      <div class="about">
+        <div class="about-content">
+          <div class="reveal-up">
+            <span class="section-kicker">Qualität mit Handschlag</span>
+            <h2>Warum Serreos?</h2>
+            <p>
+              Mit jahrelanger Erfahrung und persönlicher Hingabe sorgen wir für glänzende Ergebnisse. Als inhabergeführter Dienstleister stehen Qualität, Verlässlichkeit und Kundenzufriedenheit bei uns an erster Stelle.
+            </p>
           </div>
-          <div class="about-stat">
-            <h4>0 €</h4>
-            <span>Kostenlose Besichtigung</span>
+          <ul class="features-list">
+            <li class="reveal-left">
+              <span class="check-badge" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              <div>
+                <strong>Inhabergeführt &amp; persönlich</strong>
+                <p>Direkte Absprachen ohne Callcenter, vertraute Gesichter und Betreuung mit Herz.</p>
+              </div>
+            </li>
+            <li class="reveal-left">
+              <span class="check-badge" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              <div>
+                <strong>Umweltfreundliche Reinigung</strong>
+                <p>Geprüfte, schonende Öko-Reinigungsmittel zum Schutz von Gesundheit und Oberflächen.</p>
+              </div>
+            </li>
+            <li class="reveal-left">
+              <span class="check-badge" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              <div>
+                <strong>Flexible Einsatzzeiten</strong>
+                <p>Frühmorgens vor Geschäftsbeginn, diskret nach Feierabend oder flexibel am Wochenende.</p>
+              </div>
+            </li>
+            <li class="reveal-left">
+              <span class="check-badge" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              <div>
+                <strong>Transparente Festpreise</strong>
+                <p>Kostenlose Vor-Ort-Besichtigung und klare, faire Angebote ohne versteckte Nebenkosten.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="about-card reveal-right">
+          <div class="about-card-glow" aria-hidden="true"></div>
+          <span class="about-region-badge">Regionaler Einsatzradius</span>
+          <h3>Ihr Partner vor Ort</h3>
+          <p>Zuverlässiger Service in Aschaffenburg und der nahen Umgebung – persönlich, pünktlich und mit kurzen Anfahrtswegen.</p>
+          <div class="about-card-stats">
+            <div class="about-stat">
+              <h4 data-count="24" data-suffix="h">24h</h4>
+              <span>Reaktionszeit</span>
+            </div>
+            <div class="about-stat">
+              <h4 data-count="0" data-suffix=" €">0 €</h4>
+              <span>Kostenlose Besichtigung</span>
+            </div>
+          </div>
+          <div class="about-areas">
+            <span>Aschaffenburg</span>
+            <span>Direkte Umgebung</span>
+            <span>Kurze Wege</span>
           </div>
         </div>
       </div>
@@ -241,14 +545,15 @@
 
   <!-- Contact Section -->
   <section id="contact" class="contact section-padding">
-    <div class="contact-container fade-in-up">
-      <div class="section-header">
+    <div class="contact-container">
+      <div class="section-header reveal-up">
+        <span class="section-kicker">Direkter Draht</span>
         <h2>Lassen Sie uns sprechen</h2>
         <p>Interessiert an einem unverbindlichen Angebot? Kontaktieren Sie uns direkt oder nutzen Sie unser Anfrageformular.</p>
       </div>
 
       <div class="contact-methods">
-        <div class="contact-info">
+        <div class="contact-info reveal-left">
           <h3>Direkt erreichen</h3>
           <p>Wir freuen uns auf Ihre Anfrage und beraten Sie gerne persönlich vor Ort.</p>
 
@@ -273,20 +578,20 @@
           </div>
         </div>
 
-        <form class="contact-form" id="contactForm" action="https://formsubmit.co/serreos.raumpflegeservice@web.de" method="POST">
+        <form class="contact-form reveal-right" id="contactForm" action="https://formsubmit.co/serreos.raumpflegeservice@web.de" method="POST">
           <!-- FormSubmit Optionen -->
-          <input type="hidden" name="_subject" value="Neue Reinigungsanfrage über serreos-raumpflegeservice.de" />
+          <input type="hidden" name="_subject" value="Neue Reinigungsanfrage über Serreos Raumpflegeservice" />
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_captcha" value="false" />
 
           <div class="form-row">
-            <input type="text" name="name" placeholder="Ihr Name / Unternehmen *" required />
-            <input type="email" name="email" placeholder="Ihre E-Mail-Adresse *" required />
+            <input type="text" name="name" placeholder="Ihr Name / Unternehmen *" autocomplete="name" required />
+            <input type="email" name="email" placeholder="Ihre E-Mail-Adresse *" autocomplete="email" required />
           </div>
 
           <div class="form-row">
-            <input type="tel" name="phone" placeholder="Telefonnummer (für Rückruf)" />
-            <select name="leistung" required>
+            <input type="tel" name="phone" placeholder="Telefonnummer (für Rückruf)" autocomplete="tel" inputmode="tel" />
+            <select name="leistung" id="serviceSelect" required>
               <option value="" disabled selected>Gewünschte Leistung wählen *</option>
               <option value="Büroreinigung">Büroreinigung</option>
               <option value="Praxisreinigung">Praxisreinigung</option>
@@ -307,7 +612,13 @@
             </label>
           </div>
 
-          <button type="submit" id="submitBtn" class="btn-primary submit-btn">Nachricht senden</button>
+          <button type="submit" id="submitBtn" class="btn-primary submit-btn">
+            <span>Nachricht senden</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </button>
           <div id="formFeedback" class="form-feedback" role="alert"></div>
         </form>
       </div>
@@ -347,7 +658,7 @@
         <p>
           Telefon: 0171 6107094<br />
           E-Mail: serreos.raumpflegeservice@web.de<br />
-          Webseite: www.serreos-raumpflegeservice.de
+          Webseite: https://akooya.github.io/serreos-website/
         </p>
 
         <h3>Umsatzsteuer</h3>
@@ -363,7 +674,7 @@
 
         <h3>EU-Streitschlichtung &amp; Verbraucherstreitbeilegung</h3>
         <p>
-          Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
+          Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
           <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>.<br />
           Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
         </p>
@@ -399,7 +710,7 @@
 
         <h3>4. Kontaktformular</h3>
         <p>
-          Daten aus dem Kontaktformular verarbeiten wir ausschließlich zur Beantwortung Ihrer Anfrage auf Grundlage von Art. 6 Abs. 1 lit. b bzw. f DSGVO. Eine Weitergabe an unbefugte Dritte erfolgt nicht.
+          Daten aus dem Kontaktformular verarbeiten wir ausschließlich zur Beantwortung Ihrer Anfrage auf Grundlage von Art. 6 Abs. 1 lit. b bzw. f DSGVO. Die Übermittlung Ihrer Formulareingaben an unser E-Mail-Postfach erfolgt technisch über den Formular-Dienst FormSubmit (formsubmit.co). Eine Weitergabe an unbefugte Dritte erfolgt nicht.
         </p>
 
         <h3>5. Ihre Rechte</h3>
@@ -408,6 +719,23 @@
         </p>
       </div>
     </div>
+  </div>
+
+  <!-- Mobile Quick-Action Dock (nur auf Smartphone beim Scrollen) -->
+  <div class="mobile-quick-bar" id="mobileQuickBar" aria-label="Schnellkontakt">
+    <a href="tel:01716107094" class="mq-btn mq-call">
+      <svg class="icon-phone" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+      </svg>
+      <span>Anrufen</span>
+    </a>
+    <a href="#contact" class="mq-btn mq-offer">
+      <span>Angebot anfragen</span>
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 12h14"></path>
+        <path d="m12 5 7 7-7 7"></path>
+      </svg>
+    </a>
   </div>
 
   <!-- JavaScript -->
