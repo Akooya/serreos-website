@@ -509,38 +509,6 @@ html[data-palette="warm"] .navbar-shell.scrolled {
   z-index: 5;
 }
 
-.hero-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  background: transparent;
-  border: none;
-  padding: 0;
-  border-radius: 0;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--text-light);
-  margin-bottom: 1.15rem;
-  box-shadow: none;
-}
-
-.pulse-dot {
-  width: 7px;
-  height: 7px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background: var(--accent-cta);
-  box-shadow: 0 0 0 4px var(--glow-primary);
-  animation: pulseGlow 2.4s ease-in-out infinite;
-}
-
-@keyframes pulseGlow {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.25); opacity: 0.72; }
-}
-
 .hero-lead {
   font-size: 1.18rem;
   line-height: 1.7;
@@ -1680,37 +1648,17 @@ html[data-palette="warm"] .glass-float-bottom {
    Footer
    ========================================================================== */
 footer {
-  position: relative;
-  overflow: hidden;
   background-color: var(--surface-dark);
   color: #ffffff;
-  padding: 3.4rem 5% 4.2rem;
+  padding: 3.4rem 5% 2.6rem;
 }
 
 .footer-inner {
-  position: relative;
-  z-index: 2;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-}
-
-.footer-giant-wordmark {
-  position: relative;
-  z-index: 1;
-  max-width: 1200px;
-  margin: 1.6rem auto -4.4rem;
-  text-align: center;
-  font-family: Georgia, "Book Antiqua", "Palatino Linotype", serif;
-  font-weight: 700;
-  font-size: clamp(4.2rem, 15.5vw, 12.2rem);
-  line-height: 0.78;
-  letter-spacing: -0.025em;
-  color: rgba(255, 255, 255, 0.045);
-  user-select: none;
-  pointer-events: none;
 }
 
 .footer-top {
@@ -1960,9 +1908,6 @@ footer {
     transform: none;
     transition: none;
   }
-  .pulse-dot {
-    animation: none;
-  }
 }
 
 /* ==========================================================================
@@ -2097,7 +2042,7 @@ footer {
 
   .hero {
     min-height: auto;
-    padding: 5.5rem 5% 3.2rem;
+    padding: 6rem 5% 3.2rem;
   }
 
   .hero-orbit-stage {
@@ -2109,14 +2054,6 @@ footer {
 
   .hero-crest-backdrop {
     opacity: 0.04;
-  }
-
-  .hero-pill {
-    font-size: 0.71rem;
-    letter-spacing: 0.045em;
-    gap: 0.5rem;
-    padding: 0;
-    margin-bottom: 0.85rem;
   }
 
   h1 {
@@ -2304,11 +2241,6 @@ footer {
 
   .footer-links a {
     margin: 0 0.9rem;
-  }
-
-  .footer-giant-wordmark {
-    margin-top: 1.2rem;
-    margin-bottom: -3.2rem;
   }
 
   .faq-trigger {
