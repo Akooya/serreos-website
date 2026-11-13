@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbarShell = document.getElementById('navbarShell');
   const scrollProgressBar = document.getElementById('scrollProgressBar');
   const parallaxElements = document.querySelectorAll('[data-parallax]');
+  const heroOrbitStage = document.querySelector('.hero-orbit-stage');
   const heroRings = document.querySelector('.hero-rings');
   const heroMainCard = document.querySelector('.hero-glass-main');
   const mobileQuickBar = document.getElementById('mobileQuickBar');
@@ -74,7 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (heroRings && scrollY < window.innerHeight * 1.7) {
         const ringDeg = (scrollY * 0.025).toFixed(2);
         const ringShift = (scrollY * 0.08).toFixed(1);
-        heroRings.style.transform = `translate3d(0, ${ringShift}px, 0) rotate(${ringDeg}deg)`;
+        if (heroOrbitStage) {
+          heroOrbitStage.style.transform = `translate3d(0, ${ringShift}px, 0)`;
+          heroRings.style.transform = `rotate(${ringDeg}deg)`;
+        } else {
+          heroRings.style.transform = `translate3d(0, ${ringShift}px, 0) rotate(${ringDeg}deg)`;
+        }
       }
 
       if (viewportW > 820 && scrollY < window.innerHeight * 1.45) {
@@ -328,31 +334,42 @@ document.addEventListener('DOMContentLoaded', () => {
     messageInput.required = !hasQuickPick;
   };
 
+  const setQuickChipSelection = (targetId, value) => {
+    const group = document.querySelector(`[data-chip-target="${targetId}"]`);
+    const targetInput = document.getElementById(targetId);
+    if (!group || !targetInput) return;
+
+    const chips = group.querySelectorAll('.quick-chip');
+    chips.forEach((chip) => {
+      const match = Boolean(value) && chip.getAttribute('data-value') === value;
+      chip.classList.toggle('is-selected', match);
+      chip.setAttribute('aria-pressed', match ? 'true' : 'false');
+    });
+    targetInput.value = value || '';
+    syncMessageRequirement();
+  };
+
   quickChipGroups.forEach((group) => {
     const targetId = group.getAttribute('data-chip-target');
-    const targetInput = targetId ? document.getElementById(targetId) : null;
     const chips = group.querySelectorAll('.quick-chip');
 
     chips.forEach((chip) => {
       chip.addEventListener('click', () => {
-        const wasSelected = chip.classList.contains('is-selected');
-        chips.forEach((c) => {
-          c.classList.remove('is-selected');
-          c.setAttribute('aria-pressed', 'false');
-        });
-
-        if (!wasSelected) {
-          chip.classList.add('is-selected');
-          chip.setAttribute('aria-pressed', 'true');
-          if (targetInput) targetInput.value = chip.getAttribute('data-value') || '';
-        } else if (targetInput) {
-          targetInput.value = '';
+        const nextValue = chip.classList.contains('is-selected') ? '' : (chip.getAttribute('data-value') || '');
+        if (targetId) {
+          setQuickChipSelection(targetId, nextValue);
         }
-
-        syncMessageRequirement();
       });
     });
   });
+
+  const serviceChipDefaults = {
+    'Büroreinigung': { objektartInput: 'Büro' },
+    'Praxisreinigung': { objektartInput: 'Praxis' },
+    'Unterhaltsreinigung': { turnusInput: 'Regelmäßig' },
+    'Grundreinigung': { turnusInput: 'Einmalig' },
+    'Sonderreinigung': { turnusInput: 'Einmalig' }
+  };
 
   if (serviceSelect && serviceCtas.length > 0) {
     serviceCtas.forEach((cta) => {
@@ -364,9 +381,35 @@ document.addEventListener('DOMContentLoaded', () => {
         window.setTimeout(() => {
           serviceSelect.classList.remove('is-highlighted');
         }, 1600);
+
+        const mapped = serviceChipDefaults[chosenService];
+        if (mapped) {
+          Object.entries(mapped).forEach(([inputId, val]) => setQuickChipSelection(inputId, val));
+        }
       });
     });
   }
+
+  // 4b. Compact FAQ Accordion
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach((item) => {
+    const trigger = item.querySelector('.faq-trigger');
+    if (!trigger) return;
+
+    trigger.addEventListener('click', () => {
+      const isOpening = !item.classList.contains('is-open');
+      faqItems.forEach((other) => {
+        other.classList.remove('is-open');
+        const otherTrigger = other.querySelector('.faq-trigger');
+        if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
+      });
+
+      if (isOpening) {
+        item.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
 
   // 5. Modals (Impressum & Datenschutz)
   const modalImpressum = document.getElementById('modalImpressum');

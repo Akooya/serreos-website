@@ -25,7 +25,7 @@
   <meta name="twitter:image" content="https://akooya.github.io/serreos-website/assets/og-preview.jpg" />
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=20261113-5" />
+  <link rel="stylesheet" href="style.css?v=20261113-6" />
 
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
@@ -122,17 +122,19 @@
 
   <!-- Hero Section -->
   <section id="home" class="hero">
-    <!-- Subtle architectural radial rings echoing logo crest -->
+    <!-- Subtle architectural orbit rings & Serreos crest backdrop -->
     <div class="hero-backdrop" aria-hidden="true">
       <div class="hero-glow hero-glow-primary"></div>
       <div class="hero-glow hero-glow-secondary"></div>
-      <svg class="hero-rings" viewBox="0 0 900 900" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="620" cy="420" r="190" stroke="currentColor" stroke-width="1" stroke-dasharray="4 8" />
-        <circle cx="620" cy="420" r="290" stroke="currentColor" stroke-width="1" />
-        <circle cx="620" cy="420" r="400" stroke="currentColor" stroke-width="1" stroke-dasharray="2 10" />
-        <line x1="220" y1="420" x2="1020" y2="420" stroke="currentColor" stroke-width="0.75" />
-        <line x1="620" y1="20" x2="620" y2="820" stroke="currentColor" stroke-width="0.75" />
-      </svg>
+      <div class="hero-orbit-stage">
+        <svg class="hero-rings" viewBox="0 0 820 820" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="410" cy="410" r="245" stroke="currentColor" stroke-width="1" stroke-dasharray="4 8" />
+          <circle cx="410" cy="410" r="355" stroke="currentColor" stroke-width="1" stroke-dasharray="2 10" />
+        </svg>
+        <svg class="hero-crest-backdrop" viewBox="0 0 32 32" aria-hidden="true">
+          <use href="#serreos-crest" />
+        </svg>
+      </div>
     </div>
 
     <div class="hero-inner">
@@ -585,6 +587,67 @@
     </div>
   </section>
 
+  <!-- Compact FAQ Section -->
+  <section id="faq" class="faq-section section-padding">
+    <div class="container faq-container">
+      <div class="section-header faq-header reveal-up">
+        <span class="section-kicker">Häufige Fragen</span>
+        <h2>Kurz erklärt vor Ihrer Anfrage</h2>
+        <p>Die wichtigsten Antworten zu Besichtigung, Ablauf und Reinigungsmitteln auf einen Blick.</p>
+      </div>
+
+      <div class="faq-list reveal-up">
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false">
+            <span>Werden Reinigungsmittel und Materialien mitgebracht?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-panel">
+            <div class="faq-panel-inner">
+              <p>Wir arbeiten mit geprüften, schonenden Öko-Reinigungsmitteln – abgestimmt auf Ihre Oberflächen in Praxis, Büro oder Privathaushalt. Alle Details stimmen wir gemeinsam bei der Besichtigung ab.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false">
+            <span>Wie läuft die kostenlose Erstbesichtigung ab?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-panel">
+            <div class="faq-panel-inner">
+              <p>Wir schauen uns Ihr Objekt unverbindlich vor Ort in Aschaffenburg oder direkter Umgebung an und besprechen Ihren Bedarf und Wunschturnus. Innerhalb von 24 Stunden erhalten Sie Ihr faires Festpreis-Angebot.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false">
+            <span>Zu welchen Zeiten reinigt Ihr Team?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-panel">
+            <div class="faq-panel-inner">
+              <p>Ganz nach Ihrem Betrieb: frühmorgens vor Geschäftsbeginn, diskret nach Feierabend oder flexibel am Wochenende. Telefonisch und persönlich erreichen Sie uns montags bis samstags von 07:00 bis 19:00 Uhr.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false">
+            <span>Habe ich feste Ansprechpartner statt eines Callcenters?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-panel">
+            <div class="faq-panel-inner">
+              <p>Ja. Als inhabergeführter Fachbetrieb legen wir Wert auf direkte Absprachen ohne Callcenter sowie gleichbleibende Bezugspersonen für Ihr Objekt.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact Section -->
   <section id="contact" class="contact section-padding">
     <div class="contact-container">
@@ -692,13 +755,23 @@
   <!-- Footer -->
   <footer>
     <div class="footer-inner">
-      <div class="footer-left">
-        <img src="assets/White logo - no background.svg" alt="Serreos Raumpflegeservice Logo" />
-        <p>&copy; 2026 Serreos Raumpflegeservice. Alle Rechte vorbehalten.</p>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/White logo - no background.svg" alt="Serreos Raumpflegeservice Logo" />
+          <p class="footer-tagline">Inhabergeführter Raumpflegeservice in Aschaffenburg &amp; direkter Umgebung.</p>
+        </div>
+        <div class="footer-actions">
+          <a href="tel:01716107094" class="footer-pill">0171 6107094</a>
+          <a href="mailto:serreos.raumpflegeservice@web.de" class="footer-pill">serreos.raumpflegeservice@web.de</a>
+          <a href="#home" class="footer-pill footer-top-btn">Nach oben &uarr;</a>
+        </div>
       </div>
-      <div class="footer-links">
-        <a href="#" id="openImpressum">Impressum</a>
-        <a href="#" id="openDatenschutz">Datenschutz</a>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Serreos Raumpflegeservice &middot; Ulmenweg 43, 63741 Aschaffenburg</p>
+        <div class="footer-links">
+          <a href="#" id="openImpressum">Impressum</a>
+          <a href="#" id="openDatenschutz">Datenschutz</a>
+        </div>
       </div>
     </div>
   </footer>
@@ -803,7 +876,7 @@
   </div>
 
   <!-- JavaScript -->
-  <script src="main.js?v=20261113-3"></script>
+  <script src="main.js?v=20261113-6"></script>
 </body>
 
 </html>
