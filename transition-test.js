@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const logoOp = 1 - smoothstep(0.06, 0.44, p);
     const logoShift = smoothstep(0.02, 0.48, p);
     const navShow = smoothstep(0.24, 0.62, p);
-    const veilOp = smoothstep(0.52, 0.92, p);
-    const solidOp = smoothstep(0.76, 0.99, p);
+    const veilOp = smoothstep(0.48, 0.95, p);
+    const solidOp = smoothstep(0.84, 1.0, p) * 0.45;
     const cueOp = 1 - smoothstep(0.01, 0.14, p);
 
     stage.style.setProperty('--tr-hero-p', p.toFixed(4));
