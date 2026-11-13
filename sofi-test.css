@@ -84,7 +84,8 @@ img {
   font-family: var(--sf-mono);
   font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.11em;
+  letter-spacing: 0.13em;
+  word-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--sf-muted);
 }
@@ -140,7 +141,7 @@ img {
   font-family: Georgia, "Book Antiqua", serif;
   font-size: 1.05rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.28em;
 }
 
 .sf-nav {
@@ -229,7 +230,8 @@ img {
 .sf-hero-spaced {
   font-size: clamp(1.15rem, 2.5vw, 1.85rem);
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.34em;
+  text-indent: 0.34em;
   text-transform: lowercase;
   color: var(--sf-ink);
 }
@@ -1075,6 +1077,11 @@ img {
   gap: 0.55rem;
 }
 
+.sf-telemetry-left {
+  letter-spacing: 0.14em;
+  word-spacing: 0.18em;
+}
+
 .sf-telemetry-pct {
   padding: 0.22rem 0.6rem;
   border-radius: 9999px;
@@ -1170,7 +1177,7 @@ img {
 
   .sf-brand-name {
     font-size: 0.9rem;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.16em;
   }
 
   .sf-pill-ghost {
@@ -1186,9 +1193,20 @@ img {
     padding: 5.5rem 0 2.8rem;
   }
 
+  .sf-eyebrow-row {
+    gap: 0.35rem 1rem;
+  }
+
+  .sf-mono-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    word-spacing: 0.1em;
+  }
+
   .sf-hero-spaced {
     font-size: 0.96rem;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.24em;
+    text-indent: 0.24em;
   }
 
   .sf-spec-floating {

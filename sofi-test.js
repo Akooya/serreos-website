@@ -9,7 +9,7 @@
     {
       title: '06:30 · Ruhiger Morgen vor Arbeitsbeginn',
       code: 'frame // 01 of 04',
-      sub: 'Diskrete Frühreinigung vor dem ersten Kundenbesuch – Staubfreiheit und frische Luft direkt zu Arbeitsbeginn.'
+      sub: 'Diskrete Frühreinigung vor dem ersten Kundenbesuch, für Staubfreiheit und frische Luft direkt zu Arbeitsbeginn.'
     },
     {
       title: '10:00 · Strahlendes Vormittagslicht',
@@ -465,7 +465,7 @@
         contactForm.reset();
       } catch (err) {
         feedbackBox.textContent =
-          'Direkte Übertragung derzeit nicht möglich. Bitte schreiben Sie uns an serreos.raumpflegeservice@web.de oder rufen Sie uns unter +49 176 47949788 an.';
+          'Direkte Übertragung derzeit nicht möglich. Bitte schreiben Sie uns an serreos.raumpflegeservice@web.de oder rufen Sie uns unter 0171 6107094 an.';
         feedbackBox.classList.add('is-error');
       } finally {
         submitBtn.disabled = false;
