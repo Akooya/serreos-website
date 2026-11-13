@@ -56,30 +56,40 @@ document.addEventListener('DOMContentLoaded', () => {
   updateScrollEffects();
 
   // ------------------------------------------------------------------------
-  // 2. Mobile Navigation Drawer
+  // 2. Mobile Navigation Drawer + Backdrop
   // ------------------------------------------------------------------------
   const menuToggle = document.getElementById('menuToggle');
   const navLinks = document.getElementById('navLinks');
+  const navBackdrop = document.getElementById('navBackdrop');
+
+  const closeMobileMenu = () => {
+    if (!navLinks || !menuToggle) return;
+    navLinks.classList.remove('active');
+    menuToggle.classList.remove('is-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    navBackdrop?.classList.remove('active');
+    document.body.classList.remove('nav-open');
+  };
 
   if (menuToggle && navLinks) {
-    const closeMenu = () => {
-      navLinks.classList.remove('active');
-      menuToggle.setAttribute('aria-expanded', 'false');
-    };
-
     menuToggle.addEventListener('click', () => {
       const open = navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('is-open', open);
       menuToggle.setAttribute('aria-expanded', String(open));
+      navBackdrop?.classList.toggle('active', open);
+      document.body.classList.toggle('nav-open', open);
     });
 
     navLinks.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', closeMenu);
+      link.addEventListener('click', closeMobileMenu);
     });
+
+    navBackdrop?.addEventListener('click', closeMobileMenu);
 
     document.addEventListener('click', (event) => {
       if (!navLinks.classList.contains('active')) return;
       if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
-        closeMenu();
+        closeMobileMenu();
       }
     });
   }
@@ -98,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
       },
-      { threshold: 0.12, rootMargin: '0px 0px -30px 0px' }
+      { threshold: 0.06, rootMargin: '0px 0px -15px 0px' }
     );
     revealItems.forEach((el) => revealObs.observe(el));
   } else {
@@ -504,13 +514,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const openModal = (modal) => {
     if (!modal) return;
+    closeMobileMenu();
     modal.classList.add('open');
+    document.body.classList.add('modal-open');
     document.body.style.overflow = 'hidden';
   };
   const closeModal = (modal) => {
     if (!modal) return;
     modal.classList.remove('open');
-    document.body.style.overflow = '';
+    const anyOpen = document.querySelector('.modal-backdrop.open');
+    if (!anyOpen) {
+      document.body.classList.remove('modal-open');
+      document.body.style.overflow = '';
+    }
   };
 
   document.getElementById('openImpressum')?.addEventListener('click', (e) => {
@@ -536,6 +552,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
+      closeMobileMenu();
       closeModal(modalImpressum);
       closeModal(modalDatenschutz);
     }
