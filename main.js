@@ -314,9 +314,45 @@ document.addEventListener('DOMContentLoaded', () => {
     countElements.forEach((el) => animateCount(el));
   }
 
-  // 4. Service Card CTA -> Auto-Select Service in Contact Form
+  // 4. Service Card CTA -> Auto-Select Service & Quick-Choice Chips in Contact Form
   const serviceSelect = document.getElementById('serviceSelect');
   const serviceCtas = document.querySelectorAll('[data-service]');
+  const messageInput = document.getElementById('messageInput');
+  const objektartInput = document.getElementById('objektartInput');
+  const turnusInput = document.getElementById('turnusInput');
+  const quickChipGroups = document.querySelectorAll('[data-chip-target]');
+
+  const syncMessageRequirement = () => {
+    if (!messageInput) return;
+    const hasQuickPick = Boolean((objektartInput && objektartInput.value) || (turnusInput && turnusInput.value));
+    messageInput.required = !hasQuickPick;
+  };
+
+  quickChipGroups.forEach((group) => {
+    const targetId = group.getAttribute('data-chip-target');
+    const targetInput = targetId ? document.getElementById(targetId) : null;
+    const chips = group.querySelectorAll('.quick-chip');
+
+    chips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        const wasSelected = chip.classList.contains('is-selected');
+        chips.forEach((c) => {
+          c.classList.remove('is-selected');
+          c.setAttribute('aria-pressed', 'false');
+        });
+
+        if (!wasSelected) {
+          chip.classList.add('is-selected');
+          chip.setAttribute('aria-pressed', 'true');
+          if (targetInput) targetInput.value = chip.getAttribute('data-value') || '';
+        } else if (targetInput) {
+          targetInput.value = '';
+        }
+
+        syncMessageRequirement();
+      });
+    });
+  });
 
   if (serviceSelect && serviceCtas.length > 0) {
     serviceCtas.forEach((cta) => {
@@ -411,6 +447,15 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
+      if (messageInput && !messageInput.value.trim()) {
+        const parts = [];
+        if (objektartInput && objektartInput.value) parts.push(`Objektart: ${objektartInput.value}`);
+        if (turnusInput && turnusInput.value) parts.push(`Turnus: ${turnusInput.value}`);
+        if (parts.length) {
+          messageInput.value = `Schnellanfrage (${parts.join(', ')})`;
+        }
+      }
+
       const originalBtnHtml = submitBtn.innerHTML;
       submitBtn.disabled = true;
       submitBtn.innerHTML = '<span>Wird gesendet...</span>';
@@ -436,6 +481,15 @@ document.addEventListener('DOMContentLoaded', () => {
           formFeedback.className = 'form-feedback success';
           formFeedback.style.display = 'block';
           contactForm.reset();
+          quickChipGroups.forEach((group) => {
+            group.querySelectorAll('.quick-chip').forEach((c) => {
+              c.classList.remove('is-selected');
+              c.setAttribute('aria-pressed', 'false');
+            });
+          });
+          if (objektartInput) objektartInput.value = '';
+          if (turnusInput) turnusInput.value = '';
+          syncMessageRequirement();
         } else {
           throw new Error('Server-Fehler bei der Übertragung');
         }

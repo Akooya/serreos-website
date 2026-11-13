@@ -628,8 +628,14 @@ html[data-palette="warm"] .navbar-shell.scrolled {
   color: var(--text-dark);
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid var(--border-subtle);
-  padding: 0.35rem 0.75rem;
+  padding: 0.35rem 0.78rem;
   border-radius: var(--radius-full);
+}
+
+.chip-crest {
+  display: block;
+  color: var(--accent-cta);
+  flex-shrink: 0;
 }
 
 .sparkle-dot {
@@ -962,10 +968,55 @@ html[data-palette="warm"] .glass-float-bottom {
 }
 
 /* ==========================================================================
+   Subtle Brand Crest Divider (Leistungen -> Ablauf)
+   ========================================================================== */
+.brand-divider-band {
+  padding: 1.5rem 5% 0;
+  background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg-color) 65%);
+}
+
+.brand-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.1rem;
+}
+
+.brand-divider::before,
+.brand-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  max-width: 240px;
+}
+
+.brand-divider::before {
+  background: linear-gradient(90deg, transparent 0%, rgba(17, 24, 39, 0.14) 100%);
+}
+
+.brand-divider::after {
+  background: linear-gradient(90deg, rgba(17, 24, 39, 0.14) 0%, transparent 100%);
+}
+
+.brand-divider-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-card);
+  color: var(--accent-cta);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
    Process Dark Showcase (Scroll-Animated Layered Cards)
    ========================================================================== */
 .process-section {
-  padding-top: 5rem;
+  padding-top: 3.5rem;
   padding-bottom: 4.5rem;
 }
 
@@ -989,6 +1040,18 @@ html[data-palette="warm"] .glass-float-bottom {
   background: radial-gradient(circle, var(--glow-dark) 0%, transparent 70%);
   filter: blur(40px);
   pointer-events: none;
+}
+
+.process-crest-watermark {
+  position: absolute;
+  right: -55px;
+  bottom: -70px;
+  width: 340px;
+  height: 340px;
+  color: #ffffff;
+  opacity: 0.045;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .process-header {
@@ -1151,6 +1214,11 @@ html[data-palette="warm"] .glass-float-bottom {
   box-shadow: var(--shadow-soft);
 }
 
+.about-card > :not(.about-card-glow):not(.about-crest-watermark) {
+  position: relative;
+  z-index: 1;
+}
+
 .about-card-glow {
   position: absolute;
   top: -80px;
@@ -1161,6 +1229,18 @@ html[data-palette="warm"] .glass-float-bottom {
   background: radial-gradient(circle, var(--glow-primary) 0%, transparent 70%);
   filter: blur(26px);
   pointer-events: none;
+}
+
+.about-crest-watermark {
+  position: absolute;
+  right: -38px;
+  top: -38px;
+  width: 215px;
+  height: 215px;
+  color: var(--accent);
+  opacity: 0.045;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .about-region-badge {
@@ -1308,6 +1388,63 @@ html[data-palette="warm"] .glass-float-bottom {
 
 .contact-form select {
   cursor: pointer;
+}
+
+.quick-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.25rem 0;
+}
+
+.quick-choice-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.42rem;
+}
+
+.quick-choice-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+}
+
+.quick-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.quick-chip {
+  appearance: none;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-alt);
+  color: var(--text-dark);
+  font-family: var(--font-family);
+  font-size: 0.84rem;
+  font-weight: 500;
+  padding: 0.42rem 0.9rem;
+  min-height: 36px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.quick-chip:hover {
+  border-color: rgba(17, 24, 39, 0.28);
+  background: var(--surface-card);
+}
+
+.quick-chip.is-selected {
+  background: var(--accent-cta);
+  border-color: var(--accent-cta);
+  color: var(--accent-cta-text);
+  box-shadow: 0 6px 14px -6px rgba(17, 24, 39, 0.28);
+}
+
+.quick-chip:active {
+  transform: scale(0.96);
 }
 
 .contact-form input:focus,
@@ -1830,6 +1967,14 @@ footer {
   .process-showcase {
     padding: 2.6rem 1.25rem;
     border-radius: 24px;
+  }
+
+  .process-crest-watermark {
+    width: 220px;
+    height: 220px;
+    right: -42px;
+    bottom: -45px;
+    opacity: 0.04;
   }
 
   .process-card {
