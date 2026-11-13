@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
   <meta name="theme-color" content="#f4f5f8" />
-  <title>Serreos Raumpflegeservice | Hero-Übergang Vorschau</title>
+  <title>Serreos Raumpflegeservice | Vollbild-Übergang Vorschau</title>
   <meta name="description" content="Ihr zuverlässiger Partner für Büroreinigung, Praxisreinigung, Glasreinigung, Unterhaltsreinigung &amp; Grundreinigung in Aschaffenburg &amp; Umgebung." />
 
   <link rel="icon" type="image/png" href="assets/favicon.png" />
@@ -25,7 +25,7 @@
   <meta name="twitter:image" content="https://akooya.github.io/serreos-website/assets/og-preview.jpg" />
 
   <link rel="stylesheet" href="style.css?v=20261113-11" />
-  <link rel="stylesheet" href="transition-test.css?v=20261113-4" />
+  <link rel="stylesheet" href="transition-test.css?v=20261113-5" />
 
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
@@ -82,9 +82,11 @@
         <li><a href="#gallery">Einblicke</a></li>
         <li><a href="#process">Ablauf</a></li>
         <li><a href="#contact">Kontakt</a></li>
+        <li class="tr-drawer-live-item"><a href="index.html">&larr; Zur Live-Seite</a></li>
       </ul>
 
       <div class="hr-nav-actions">
+        <a href="index.html" class="tr-nav-live-link">&larr; Live-Seite</a>
         <a href="tel:01716107094" class="hr-nav-phone">0171 6107094</a>
         <a href="#contact" class="hr-btn-emerald hr-nav-cta">Angebot</a>
         <a href="tel:01716107094" class="hr-mobile-call" aria-label="Jetzt anrufen">
@@ -105,57 +107,52 @@
   <div class="hr-nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
 
   <main>
-    <!-- 1. Silo × Serreos Opening: Großes Architektur-Bild + Zentrales Wappen + Scroll-Übergang -->
-    <section id="home" class="tr-opening-section">
-      <div class="tr-opening-frame">
-        <div class="tr-opening-topbar">
-          <a href="index.html" class="tr-preview-banner">
-            <span>Vorschau-Variante &middot; Großer Logo-Einstieg mit Scroll-Übergang</span>
-            <span class="tr-preview-back">&larr; Zur aktuellen Live-Seite</span>
-          </a>
+    <!-- 1. Vollbild-Einstieg ohne Kasten (100vw × 100svh): Wappen + Tageslicht-Scroll-Übergang -->
+    <section id="home" class="tr-opening-track" aria-label="Serreos Vollbild-Einstieg">
+      <div class="tr-opening-stage" id="trOpeningStage">
+        <div class="tr-opening-media" aria-hidden="true">
+          <div class="tr-opening-layer tr-opening-layer--dawn">
+            <img
+              src="assets/images/sofi/seq-1-dawn.webp"
+              alt="Moderner Empfangsbereich im frühen Morgenlicht in Aschaffenburg"
+              class="tr-opening-slide"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </div>
+          <div class="tr-opening-layer tr-opening-layer--day">
+            <img
+              src="assets/images/sofi/seq-2-daylight.webp"
+              alt="Lichtdurchfluteter Empfangs- und Glaskorridor nach der Pflege"
+              class="tr-opening-slide"
+              loading="eager"
+            />
+          </div>
         </div>
 
-        <div class="tr-opening-stage" id="trOpeningStage">
-          <div class="tr-opening-media" aria-hidden="true">
-            <img
-              src="assets/images/transitions/lobby-after.webp"
-              alt="Lichtdurchfluteter Büro- und Glaseingang in Aschaffenburg"
-              class="tr-opening-slide is-active"
-            />
-            <img
-              src="assets/images/buero.jpg"
-              alt="Gepflegte Bürolandschaft nach der Reinigung"
-              class="tr-opening-slide"
-            />
-            <img
-              src="assets/images/glas.jpg"
-              alt="Streifenfreie Glasarchitektur im Sonnenlicht"
-              class="tr-opening-slide"
-            />
-          </div>
+        <div class="tr-opening-scrim" aria-hidden="true"></div>
 
-          <div class="tr-opening-scrim" aria-hidden="true"></div>
-
-          <div class="tr-opening-center">
-            <svg class="tr-opening-crest" viewBox="0 0 32 32" aria-hidden="true">
-              <use href="#serreos-crest"></use>
-            </svg>
-            <span class="tr-opening-wordmark">Serreos</span>
-            <span class="tr-opening-tag">Raumpflegeservice &middot; Aschaffenburg</span>
-          </div>
-
-          <div class="tr-opening-bottom">
-            <span class="tr-open-meta-pill">Inhabergeführt &middot; Feste Teams &middot; Mo&ndash;Sa 07&ndash;19 Uhr</span>
-            <div class="tr-open-actions">
-              <a href="#heroStatement" class="tr-open-action tr-open-glass">Entdecken &darr;</a>
-              <a href="#contact" class="tr-open-action tr-open-solid">Angebot anfragen</a>
-            </div>
-          </div>
+        <div class="tr-opening-center">
+          <svg class="tr-opening-crest" viewBox="0 0 32 32" aria-hidden="true">
+            <use href="#serreos-crest"></use>
+          </svg>
+          <span class="tr-opening-wordmark">Serreos</span>
+          <span class="tr-opening-tag">Raumpflegeservice &middot; Aschaffenburg</span>
         </div>
+
+        <a href="#heroStatement" class="tr-scroll-hint" aria-label="Weiter zu den Inhalten scrollen">
+          <span>Entdecken</span>
+          <span class="tr-scroll-hint-arrow" aria-hidden="true">&darr;</span>
+        </a>
+
+        <a href="index.html" class="tr-live-corner">&larr; Live-Seite</a>
+
+        <div class="tr-opening-veil" aria-hidden="true"></div>
+        <div class="tr-opening-solidfill" aria-hidden="true"></div>
       </div>
     </section>
 
-    <!-- 1b. Kernaussage, CTA & Vertrauensleiste direkt nach dem Öffnungs-Übergang -->
+    <!-- 1b. Kernaussage, CTA & Vertrauensleiste direkt aus dem Nebel-Übergang -->
     <section id="heroStatement" class="tr-statement-sec">
       <div class="hr-container">
         <div class="hr-hero-center">
@@ -780,7 +777,7 @@
   </div>
 
   <script src="main.js?v=20261113-11"></script>
-  <script src="transition-test.js?v=20261113-4"></script>
+  <script src="transition-test.js?v=20261113-5"></script>
 </body>
 
 </html>
