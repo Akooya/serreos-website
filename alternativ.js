@@ -233,9 +233,17 @@ document.addEventListener('DOMContentLoaded', () => {
   let activeMetricIdx = 0;
   let impactStarted = false;
   let metricTimer = null;
+  let activeCountFrame = null;
+  let activeSwitchTimer = null;
+  let activeRunToken = 0;
 
-  const animateNumberTo = (metric) => {
+  const animateNumberTo = (metric, token) => {
     if (!impactValue) return;
+    if (activeCountFrame) {
+      cancelAnimationFrame(activeCountFrame);
+      activeCountFrame = null;
+    }
+
     if (prefersReducedMotion || metric.num === 0) {
       impactValue.textContent = `${metric.prefix}${metric.num}${metric.suffix}`;
       return;
@@ -244,20 +252,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const start = performance.now();
     const duration = 760;
     const step = (now) => {
+      if (token !== activeRunToken) return;
       const t = Math.min(1, (now - start) / duration);
       const eased = 1 - Math.pow(1 - t, 3);
       const current = Math.round(eased * metric.num);
       impactValue.textContent = `${metric.prefix}${current}${metric.suffix}`;
       if (t < 1) {
-        requestAnimationFrame(step);
+        activeCountFrame = requestAnimationFrame(step);
       } else {
         impactValue.textContent = `${metric.prefix}${metric.num}${metric.suffix}`;
+        activeCountFrame = null;
       }
     };
-    requestAnimationFrame(step);
+    activeCountFrame = requestAnimationFrame(step);
   };
 
   const setImpactMetric = (idx, animate = true) => {
+    activeRunToken += 1;
+    const runToken = activeRunToken;
+
+    if (activeSwitchTimer) {
+      clearTimeout(activeSwitchTimer);
+      activeSwitchTimer = null;
+    }
+    if (activeCountFrame) {
+      cancelAnimationFrame(activeCountFrame);
+      activeCountFrame = null;
+    }
+
     activeMetricIdx = (idx + impactMetrics.length) % impactMetrics.length;
     const metric = impactMetrics[activeMetricIdx];
 
@@ -272,16 +294,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!animate || prefersReducedMotion) {
       impactLabel.textContent = metric.label;
       impactSub.textContent = metric.sub;
-      animateNumberTo(metric);
+      animateNumberTo(metric, runToken);
       return;
     }
 
     impactValue.classList.add('is-switching');
-    setTimeout(() => {
+    activeSwitchTimer = setTimeout(() => {
+      if (runToken !== activeRunToken) return;
       impactLabel.textContent = metric.label;
       impactSub.textContent = metric.sub;
       impactValue.classList.remove('is-switching');
-      animateNumberTo(metric);
+      animateNumberTo(metric, runToken);
+      activeSwitchTimer = null;
     }, 180);
   };
 

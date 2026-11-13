@@ -5,12 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex" />
-  <title>Serreos Raumpflegeservice | Alternativ-Konzept (HopeRise-Stil)</title>
-  <meta name="description" content="Serreos Raumpflegeservice in Aschaffenburg – Alternativ-Konzept mit großflächigen Einblicken, flüssigen Übergängen und interaktiver Anfrage." />
+  <title>Serreos Raumpflegeservice | Alternativ-Konzept</title>
+  <meta name="description" content="Serreos Raumpflegeservice in Aschaffenburg – Alternativ-Konzept in Serreos Designfarben mit großflächigen Einblicken, flüssigen Übergängen und starker Markenpräsenz." />
 
   <link rel="icon" type="image/png" href="assets/favicon.png" />
   <link rel="apple-touch-icon" href="assets/favicon.png" />
-  <link rel="stylesheet" href="alternativ.css?v=20261113-2" />
+  <link rel="stylesheet" href="alternativ.css?v=20261113-3" />
 </head>
 
 <body>
@@ -68,9 +68,11 @@
   </header>
 
   <main>
-    <!-- 1. Hero Section (Warm Linen + Eingebettete Bild-Kapsel + Großes Panorama) -->
+    <!-- 1. Hero Section (Serreos Designfarben + Wappen-Präsenz + Großes Panorama) -->
     <section id="home" class="hr-hero">
-      <div class="hr-hero-ambient" aria-hidden="true"></div>
+      <div class="hr-hero-crest-ambient" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><use href="#serreos-crest"></use></svg>
+      </div>
 
       <div class="hr-container">
         <div class="hr-hero-center">
@@ -144,7 +146,10 @@
             <div class="hr-panorama-scrim" aria-hidden="true"></div>
 
             <div class="hr-panorama-top-chips">
-              <span class="hr-glass-pill">Qualitätsstandard Serreos · Mo–Sa 07–19 Uhr</span>
+              <span class="hr-glass-pill">
+                <svg width="16" height="16" viewBox="0 0 32 32" aria-hidden="true"><use href="#serreos-crest"></use></svg>
+                <span>Qualitätsstandard Serreos · Mo–Sa 07–19 Uhr</span>
+              </span>
               <span class="hr-glass-pill">Aschaffenburg &amp; direkte Umgebung</span>
             </div>
 
@@ -293,18 +298,24 @@
       </div>
     </section>
 
-    <!-- Weicher Bogen Weiß -> Sand -->
-    <div class="hr-curve-divider" style="--curve-bg: var(--hr-white);" aria-hidden="true">
+    <!-- Weicher Bogen Weiß -> Serreos Perl-Slate -->
+    <div class="hr-curve-divider" style="--curve-bg: var(--sr-white);" aria-hidden="true">
       <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
-        <path d="M0,90 C360,12 1080,12 1440,90 L1440,90 L0,90 Z" fill="#f6ecd9"></path>
+        <path d="M0,90 C360,12 1080,12 1440,90 L1440,90 L0,90 Z" fill="#f4f5f8"></path>
       </svg>
     </div>
 
-    <!-- 3. „Auf einen Blick“ – Interaktiver Smaragd-Zahlen-Counter (HopeRise Impact-Sektion) -->
+    <!-- 3. „Auf einen Blick“ – Interaktiver Zahlen-Counter mit Serreos-Wappen -->
     <section id="impact" class="hr-impact-sec">
+      <div class="hr-impact-crest-bg" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><use href="#serreos-crest"></use></svg>
+      </div>
       <div class="hr-container">
         <div class="hr-impact-card hr-reveal">
-          <span class="hr-badge">Auf einen Blick</span>
+          <span class="hr-badge hr-badge-white">
+            <svg width="15" height="15" viewBox="0 0 32 32" aria-hidden="true"><use href="#serreos-crest"></use></svg>
+            <span>Auf einen Blick</span>
+          </span>
           <h2 class="hr-section-title">Verlässlichkeit, die man jeden Tag spürt</h2>
 
           <div class="hr-impact-value" id="hrImpactValue" aria-live="polite">24h</div>
@@ -321,8 +332,8 @@
       </div>
     </section>
 
-    <!-- Konkaver Bogen Sand -> Weiß -->
-    <div class="hr-curve-divider" style="--curve-bg: var(--hr-linen);" aria-hidden="true">
+    <!-- Konkaver Bogen Serreos Perl-Slate -> Weiß -->
+    <div class="hr-curve-divider" style="--curve-bg: var(--sr-bg-alt);" aria-hidden="true">
       <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
         <path d="M0,90 C380,8 1060,8 1440,90 L1440,90 L0,90 Z" fill="#ffffff"></path>
       </svg>
@@ -407,10 +418,10 @@
       </div>
     </section>
 
-    <!-- Bogen Weiß -> Sand -->
-    <div class="hr-curve-divider" style="--curve-bg: var(--hr-white);" aria-hidden="true">
+    <!-- Bogen Weiß -> Serreos Perl-Slate -->
+    <div class="hr-curve-divider" style="--curve-bg: var(--sr-white);" aria-hidden="true">
       <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-        <path d="M0,80 C420,10 1020,10 1440,80 L1440,80 L0,80 Z" fill="#f6ecd9"></path>
+        <path d="M0,80 C420,10 1020,10 1440,80 L1440,80 L0,80 Z" fill="#f4f5f8"></path>
       </svg>
     </div>
 
@@ -455,7 +466,10 @@
         <div class="hr-contact-shell">
           <div class="hr-contact-panel-left hr-reveal">
             <div>
-              <span class="hr-badge">Direkter Draht</span>
+              <span class="hr-badge hr-badge-dark">
+                <svg width="15" height="15" viewBox="0 0 32 32" aria-hidden="true"><use href="#serreos-crest"></use></svg>
+                <span>Direkter Draht · Serreos</span>
+              </span>
               <h2>Lassen Sie uns Ihr Objekt anschauen</h2>
               <p>Kurze Anfrage senden oder direkt anrufen – wir beraten ehrlich, direkt und ohne Callcenter.</p>
             </div>
@@ -601,6 +615,10 @@
           <div class="hr-float-bubble hr-fb-3" aria-hidden="true"><img src="assets/images/glas.jpg" alt="" /></div>
           <div class="hr-float-bubble hr-fb-4" aria-hidden="true"><img src="assets/images/grund.jpg" alt="" /></div>
 
+          <div class="hr-cta-crest-seal" aria-hidden="true">
+            <svg viewBox="0 0 32 32"><use href="#serreos-crest"></use></svg>
+          </div>
+
           <h2>Bereit für dauerhaft gepflegte Räume?</h2>
           <p>Feste Ansprechpartner, umweltschonende Pflege und schnelle Umsetzung direkt vor Ort in Aschaffenburg.</p>
           <div class="hr-cta-actions">
@@ -695,7 +713,7 @@
     <a href="#contact" class="mq-btn mq-offer">Angebot anfragen &rarr;</a>
   </div>
 
-  <script src="alternativ.js?v=20261113-1"></script>
+  <script src="alternativ.js?v=20261113-3"></script>
 </body>
 
 </html>

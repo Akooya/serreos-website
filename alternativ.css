@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Serreos Raumpflegeservice – HopeRise-inspiriertes Alternativ-Design
+   Serreos Raumpflegeservice – HopeRise-Struktur in Serreos Designfarben
    100 % lokal gehostete Schriftarten & Assets (DSGVO-konform)
    ========================================================================== */
 
@@ -22,29 +22,27 @@
 }
 
 :root {
-  --hr-cream: #fbf7ef;
-  --hr-linen: #f6ecd9;
-  --hr-sand: #efe3d0;
-  --hr-sand-deep: #e5d5bc;
-  --hr-white: #ffffff;
-  --hr-ink: #17191d;
-  --hr-ink-soft: #4e545e;
-  --hr-ink-muted: #767c86;
-  --hr-emerald: #10b968;
-  --hr-emerald-dark: #0ca058;
-  --hr-emerald-glow: rgba(16, 185, 104, 0.28);
-  --hr-mint-bg: #def4e8;
-  --hr-mint-text: #0b6e3f;
-  --hr-dark: #16181c;
-  --hr-dark-card: #1f2228;
-  --hr-border: rgba(23, 25, 29, 0.08);
-  --hr-border-strong: rgba(23, 25, 29, 0.14);
-  --hr-radius-sm: 16px;
-  --hr-radius-md: 24px;
-  --hr-radius-lg: 34px;
-  --hr-radius-pill: 9999px;
-  --hr-ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --hr-font: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --sr-white: #ffffff;
+  --sr-bg-alt: #f4f5f8;
+  --sr-bg-soft: #f7f8fb;
+  --sr-slate-hover: #eaeef5;
+  --sr-slate-border: #d5dce6;
+  --sr-ink: #111827;
+  --sr-ink-hover: #1f2937;
+  --sr-ink-soft: #4b5563;
+  --sr-ink-muted: #6b7280;
+  --sr-dark: #0f141e;
+  --sr-dark-2: #182030;
+  --sr-badge-bg: #e9edf4;
+  --sr-accent-glow: rgba(17, 24, 39, 0.24);
+  --sr-border: rgba(17, 24, 39, 0.08);
+  --sr-border-strong: rgba(17, 24, 39, 0.14);
+  --sr-radius-sm: 16px;
+  --sr-radius-md: 24px;
+  --sr-radius-lg: 34px;
+  --sr-radius-pill: 9999px;
+  --sr-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --sr-font: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 *,
@@ -62,9 +60,9 @@ html {
 }
 
 body {
-  font-family: var(--hr-font);
-  background-color: var(--hr-cream);
-  color: var(--hr-ink);
+  font-family: var(--sr-font);
+  background-color: var(--sr-white);
+  color: var(--sr-ink);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -100,34 +98,45 @@ img {
   left: 0;
   height: 3px;
   width: 0%;
-  background: linear-gradient(90deg, var(--hr-emerald), #34d38b);
+  background: linear-gradient(90deg, var(--sr-ink), #64748b);
   z-index: 2000;
   transition: width 0.08s linear;
   pointer-events: none;
 }
 
 /* ==========================================================================
-   Shared Typography & Badges
+   Shared Typography, Logo Badges & Buttons
    ========================================================================== */
 .hr-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.42rem 1rem;
-  border-radius: var(--hr-radius-pill);
-  background: var(--hr-mint-bg);
-  color: var(--hr-mint-text);
+  gap: 0.48rem;
+  padding: 0.44rem 1.05rem;
+  border-radius: var(--sr-radius-pill);
+  background: var(--sr-badge-bg);
+  color: var(--sr-ink);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 1rem;
+  border: 1px solid var(--sr-border);
+}
+
+.hr-badge svg {
+  flex-shrink: 0;
 }
 
 .hr-badge-white {
-  background: rgba(255, 255, 255, 0.85);
-  color: var(--hr-ink);
-  border: 1px solid var(--hr-border);
+  background: #ffffff;
+  color: var(--sr-ink);
+  border: 1px solid var(--sr-border);
+}
+
+.hr-badge-dark {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .hr-section-head {
@@ -152,17 +161,17 @@ img {
   font-weight: 800;
   line-height: 1.08;
   letter-spacing: -0.03em;
-  color: var(--hr-ink);
+  color: var(--sr-ink);
 }
 
 .hr-section-sub {
   font-size: 1.05rem;
-  color: var(--hr-ink-soft);
+  color: var(--sr-ink-soft);
   max-width: 540px;
   margin-top: 0.85rem;
 }
 
-/* Signature Buttons & Micro-Animations */
+/* Serreos Primary & Secondary Buttons */
 .hr-btn-emerald {
   position: relative;
   overflow: hidden;
@@ -170,17 +179,17 @@ img {
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  background: var(--hr-emerald);
+  background: var(--sr-ink);
   color: #ffffff;
-  border: 2px solid var(--hr-emerald);
+  border: 2px solid var(--sr-ink);
   padding: 0.98rem 2rem;
-  border-radius: var(--hr-radius-pill);
+  border-radius: var(--sr-radius-pill);
   font-weight: 700;
   font-size: 0.94rem;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   cursor: pointer;
-  box-shadow: 0 14px 30px -10px var(--hr-emerald-glow);
-  transition: transform 0.35s var(--hr-ease), background-color 0.25s ease, box-shadow 0.35s var(--hr-ease);
+  box-shadow: 0 14px 30px -10px var(--sr-accent-glow);
+  transition: transform 0.35s var(--sr-ease), background-color 0.25s ease, box-shadow 0.35s var(--sr-ease);
 }
 
 .hr-btn-emerald::after {
@@ -190,16 +199,16 @@ img {
   left: -120%;
   width: 65%;
   height: 100%;
-  background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.36), transparent);
+  background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.28), transparent);
   transform: skewX(-20deg);
-  transition: left 0.65s var(--hr-ease);
+  transition: left 0.65s var(--sr-ease);
 }
 
 .hr-btn-emerald:hover {
-  background: var(--hr-emerald-dark);
-  border-color: var(--hr-emerald-dark);
+  background: var(--sr-ink-hover);
+  border-color: var(--sr-ink-hover);
   transform: translateY(-2px);
-  box-shadow: 0 20px 36px -10px rgba(12, 160, 88, 0.42);
+  box-shadow: 0 20px 38px -10px rgba(17, 24, 39, 0.34);
 }
 
 .hr-btn-emerald:hover::after {
@@ -212,40 +221,40 @@ img {
   justify-content: center;
   gap: 0.65rem;
   padding: 0.5rem 0.5rem 0.5rem 1.35rem;
-  border-radius: var(--hr-radius-pill);
-  background: rgba(255, 255, 255, 0.78);
-  border: 1px solid var(--hr-border-strong);
-  color: var(--hr-ink);
+  border-radius: var(--sr-radius-pill);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--sr-border-strong);
+  color: var(--sr-ink);
   font-weight: 700;
   font-size: 0.9rem;
   letter-spacing: 0.02em;
   cursor: pointer;
-  transition: background-color 0.28s ease, border-color 0.28s ease, transform 0.32s var(--hr-ease);
+  transition: background-color 0.28s ease, border-color 0.28s ease, transform 0.32s var(--sr-ease);
 }
 
 .hr-btn-arrow-circle {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: var(--hr-linen);
-  border: 1px solid var(--hr-border);
+  background: var(--sr-bg-alt);
+  border: 1px solid var(--sr-border);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: transform 0.35s var(--hr-ease), background-color 0.28s ease, color 0.28s ease;
+  transition: transform 0.35s var(--sr-ease), background-color 0.28s ease, color 0.28s ease;
 }
 
 .hr-btn-outline-pill:hover {
   background: #ffffff;
-  border-color: var(--hr-emerald);
+  border-color: var(--sr-ink);
   transform: translateY(-2px);
 }
 
 .hr-btn-outline-pill:hover .hr-btn-arrow-circle {
-  background: var(--hr-emerald);
+  background: var(--sr-ink);
   color: #ffffff;
-  border-color: var(--hr-emerald);
+  border-color: var(--sr-ink);
   transform: rotate(45deg);
 }
 
@@ -259,7 +268,7 @@ img {
   width: 100%;
   z-index: 1000;
   padding: 0.85rem 4%;
-  transition: padding 0.3s var(--hr-ease);
+  transition: padding 0.3s var(--sr-ease);
 }
 
 .hr-nav-shell {
@@ -270,18 +279,18 @@ img {
   justify-content: space-between;
   gap: 1.5rem;
   padding: 0.65rem 1.3rem;
-  border-radius: var(--hr-radius-pill);
-  background: rgba(251, 247, 239, 0.78);
+  border-radius: var(--sr-radius-pill);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(23, 25, 29, 0.07);
+  border: 1px solid rgba(17, 24, 39, 0.08);
   transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .hr-nav-shell.is-scrolled {
-  background: rgba(255, 255, 255, 0.92);
-  border-color: var(--hr-border);
-  box-shadow: 0 14px 36px -14px rgba(23, 25, 29, 0.14);
+  background: rgba(255, 255, 255, 0.94);
+  border-color: var(--sr-border-strong);
+  box-shadow: 0 14px 36px -14px rgba(17, 24, 39, 0.14);
 }
 
 .hr-brand {
@@ -293,11 +302,11 @@ img {
 
 .hr-brand img,
 .hr-brand-crest {
-  width: 34px;
-  height: 34px;
-  color: var(--hr-ink);
+  width: 35px;
+  height: 35px;
+  color: var(--sr-ink);
   flex-shrink: 0;
-  transition: transform 0.35s var(--hr-ease);
+  transition: transform 0.35s var(--sr-ease);
 }
 
 .hr-brand:hover img,
@@ -310,7 +319,7 @@ img {
   font-size: 1.38rem;
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: var(--hr-ink);
+  color: var(--sr-ink);
 }
 
 .hr-nav-links {
@@ -326,7 +335,7 @@ img {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--hr-ink-soft);
+  color: var(--sr-ink-soft);
   padding: 0.3rem 0;
   transition: color 0.22s ease;
 }
@@ -338,16 +347,16 @@ img {
   bottom: -2px;
   width: 100%;
   height: 2px;
-  background: var(--hr-emerald);
+  background: var(--sr-ink);
   border-radius: 2px;
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 0.32s var(--hr-ease);
+  transition: transform 0.32s var(--sr-ease);
 }
 
 .hr-nav-links a:hover,
 .hr-nav-links a.active {
-  color: var(--hr-ink);
+  color: var(--sr-ink);
 }
 
 .hr-nav-links a:hover::after,
@@ -367,15 +376,15 @@ img {
   align-items: center;
   gap: 0.4rem;
   padding: 0.5rem 0.95rem;
-  border-radius: var(--hr-radius-pill);
+  border-radius: var(--sr-radius-pill);
   font-size: 0.88rem;
   font-weight: 600;
-  color: var(--hr-ink);
+  color: var(--sr-ink);
   transition: background-color 0.2s ease;
 }
 
 .hr-nav-phone:hover {
-  background: var(--hr-sand);
+  background: var(--sr-bg-alt);
 }
 
 .hr-nav-cta {
@@ -383,7 +392,7 @@ img {
   font-size: 0.84rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  box-shadow: 0 8px 20px -8px var(--hr-emerald-glow);
+  box-shadow: 0 8px 20px -8px var(--sr-accent-glow);
 }
 
 .hr-mobile-call,
@@ -394,37 +403,55 @@ img {
   border-radius: 50%;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--hr-border-strong);
+  border: 1px solid var(--sr-border-strong);
   background: #ffffff;
-  color: var(--hr-ink);
+  color: var(--sr-ink);
   cursor: pointer;
 }
 
 .hr-mobile-call {
-  background: var(--hr-emerald);
-  border-color: var(--hr-emerald);
+  background: var(--sr-ink);
+  border-color: var(--sr-ink);
   color: #ffffff;
 }
 
 /* ==========================================================================
-   1. Hero Section (HopeRise Capsule Headline + Live Panorama Stage)
+   1. Hero Section (Cool Architectural Monochrome + Logo-Wappen Backdrop + Panorama)
    ========================================================================== */
 .hr-hero {
   position: relative;
   padding: 7.4rem 0 4rem;
-  background: linear-gradient(180deg, #f5e9d6 0%, var(--hr-cream) 72%, var(--hr-white) 100%);
+  background: linear-gradient(180deg, #f4f5f8 0%, #f9fafc 68%, #ffffff 100%);
   overflow: hidden;
 }
 
-.hr-hero-ambient {
+.hr-hero-crest-ambient {
   position: absolute;
-  width: 680px;
-  height: 680px;
-  top: -240px;
-  right: -180px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(16, 185, 104, 0.1) 0%, transparent 68%);
+  top: -120px;
+  right: -120px;
+  width: clamp(340px, 44vw, 620px);
+  height: clamp(340px, 44vw, 620px);
+  color: var(--sr-ink);
+  opacity: 0.045;
   pointer-events: none;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hr-hero-crest-ambient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px dashed currentColor;
+  opacity: 0.55;
+}
+
+.hr-hero-crest-ambient svg {
+  width: 66%;
+  height: 66%;
 }
 
 .hr-hero-center {
@@ -440,7 +467,7 @@ img {
   font-weight: 800;
   line-height: 1.02;
   letter-spacing: -0.04em;
-  color: var(--hr-ink);
+  color: var(--sr-ink);
   margin-bottom: 1.45rem;
 }
 
@@ -457,19 +484,19 @@ img {
   display: inline-block;
   width: clamp(110px, 16vw, 195px);
   height: clamp(54px, 7.6vw, 94px);
-  border-radius: var(--hr-radius-pill);
+  border-radius: var(--sr-radius-pill);
   overflow: hidden;
   vertical-align: middle;
   border: 4px solid #ffffff;
-  box-shadow: 0 18px 40px -12px rgba(23, 25, 29, 0.26);
+  box-shadow: 0 18px 40px -12px rgba(17, 24, 39, 0.24);
   cursor: pointer;
   transform: translateY(-0.04em);
-  transition: transform 0.45s var(--hr-ease), box-shadow 0.45s var(--hr-ease);
+  transition: transform 0.45s var(--sr-ease), box-shadow 0.45s var(--sr-ease);
 }
 
 .hr-hero-capsule:hover {
   transform: translateY(-0.04em) scale(1.06) rotate(-1.5deg);
-  box-shadow: 0 24px 48px -10px rgba(16, 185, 104, 0.34);
+  box-shadow: 0 24px 48px -10px rgba(17, 24, 39, 0.34);
 }
 
 .hr-hero-capsule img {
@@ -490,7 +517,7 @@ img {
 
 .hr-hero-lead {
   font-size: clamp(1.02rem, 1.45vw, 1.2rem);
-  color: var(--hr-ink-soft);
+  color: var(--sr-ink-soft);
   max-width: 600px;
   margin: 0 auto 2rem;
 }
@@ -504,48 +531,48 @@ img {
   margin-bottom: 2.8rem;
 }
 
-/* Hero Trust Rail (HopeRise signature bar) */
+/* Hero Trust Rail */
 .hr-hero-rail {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
   padding: 1rem 0 2.6rem;
-  border-top: 1px solid rgba(23, 25, 29, 0.08);
+  border-top: 1px solid var(--sr-border);
   font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--hr-ink-soft);
+  color: var(--sr-ink-soft);
 }
 
 .hr-rail-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  color: var(--hr-ink);
-  transition: color 0.2s ease, transform 0.25s var(--hr-ease);
+  color: var(--sr-ink);
+  transition: color 0.2s ease, transform 0.25s var(--sr-ease);
 }
 
 .hr-rail-icon {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  border: 1px solid var(--hr-border-strong);
+  border: 1px solid var(--sr-border-strong);
   background: #ffffff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.28s var(--hr-ease);
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.28s var(--sr-ease);
 }
 
 .hr-rail-btn:hover {
-  color: var(--hr-emerald-dark);
+  color: var(--sr-ink);
 }
 
 .hr-rail-btn:hover .hr-rail-icon {
-  background: var(--hr-emerald);
-  border-color: var(--hr-emerald);
+  background: var(--sr-ink);
+  border-color: var(--sr-ink);
   color: #ffffff;
   transform: translateY(2px);
 }
@@ -562,14 +589,14 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  color: var(--hr-ink-soft);
+  color: var(--sr-ink-soft);
 }
 
 .hr-dot-emerald {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--hr-emerald);
+  background: var(--sr-ink);
 }
 
 /* ==========================================================================
@@ -577,11 +604,12 @@ img {
    ========================================================================== */
 .hr-panorama-wrap {
   position: relative;
-  border-radius: var(--hr-radius-lg);
+  z-index: 2;
+  border-radius: var(--sr-radius-lg);
   overflow: hidden;
-  background: var(--hr-dark);
-  box-shadow: 0 34px 70px -24px rgba(23, 25, 29, 0.28);
-  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: var(--sr-dark);
+  box-shadow: 0 34px 70px -24px rgba(17, 24, 39, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.75);
 }
 
 .hr-panorama-stage {
@@ -595,7 +623,7 @@ img {
   inset: 0;
   opacity: 0;
   transform: scale(1.06);
-  transition: opacity 0.75s var(--hr-ease), transform 1.2s var(--hr-ease);
+  transition: opacity 0.75s var(--sr-ease), transform 1.2s var(--sr-ease);
   pointer-events: none;
 }
 
@@ -620,7 +648,7 @@ img {
 .hr-panorama-scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(22, 24, 28, 0.14) 0%, rgba(22, 24, 28, 0.16) 40%, rgba(22, 24, 28, 0.84) 100%);
+  background: linear-gradient(180deg, rgba(15, 20, 30, 0.14) 0%, rgba(15, 20, 30, 0.18) 42%, rgba(15, 20, 30, 0.85) 100%);
   pointer-events: none;
 }
 
@@ -640,13 +668,13 @@ img {
 .hr-glass-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.48rem;
   padding: 0.55rem 1rem;
-  border-radius: var(--hr-radius-pill);
-  background: rgba(255, 255, 255, 0.9);
+  border-radius: var(--sr-radius-pill);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  color: var(--hr-ink);
+  color: var(--sr-ink);
   font-size: 0.82rem;
   font-weight: 700;
   box-shadow: 0 10px 26px -10px rgba(0, 0, 0, 0.25);
@@ -679,18 +707,18 @@ img {
 
 .hr-panorama-caption p {
   font-size: 0.94rem;
-  color: rgba(255, 255, 255, 0.84);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .hr-panorama-tabs {
   display: inline-flex;
   gap: 0.45rem;
   padding: 0.38rem;
-  border-radius: var(--hr-radius-pill);
-  background: rgba(22, 24, 28, 0.58);
+  border-radius: var(--sr-radius-pill);
+  background: rgba(15, 20, 30, 0.68);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   flex-wrap: wrap;
 }
 
@@ -699,7 +727,7 @@ img {
   background: transparent;
   color: rgba(255, 255, 255, 0.82);
   padding: 0.48rem 0.95rem;
-  border-radius: var(--hr-radius-pill);
+  border-radius: var(--sr-radius-pill);
   font-size: 0.82rem;
   font-weight: 600;
   cursor: pointer;
@@ -711,15 +739,15 @@ img {
 }
 
 .hr-pano-tab.is-active {
-  background: var(--hr-emerald);
-  color: #ffffff;
+  background: #ffffff;
+  color: var(--sr-ink);
 }
 
 /* ==========================================================================
-   2. „Was wir leisten“ – White Section with HopeRise State-Flip Cards
+   2. „Unsere Leistungen“ – State-Flip Hover Cards (Weiß -> Kühles Perl-Slate)
    ========================================================================== */
 .hr-services-sec {
-  background: var(--hr-white);
+  background: var(--sr-white);
   padding: 5.5rem 0 4.5rem;
 }
 
@@ -733,21 +761,21 @@ img {
   position: relative;
   display: flex;
   flex-direction: column;
-  background: var(--hr-cream);
-  border: 1px solid var(--hr-border);
-  border-radius: var(--hr-radius-md);
+  background: var(--sr-bg-soft);
+  border: 1px solid var(--sr-border);
+  border-radius: var(--sr-radius-md);
   padding: 1.05rem 1.05rem 1.35rem;
   cursor: pointer;
   transform-style: preserve-3d;
-  transition: background-color 0.42s var(--hr-ease), border-color 0.42s var(--hr-ease), transform 0.42s var(--hr-ease), box-shadow 0.42s var(--hr-ease);
+  transition: background-color 0.42s var(--sr-ease), border-color 0.42s var(--sr-ease), transform 0.42s var(--sr-ease), box-shadow 0.42s var(--sr-ease);
 }
 
-/* HopeRise signature State-Flip on hover: White/Cream -> Warm Sand + Green Button Pop */
+/* State-Flip im Serreos-Farbklima: Lichtgrau -> Elegantes Kühlschiefer + Midnight-Arrow */
 .hr-service-card:hover {
-  background: var(--hr-sand);
-  border-color: var(--hr-sand-deep);
+  background: var(--sr-slate-hover);
+  border-color: var(--sr-slate-border);
   transform: translateY(-7px);
-  box-shadow: 0 28px 50px -24px rgba(23, 25, 29, 0.22);
+  box-shadow: 0 28px 50px -24px rgba(17, 24, 39, 0.2);
 }
 
 .hr-service-media {
@@ -762,7 +790,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.7s var(--hr-ease), filter 0.5s ease;
+  transition: transform 0.7s var(--sr-ease), filter 0.5s ease;
 }
 
 .hr-service-card:hover .hr-service-media img {
@@ -774,10 +802,10 @@ img {
   top: 0.85rem;
   left: 0.85rem;
   padding: 0.36rem 0.78rem;
-  border-radius: var(--hr-radius-pill);
-  background: rgba(255, 255, 255, 0.92);
+  border-radius: var(--sr-radius-pill);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(8px);
-  color: var(--hr-ink);
+  color: var(--sr-ink);
   font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -802,7 +830,7 @@ img {
   font-size: 1.32rem;
   font-weight: 700;
   line-height: 1.2;
-  color: var(--hr-ink);
+  color: var(--sr-ink);
 }
 
 .hr-flip-arrow {
@@ -810,25 +838,25 @@ img {
   height: 40px;
   border-radius: 50%;
   background: #ffffff;
-  border: 1px solid var(--hr-border);
-  color: var(--hr-ink);
+  border: 1px solid var(--sr-border);
+  color: var(--sr-ink);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: background-color 0.35s var(--hr-ease), color 0.35s var(--hr-ease), border-color 0.35s ease, transform 0.38s var(--hr-ease);
+  transition: background-color 0.35s var(--sr-ease), color 0.35s var(--sr-ease), border-color 0.35s ease, transform 0.38s var(--sr-ease);
 }
 
 .hr-service-card:hover .hr-flip-arrow {
-  background: var(--hr-emerald);
-  border-color: var(--hr-emerald);
+  background: var(--sr-ink);
+  border-color: var(--sr-ink);
   color: #ffffff;
   transform: rotate(45deg) scale(1.06);
 }
 
 .hr-service-body p {
   font-size: 0.94rem;
-  color: var(--hr-ink-soft);
+  color: var(--sr-ink-soft);
   line-height: 1.58;
   margin-bottom: 1rem;
   flex: 1;
@@ -843,11 +871,11 @@ img {
 .hr-service-chips span {
   font-size: 0.76rem;
   font-weight: 600;
-  color: var(--hr-ink-soft);
+  color: var(--sr-ink-soft);
   padding: 0.32rem 0.72rem;
-  border-radius: var(--hr-radius-pill);
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid var(--hr-border);
+  border-radius: var(--sr-radius-pill);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--sr-border);
   transition: background-color 0.25s ease;
 }
 
@@ -856,13 +884,13 @@ img {
 }
 
 /* ==========================================================================
-   Curved Section Transitions (Concave / Convex SVG Arches like HopeRise)
+   Curved Section Transitions (Concave / Convex SVG Arches)
    ========================================================================== */
 .hr-curve-divider {
   width: 100%;
   overflow: hidden;
   line-height: 0;
-  background: var(--curve-bg, var(--hr-white));
+  background: var(--curve-bg, var(--sr-white));
 }
 
 .hr-curve-divider svg {
@@ -872,15 +900,37 @@ img {
 }
 
 /* ==========================================================================
-   3. „Auf einen Blick“ – Interactive Animated Emerald Impact Counter
+   3. „Auf einen Blick“ – Interactive Animated Counter + Subtiles Serreos-Wappen
    ========================================================================== */
 .hr-impact-sec {
-  background: var(--hr-linen);
-  padding: 4.5rem 0 3.5rem;
+  position: relative;
+  overflow: hidden;
+  background: var(--sr-bg-alt);
+  padding: 4.5rem 0 3.8rem;
   text-align: center;
 }
 
+.hr-impact-crest-bg {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(260px, 36vw, 440px);
+  height: clamp(260px, 36vw, 440px);
+  color: var(--sr-ink);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hr-impact-crest-bg svg {
+  width: 100%;
+  height: 100%;
+}
+
 .hr-impact-card {
+  position: relative;
+  z-index: 1;
   max-width: 820px;
   margin: 0 auto;
 }
@@ -890,10 +940,10 @@ img {
   font-weight: 800;
   line-height: 0.95;
   letter-spacing: -0.05em;
-  color: var(--hr-emerald);
+  color: var(--sr-ink);
   margin: 1.4rem 0 0.6rem;
   font-variant-numeric: tabular-nums;
-  transition: opacity 0.28s ease, transform 0.38s var(--hr-ease);
+  transition: opacity 0.28s ease, transform 0.38s var(--sr-ease);
 }
 
 .hr-impact-value.is-switching {
@@ -904,13 +954,13 @@ img {
 .hr-impact-label {
   font-size: clamp(1.1rem, 2vw, 1.38rem);
   font-weight: 700;
-  color: var(--hr-ink);
+  color: var(--sr-ink);
   margin-bottom: 0.4rem;
 }
 
 .hr-impact-sub {
   font-size: 0.98rem;
-  color: var(--hr-ink-soft);
+  color: var(--sr-ink-soft);
   max-width: 480px;
   margin: 0 auto 2rem;
 }
@@ -921,17 +971,18 @@ img {
   justify-content: center;
   gap: 0.55rem;
   padding: 0.45rem;
-  border-radius: var(--hr-radius-pill);
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid var(--hr-border);
+  border-radius: var(--sr-radius-pill);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--sr-border);
+  box-shadow: 0 12px 26px -14px rgba(17, 24, 39, 0.12);
 }
 
 .hr-impact-tab {
   border: none;
   background: transparent;
-  color: var(--hr-ink-soft);
+  color: var(--sr-ink-soft);
   padding: 0.56rem 1.15rem;
-  border-radius: var(--hr-radius-pill);
+  border-radius: var(--sr-radius-pill);
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
@@ -939,19 +990,19 @@ img {
 }
 
 .hr-impact-tab:hover {
-  color: var(--hr-ink);
+  color: var(--sr-ink);
 }
 
 .hr-impact-tab.is-active {
-  background: var(--hr-ink);
+  background: var(--sr-ink);
   color: #ffffff;
 }
 
 /* ==========================================================================
-   4. „Einblicke“ – HopeRise Rounded-Arch Photo Showcase & Carousel
+   4. „Einblicke“ – Rounded-Arch Photo Showcase & Carousel
    ========================================================================== */
 .hr-gallery-sec {
-  background: var(--hr-white);
+  background: var(--sr-white);
   padding: 4.5rem 0 5.5rem;
 }
 
@@ -964,19 +1015,19 @@ img {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border: 1px solid var(--hr-border-strong);
-  background: var(--hr-cream);
-  color: var(--hr-ink);
+  border: 1px solid var(--sr-border-strong);
+  background: var(--sr-bg-alt);
+  color: var(--sr-ink);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.28s var(--hr-ease);
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.28s var(--sr-ease);
 }
 
 .hr-circle-nav:hover {
-  background: var(--hr-emerald);
-  border-color: var(--hr-emerald);
+  background: var(--sr-ink);
+  border-color: var(--sr-ink);
   color: #ffffff;
   transform: scale(1.06);
 }
@@ -1002,23 +1053,23 @@ img {
   height: 455px;
   border-radius: 260px 260px 28px 28px;
   overflow: hidden;
-  background: var(--hr-dark);
+  background: var(--sr-dark);
   scroll-snap-align: start;
   cursor: pointer;
-  box-shadow: 0 22px 44px -22px rgba(23, 25, 29, 0.25);
-  transition: transform 0.45s var(--hr-ease), box-shadow 0.45s var(--hr-ease);
+  box-shadow: 0 22px 44px -22px rgba(17, 24, 39, 0.26);
+  transition: transform 0.45s var(--sr-ease), box-shadow 0.45s var(--sr-ease);
 }
 
 .hr-arch-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 32px 60px -22px rgba(23, 25, 29, 0.34);
+  box-shadow: 0 32px 60px -22px rgba(17, 24, 39, 0.36);
 }
 
 .hr-arch-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.8s var(--hr-ease);
+  transition: transform 0.8s var(--sr-ease);
 }
 
 .hr-arch-card:hover img {
@@ -1028,7 +1079,7 @@ img {
 .hr-arch-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 32%, rgba(18, 20, 24, 0.5) 68%, rgba(18, 20, 24, 0.9) 100%);
+  background: linear-gradient(180deg, transparent 32%, rgba(15, 20, 30, 0.52) 68%, rgba(15, 20, 30, 0.92) 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -1039,9 +1090,9 @@ img {
 .hr-arch-tag {
   align-self: flex-start;
   padding: 0.32rem 0.78rem;
-  border-radius: var(--hr-radius-pill);
-  background: rgba(16, 185, 104, 0.92);
-  color: #ffffff;
+  border-radius: var(--sr-radius-pill);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--sr-ink);
   font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -1057,7 +1108,7 @@ img {
 
 .hr-arch-overlay p {
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.82);
   margin-bottom: 1rem;
 }
 
@@ -1068,19 +1119,19 @@ img {
   font-size: 0.86rem;
   font-weight: 700;
   color: #ffffff;
-  transition: gap 0.28s var(--hr-ease), color 0.25s ease;
+  transition: gap 0.28s var(--hr-ease, cubic-bezier(0.22, 1, 0.36, 1)), color 0.25s ease;
 }
 
 .hr-arch-card:hover .hr-arch-cta {
   gap: 0.72rem;
-  color: #5eeaa3;
+  color: #cbd5e1;
 }
 
 /* ==========================================================================
-   5. „Ablauf“ – Animated Steps on Soft Sand Canvas
+   5. „Ablauf“ – Animated Steps on Soft Slate Canvas
    ========================================================================== */
 .hr-process-sec {
-  background: var(--hr-linen);
+  background: var(--sr-bg-alt);
   padding: 4.5rem 0 5rem;
 }
 
@@ -1094,35 +1145,35 @@ img {
 .hr-step-card {
   position: relative;
   background: #ffffff;
-  border: 1px solid var(--hr-border);
-  border-radius: var(--hr-radius-md);
+  border: 1px solid var(--sr-border);
+  border-radius: var(--sr-radius-md);
   padding: 2rem 1.75rem;
-  transition: background-color 0.35s var(--hr-ease), transform 0.38s var(--hr-ease), box-shadow 0.38s var(--hr-ease);
+  transition: background-color 0.35s var(--sr-ease), transform 0.38s var(--sr-ease), box-shadow 0.38s var(--sr-ease);
 }
 
 .hr-step-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 24px 44px -20px rgba(23, 25, 29, 0.16);
-  border-color: rgba(16, 185, 104, 0.4);
+  box-shadow: 0 24px 44px -20px rgba(17, 24, 39, 0.16);
+  border-color: var(--sr-border-strong);
 }
 
 .hr-step-num {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: var(--hr-mint-bg);
-  color: var(--hr-mint-text);
+  background: var(--sr-badge-bg);
+  color: var(--sr-ink);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: 1.05rem;
   font-weight: 800;
   margin-bottom: 1.35rem;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.35s var(--hr-ease);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.35s var(--sr-ease);
 }
 
 .hr-step-card:hover .hr-step-num {
-  background: var(--hr-emerald);
+  background: var(--sr-ink);
   color: #ffffff;
   transform: scale(1.1) rotate(-6deg);
 }
@@ -1131,23 +1182,23 @@ img {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 0.65rem;
-  color: var(--hr-ink);
+  color: var(--sr-ink);
 }
 
 .hr-step-card p {
   font-size: 0.95rem;
-  color: var(--hr-ink-soft);
+  color: var(--sr-ink-soft);
   line-height: 1.62;
 }
 
 /* ==========================================================================
-   6. „Kontakt“ – Full-Bleed Architectural Backdrop + Floating Glass Card
+   6. „Kontakt“ – Full-Bleed Backdrop + Floating Glass Form Card (Midnight Navy)
    ========================================================================== */
 .hr-contact-sec {
   position: relative;
   padding: 5.5rem 0;
   overflow: hidden;
-  background: var(--hr-dark);
+  background: var(--sr-dark);
 }
 
 .hr-contact-backdrop {
@@ -1160,7 +1211,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.38;
+  opacity: 0.34;
   transform: scale(1.06);
   transition: transform 0.4s ease-out;
 }
@@ -1169,7 +1220,7 @@ img {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(22, 24, 28, 0.84) 0%, rgba(22, 24, 28, 0.68) 100%);
+  background: linear-gradient(135deg, rgba(15, 20, 30, 0.88) 0%, rgba(15, 20, 30, 0.72) 100%);
 }
 
 .hr-contact-shell {
@@ -1213,7 +1264,7 @@ img {
   display: flex;
   flex-direction: column;
   padding: 0.95rem 1.2rem;
-  border-radius: var(--hr-radius-sm);
+  border-radius: var(--sr-radius-sm);
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.14);
   backdrop-filter: blur(12px);
@@ -1221,8 +1272,8 @@ img {
 }
 
 .hr-contact-row:hover {
-  background: rgba(255, 255, 255, 0.13);
-  border-color: rgba(16, 185, 104, 0.6);
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.34);
 }
 
 .hr-contact-row span {
@@ -1230,7 +1281,7 @@ img {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #6ee7ab;
+  color: #cbd5e1;
   margin-bottom: 0.2rem;
 }
 
@@ -1247,9 +1298,9 @@ img {
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-radius: var(--hr-radius-lg);
+  border-radius: var(--sr-radius-lg);
   padding: 2.3rem;
-  box-shadow: 0 34px 70px -20px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 34px 70px -20px rgba(0, 0, 0, 0.48);
 }
 
 .hr-form-grid {
@@ -1267,9 +1318,9 @@ img {
   width: 100%;
   padding: 0.9rem 1.1rem;
   border-radius: 14px;
-  border: 1px solid var(--hr-border-strong);
-  background: var(--hr-cream);
-  color: var(--hr-ink);
+  border: 1px solid var(--sr-border-strong);
+  background: var(--sr-bg-soft);
+  color: var(--sr-ink);
   font-size: 0.96rem;
   transition: border-color 0.22s ease, background-color 0.22s ease, box-shadow 0.22s ease;
 }
@@ -1279,16 +1330,16 @@ img {
 .hr-contact-form-card textarea:focus {
   outline: none;
   background: #ffffff;
-  border-color: var(--hr-emerald);
-  box-shadow: 0 0 0 4px rgba(16, 185, 104, 0.14);
+  border-color: var(--sr-ink);
+  box-shadow: 0 0 0 4px rgba(17, 24, 39, 0.12);
 }
 
 .hr-quick-group {
   margin: 0.85rem 0 1rem;
   padding: 0.95rem 1rem;
   border-radius: 16px;
-  background: var(--hr-cream);
-  border: 1px solid var(--hr-border);
+  background: var(--sr-bg-soft);
+  border: 1px solid var(--sr-border);
   display: grid;
   gap: 0.8rem;
 }
@@ -1299,7 +1350,7 @@ img {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--hr-ink-soft);
+  color: var(--sr-ink-soft);
   margin-bottom: 0.45rem;
 }
 
@@ -1310,11 +1361,11 @@ img {
 }
 
 .hr-chip {
-  border: 1px solid var(--hr-border-strong);
+  border: 1px solid var(--sr-border-strong);
   background: #ffffff;
-  color: var(--hr-ink-soft);
+  color: var(--sr-ink-soft);
   padding: 0.42rem 0.85rem;
-  border-radius: var(--hr-radius-pill);
+  border-radius: var(--sr-radius-pill);
   font-size: 0.83rem;
   font-weight: 600;
   cursor: pointer;
@@ -1322,13 +1373,13 @@ img {
 }
 
 .hr-chip:hover {
-  border-color: var(--hr-emerald);
-  color: var(--hr-ink);
+  border-color: var(--sr-ink);
+  color: var(--sr-ink);
 }
 
 .hr-chip.is-selected {
-  background: var(--hr-emerald);
-  border-color: var(--hr-emerald);
+  background: var(--sr-ink);
+  border-color: var(--sr-ink);
   color: #ffffff;
 }
 
@@ -1338,19 +1389,19 @@ img {
   gap: 0.65rem;
   margin: 0.95rem 0 1.25rem;
   font-size: 0.86rem;
-  color: var(--hr-ink-soft);
+  color: var(--sr-ink-soft);
 }
 
 .hr-privacy-row input {
   width: 18px;
   height: 18px;
   margin-top: 2px;
-  accent-color: var(--hr-emerald);
+  accent-color: var(--sr-ink);
   flex-shrink: 0;
 }
 
 .hr-privacy-row a {
-  color: var(--hr-mint-text);
+  color: var(--sr-ink);
   font-weight: 700;
   text-decoration: underline;
 }
@@ -1371,8 +1422,8 @@ img {
 
 .hr-form-feedback.is-success {
   display: block;
-  background: var(--hr-mint-bg);
-  color: var(--hr-mint-text);
+  background: #ecfdf5;
+  color: #065f46;
 }
 
 .hr-form-feedback.is-error {
@@ -1382,10 +1433,10 @@ img {
 }
 
 /* ==========================================================================
-   7. FAQ & Floating Bubble CTA Band („Join Us“ Spirit)
+   7. FAQ & Floating Bubble CTA Band mit Serreos-Logo-Siegel
    ========================================================================== */
 .hr-faq-sec {
-  background: var(--hr-white);
+  background: var(--sr-white);
   padding: 5rem 0 3.5rem;
 }
 
@@ -1398,15 +1449,15 @@ img {
 
 .hr-faq-item {
   border-radius: 18px;
-  background: var(--hr-cream);
-  border: 1px solid var(--hr-border);
+  background: var(--sr-bg-soft);
+  border: 1px solid var(--sr-border);
   overflow: hidden;
   transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .hr-faq-item.is-open {
-  background: var(--hr-sand);
-  border-color: var(--hr-sand-deep);
+  background: var(--sr-slate-hover);
+  border-color: var(--sr-slate-border);
 }
 
 .hr-faq-trigger {
@@ -1421,7 +1472,7 @@ img {
   text-align: left;
   font-size: 1.03rem;
   font-weight: 700;
-  color: var(--hr-ink);
+  color: var(--sr-ink);
   cursor: pointer;
 }
 
@@ -1435,11 +1486,11 @@ img {
   justify-content: center;
   font-size: 1.15rem;
   flex-shrink: 0;
-  transition: transform 0.3s var(--hr-ease), background-color 0.25s ease, color 0.25s ease;
+  transition: transform 0.3s var(--sr-ease), background-color 0.25s ease, color 0.25s ease;
 }
 
 .hr-faq-item.is-open .hr-faq-plus {
-  background: var(--hr-emerald);
+  background: var(--sr-ink);
   color: #ffffff;
   transform: rotate(45deg);
 }
@@ -1447,7 +1498,7 @@ img {
 .hr-faq-panel {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 0.36s var(--hr-ease);
+  transition: grid-template-rows 0.36s var(--sr-ease);
 }
 
 .hr-faq-item.is-open .hr-faq-panel {
@@ -1461,13 +1512,13 @@ img {
 .hr-faq-panel-inner p {
   padding: 0 1.35rem 1.25rem;
   font-size: 0.95rem;
-  color: var(--hr-ink-soft);
+  color: var(--sr-ink-soft);
 }
 
-/* Final Bubble CTA */
+/* Final Bubble CTA with Serreos Crest Seal */
 .hr-community-cta {
   position: relative;
-  background: var(--hr-white);
+  background: var(--sr-white);
   padding: 4.5rem 0 6rem;
   overflow: hidden;
   text-align: center;
@@ -1479,9 +1530,30 @@ img {
   margin: 0 auto;
   padding: 4rem 2rem;
   border-radius: 36px;
-  background: linear-gradient(135deg, var(--hr-linen) 0%, var(--hr-cream) 100%);
-  border: 1px solid var(--hr-border);
+  background: linear-gradient(135deg, #f1f4f9 0%, #f8fafc 100%);
+  border: 1px solid var(--sr-border);
   overflow: hidden;
+}
+
+.hr-cta-crest-seal {
+  position: relative;
+  z-index: 2;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.3rem;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid var(--sr-border);
+  box-shadow: 0 12px 28px -10px rgba(17, 24, 39, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sr-ink);
+}
+
+.hr-cta-crest-seal svg {
+  width: 36px;
+  height: 36px;
 }
 
 .hr-float-bubble {
@@ -1489,7 +1561,7 @@ img {
   border-radius: 50%;
   overflow: hidden;
   border: 4px solid #ffffff;
-  box-shadow: 0 16px 34px -12px rgba(23, 25, 29, 0.22);
+  box-shadow: 0 16px 34px -12px rgba(17, 24, 39, 0.22);
   pointer-events: none;
 }
 
@@ -1552,7 +1624,7 @@ img {
   z-index: 2;
   max-width: 470px;
   margin: 0 auto 1.8rem;
-  color: var(--hr-ink-soft);
+  color: var(--sr-ink-soft);
 }
 
 .hr-cta-actions {
@@ -1565,10 +1637,10 @@ img {
 }
 
 /* ==========================================================================
-   Footer (High Contrast Charcoal — Ohne überdimensioniertes Wasserzeichen)
+   Footer (Serreos Official Deep Navy #0f141e)
    ========================================================================== */
 .hr-footer {
-  background: var(--hr-dark);
+  background: var(--sr-dark);
   color: #ffffff;
   padding: 3.5rem 0 2.6rem;
 }
@@ -1584,7 +1656,7 @@ img {
 }
 
 .hr-footer-brand img {
-  height: 42px;
+  height: 44px;
   width: auto;
   filter: brightness(0) invert(1);
   margin-bottom: 0.7rem;
@@ -1606,18 +1678,19 @@ img {
   display: inline-flex;
   align-items: center;
   padding: 0.58rem 1.05rem;
-  border-radius: var(--hr-radius-pill);
+  border-radius: var(--sr-radius-pill);
   border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.08);
   color: #ffffff;
   font-size: 0.88rem;
   font-weight: 600;
-  transition: background-color 0.22s ease, border-color 0.22s ease;
+  transition: background-color 0.22s ease, border-color 0.22s ease, color 0.22s ease;
 }
 
 .hr-footer-pill:hover {
-  background: var(--hr-emerald);
-  border-color: var(--hr-emerald);
+  background: #ffffff;
+  border-color: #ffffff;
+  color: var(--sr-ink);
 }
 
 .hr-footer-bottom {
@@ -1648,7 +1721,7 @@ img {
 .hr-reveal {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity 0.75s var(--hr-ease), transform 0.75s var(--hr-ease);
+  transition: opacity 0.75s var(--sr-ease), transform 0.75s var(--sr-ease);
 }
 
 .hr-reveal.is-visible {
@@ -1656,11 +1729,11 @@ img {
   transform: translateY(0);
 }
 
-/* Modals (Impressum / Datenschutz) */
+/* Modals */
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(22, 24, 28, 0.66);
+  background: rgba(15, 20, 30, 0.68);
   backdrop-filter: blur(8px);
   z-index: 2200;
   display: flex;
@@ -1684,7 +1757,7 @@ img {
   max-height: 86vh;
   overflow-y: auto;
   background: #ffffff;
-  color: var(--hr-ink);
+  color: var(--sr-ink);
   border-radius: 26px;
   padding: 2.3rem;
 }
@@ -1696,8 +1769,8 @@ img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid var(--hr-border-strong);
-  background: var(--hr-cream);
+  border: 1px solid var(--sr-border-strong);
+  background: var(--sr-bg-alt);
   font-size: 1.4rem;
   cursor: pointer;
 }
@@ -1714,7 +1787,7 @@ img {
 
 .modal-body p {
   font-size: 0.94rem;
-  color: var(--hr-ink-soft);
+  color: var(--sr-ink-soft);
   margin-bottom: 0.65rem;
 }
 
@@ -1750,14 +1823,14 @@ img {
     align-items: center;
     padding: 1.4rem;
     gap: 1.1rem;
-    background: rgba(255, 255, 255, 0.97);
+    background: rgba(255, 255, 255, 0.98);
     border-radius: 24px;
-    border: 1px solid var(--hr-border);
-    box-shadow: 0 26px 50px -16px rgba(23, 25, 29, 0.22);
+    border: 1px solid var(--sr-border);
+    box-shadow: 0 26px 50px -16px rgba(17, 24, 39, 0.22);
     opacity: 0;
     pointer-events: none;
     transform: translateY(-10px);
-    transition: opacity 0.25s ease, transform 0.28s var(--hr-ease);
+    transition: opacity 0.25s ease, transform 0.28s var(--sr-ease);
   }
 
   .hr-nav-links.active {
@@ -1778,6 +1851,14 @@ img {
 
   .hr-hero {
     padding: 6.4rem 0 3.2rem;
+  }
+
+  .hr-hero-crest-ambient {
+    width: 300px;
+    height: 300px;
+    right: -85px;
+    top: 30px;
+    opacity: 0.04;
   }
 
   .hr-hero-rail {
@@ -1834,14 +1915,14 @@ img {
     bottom: 0;
     z-index: 1400;
     padding: 0.65rem 4% max(0.75rem, env(safe-area-inset-bottom));
-    background: rgba(255, 255, 255, 0.94);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(18px);
-    border-top: 1px solid var(--hr-border);
-    box-shadow: 0 -10px 30px -10px rgba(23, 25, 29, 0.14);
+    border-top: 1px solid var(--sr-border);
+    box-shadow: 0 -10px 30px -10px rgba(17, 24, 39, 0.14);
     transform: translateY(115%);
     opacity: 0;
     pointer-events: none;
-    transition: transform 0.3s var(--hr-ease), opacity 0.25s ease;
+    transition: transform 0.3s var(--sr-ease), opacity 0.25s ease;
   }
 
   .mobile-quick-bar.is-visible {
@@ -1856,19 +1937,19 @@ img {
     justify-content: center;
     gap: 0.45rem;
     min-height: 46px;
-    border-radius: var(--hr-radius-pill);
+    border-radius: var(--sr-radius-pill);
     font-weight: 700;
     font-size: 0.92rem;
   }
 
   .mq-call {
-    background: var(--hr-linen);
-    color: var(--hr-ink);
-    border: 1px solid var(--hr-border-strong);
+    background: var(--sr-bg-alt);
+    color: var(--sr-ink);
+    border: 1px solid var(--sr-border-strong);
   }
 
   .mq-offer {
-    background: var(--hr-emerald);
+    background: var(--sr-ink);
     color: #ffffff;
   }
 }
