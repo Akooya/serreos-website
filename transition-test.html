@@ -24,8 +24,8 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://akooya.github.io/serreos-website/assets/og-preview.jpg" />
 
-  <link rel="stylesheet" href="style.css?v=20261113-10" />
-  <link rel="stylesheet" href="transition-test.css?v=20261113-2" />
+  <link rel="stylesheet" href="style.css?v=20261113-11" />
+  <link rel="stylesheet" href="transition-test.css?v=20261113-3" />
 
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
@@ -114,7 +114,7 @@
       <div class="hr-container">
         <div class="hr-hero-center">
           <a href="index.html" class="tr-preview-banner">
-            <span>Vorschau-Variante &middot; Mit Serreos Scroll-Transition</span>
+            <span>Vorschau-Variante &middot; Rahmenloser Vorher/Nachher-Vergleich</span>
             <span class="tr-preview-back">&larr; Zur finalen Live-Seite</span>
           </a>
 
@@ -381,65 +381,52 @@
       </svg>
     </div>
 
-    <!-- 3b. Vorher-Nachher Scroll- & Zieh-Wischlinie (Sichtbare Präzision) -->
+    <!-- 3b. Rahmenlose Vorher-Nachher Scroll- & Zieh-Bühne (Sichtbare Präzision) -->
     <section id="comparison" class="tr-wipe-section">
       <div class="hr-container">
         <div class="hr-section-head hr-reveal">
           <div>
             <span class="hr-badge">Sichtbare Präzision</span>
             <h2 class="hr-section-title">Von Alltagsspuren zu streifenfreiem Glanz</h2>
-            <p class="hr-section-sub">Scrollen Sie einfach weiter – oder verschieben Sie die Trennlinie direkt über exakt dieselbe Glas- und Steinfläche.</p>
+            <p class="hr-section-sub">Scrollen Sie einfach weiter – die Lichtlinie wischt Schlieren und Staub auf exakt demselben Büro- und Glaseingang sauber frei.</p>
           </div>
         </div>
 
-        <div class="tr-wipe-card hr-reveal" id="trWipeCard">
-          <div class="tr-wipe-toolbar">
-            <div class="tr-wipe-meta">
-              <span class="tr-wipe-dot" aria-hidden="true"></span>
-              <span>Direktvergleich &middot; Glasfront &amp; Travertinboden vor &amp; nach der Pflege</span>
-            </div>
-            <div class="tr-wipe-controls" role="group" aria-label="Vorher-Nachher-Ansicht steuern">
-              <button type="button" class="tr-wipe-btn" data-split="0.84" aria-pressed="false">Vorher</button>
-              <button type="button" class="tr-wipe-btn" data-split="0.5" aria-pressed="false">50 / 50</button>
-              <button type="button" class="tr-wipe-btn" data-split="0.12" aria-pressed="false">Nachher</button>
-              <button type="button" class="tr-wipe-btn is-active" data-mode="scroll" aria-pressed="true">Auto-Scroll</button>
-            </div>
-          </div>
-
-          <div
-            class="tr-wipe-stage"
-            id="trWipeStage"
-            role="slider"
-            aria-label="Vorher-Nachher-Vergleichsregler"
-            aria-valuemin="4"
-            aria-valuemax="96"
-            aria-valuenow="50"
-            tabindex="0"
-          >
+        <div
+          class="tr-wipe-stage hr-reveal"
+          id="trWipeStage"
+          role="slider"
+          aria-label="Vorher-Nachher-Vergleichsregler"
+          aria-valuemin="4"
+          aria-valuemax="96"
+          aria-valuenow="50"
+          tabindex="0"
+        >
+          <img
+            src="assets/images/transitions/lobby-after.webp"
+            alt="Sonnendurchflutete Glasfronten und gepflegter Travertinboden nach dem Serreos-Einsatz"
+            class="tr-wipe-img-after"
+          />
+          <div class="tr-wipe-before-layer" id="trWipeBefore">
             <img
-              src="assets/images/transitions/lobby-after.webp"
-              alt="Sonnendurchflutete Glasfronten und gepflegter Travertinboden nach dem Serreos-Einsatz"
-              class="tr-wipe-img-after"
+              src="assets/images/transitions/lobby-before.webp"
+              alt="Glasfronten mit Schlieren und leicht verschmutzter Natursteinboden vor der Reinigung"
             />
-            <div class="tr-wipe-before-layer" id="trWipeBefore">
-              <img
-                src="assets/images/transitions/lobby-before.webp"
-                alt="Glasfronten mit Schlieren und leicht verschmutzter Natursteinboden vor der Reinigung"
-              />
-            </div>
-
-            <span class="tr-wipe-badge tr-badge-before">Vorher &middot; Nach Arbeitstag</span>
-            <span class="tr-wipe-badge tr-badge-after">Nachher &middot; Streifenfrei</span>
-
-            <div class="tr-wipe-beam" id="trWipeDivider" aria-hidden="true">
-              <span class="tr-wipe-knob" id="trWipeKnob">&harr;</span>
-            </div>
           </div>
 
-          <div class="tr-wipe-footnote">
-            <span id="trWipeStatus">Beim Scrollen &middot; 50 % streifenfrei aufgedeckt</span>
-            <span>Tipp: Einfach weiterscrollen oder Regler direkt per Maus bzw. Finger ziehen.</span>
+          <span class="tr-wipe-badge tr-badge-before">Vorher &middot; Nach Arbeitstag</span>
+          <span class="tr-wipe-badge tr-badge-after">Nachher &middot; Streifenfrei</span>
+
+          <div class="tr-wipe-beam" id="trWipeDivider" aria-hidden="true">
+            <span class="tr-wipe-knob" id="trWipeKnob">&harr;</span>
           </div>
+
+          <button
+            type="button"
+            class="tr-reattach-btn"
+            id="trReattachBtn"
+            aria-label="Scroll-Wischbewegung wieder aktivieren"
+          >&#8635; Auto-Wisch</button>
         </div>
       </div>
     </section>
@@ -532,7 +519,7 @@
 
     <!-- 5. Ablauf („So einfach geht's“) -->
     <section id="process" class="hr-process-sec">
-      <div class="tr-process-dusk-wash" aria-hidden="true"></div>
+      <div class="hr-process-dusk-wash" aria-hidden="true"></div>
       <div class="hr-container">
         <div class="hr-section-head hr-section-head-center hr-reveal">
           <span class="hr-badge hr-badge-white">Transparent &amp; Direkt</span>
@@ -560,10 +547,10 @@
           </div>
         </div>
 
-        <div class="tr-dusk-cue" id="trDuskCue">
-          <span class="tr-dusk-line" aria-hidden="true"></span>
+        <div class="hr-dusk-cue" id="hrDuskCue">
+          <span class="hr-dusk-line" aria-hidden="true"></span>
           <span>Nach Feierabend übernehmen wir &middot; Für Ihren klaren Start am Morgen</span>
-          <span class="tr-dusk-line" aria-hidden="true"></span>
+          <span class="hr-dusk-line" aria-hidden="true"></span>
         </div>
       </div>
     </section>
@@ -572,7 +559,7 @@
     <section id="contact" class="hr-contact-sec">
       <div class="hr-contact-backdrop" id="contactBackdrop" aria-hidden="true">
         <img src="assets/images/praxis.jpg" alt="" />
-        <img src="assets/images/sofi/seq-4-dusk.webp" alt="" class="tr-dusk-img-overlay" />
+        <img src="assets/images/abend-lobby.webp" alt="" class="hr-dusk-img-overlay" />
       </div>
 
       <div class="hr-container">
@@ -852,8 +839,8 @@
     <a href="#contact" class="mq-btn mq-offer">Angebot anfragen &rarr;</a>
   </div>
 
-  <script src="main.js?v=20261113-10"></script>
-  <script src="transition-test.js?v=20261113-1"></script>
+  <script src="main.js?v=20261113-11"></script>
+  <script src="transition-test.js?v=20261113-3"></script>
 </body>
 
 </html>

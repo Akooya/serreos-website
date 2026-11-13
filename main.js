@@ -14,8 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const navShell = document.getElementById('hrNavShell');
   const scrollProgress = document.getElementById('hrScrollProgress');
   const mobileQuickBar = document.getElementById('mobileQuickBar');
+  const processSection = document.getElementById('process');
   const contactBackdropImg = document.querySelector('#contactBackdrop img');
   const contactSection = document.getElementById('contact');
+
+  const clamp01 = (val) => Math.min(1, Math.max(0, val));
 
   let scrollTicking = false;
   const updateScrollEffects = () => {
@@ -30,6 +33,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (mobileQuickBar) {
       mobileQuickBar.classList.toggle('is-visible', y > 360);
+    }
+
+    if (processSection && contactSection) {
+      const vh = Math.max(1, window.innerHeight);
+      const cRect = contactSection.getBoundingClientRect();
+      if (prefersReducedMotion) {
+        processSection.style.setProperty('--sr-dusk', '1');
+        processSection.classList.add('is-dusk-cue');
+        contactSection.style.setProperty('--sr-contact-dusk', '1');
+      } else {
+        const washProgress = clamp01((vh * 1.15 - cRect.top) / (vh * 0.72));
+        processSection.style.setProperty('--sr-dusk', washProgress.toFixed(3));
+        processSection.classList.toggle('is-dusk-cue', washProgress > 0.42);
+        const contactReveal = clamp01((vh - cRect.top) / (vh * 0.65));
+        contactSection.style.setProperty('--sr-contact-dusk', contactReveal.toFixed(3));
+      }
     }
 
     if (!prefersReducedMotion && contactBackdropImg && contactSection) {

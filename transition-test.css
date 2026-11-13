@@ -1,6 +1,6 @@
 /* ==========================================================================
-   Serreos Raumpflegeservice – Thematische Transition-Erweiterung
-   Schicht über style.css (Perl-Slate #f4f5f8 · Weiß #ffffff · Nachtblau #0f141e)
+   Serreos Raumpflegeservice – Rahmenloser Vorher/Nachher Scroll-Wipe
+   Reine Foto-Bühne im Stil moderner Editorial-Webseiten (ohne Kasten-UI)
    ========================================================================== */
 
 .tr-preview-banner {
@@ -39,7 +39,7 @@
 }
 
 /* ==========================================================================
-   Transition 1: Vorher -> Streifenfrei Scroll- & Zieh-Wischlinie (#gallery)
+   Rahmenlose Scroll- & Zieh-Bühne („Von Alltagsspuren zu streifenfreiem Glanz“)
    ========================================================================== */
 
 .tr-wipe-section {
@@ -48,78 +48,7 @@
 }
 
 .tr-wipe-section + .hr-gallery-sec {
-  padding-top: 2.25rem;
-}
-
-.tr-wipe-card {
-  margin-bottom: 0.75rem;
-  background: #ffffff;
-  border: 1px solid var(--sr-border-strong);
-  border-radius: var(--sr-radius-lg);
-  padding: 1.15rem;
-  box-shadow: 0 28px 60px -36px rgba(17, 24, 39, 0.22);
-}
-
-.tr-wipe-toolbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.85rem 1.25rem;
-  padding: 0.15rem 0.35rem 1rem;
-}
-
-.tr-wipe-meta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--sr-ink);
-}
-
-.tr-wipe-dot {
-  width: 9px;
-  height: 9px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background: var(--sr-ink);
-  box-shadow: 0 0 0 4px var(--sr-badge-bg);
-}
-
-.tr-wipe-controls {
-  display: inline-flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  padding: 0.28rem;
-  border-radius: var(--sr-radius-pill);
-  background: var(--sr-bg-alt);
-  border: 1px solid var(--sr-border);
-}
-
-.tr-wipe-btn {
-  border: none;
-  background: transparent;
-  color: var(--sr-ink-soft);
-  font-family: var(--sr-font);
-  font-size: 0.8rem;
-  font-weight: 600;
-  padding: 0.42rem 0.86rem;
-  border-radius: var(--sr-radius-pill);
-  cursor: pointer;
-  transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
-}
-
-.tr-wipe-btn:hover {
-  color: var(--sr-ink);
-  background: rgba(255, 255, 255, 0.65);
-}
-
-.tr-wipe-btn.is-active {
-  background: var(--sr-ink);
-  color: #ffffff;
-  box-shadow: 0 6px 16px -6px rgba(17, 24, 39, 0.35);
+  padding-top: 2.5rem;
 }
 
 .tr-wipe-stage {
@@ -127,9 +56,10 @@
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
-  border-radius: calc(var(--sr-radius-lg) - 10px);
+  border-radius: var(--sr-radius-lg);
   overflow: hidden;
   background: var(--sr-bg-alt);
+  box-shadow: 0 34px 72px -34px rgba(15, 20, 30, 0.34);
   cursor: ew-resize;
   user-select: none;
   -webkit-user-select: none;
@@ -159,40 +89,42 @@
   will-change: clip-path;
 }
 
-.tr-wipe-card.is-smooth .tr-wipe-before-layer {
-  transition: clip-path 0.5s var(--sr-ease);
+.tr-wipe-stage.is-smooth .tr-wipe-before-layer {
+  transition: clip-path 0.55s var(--sr-ease);
 }
 
-.tr-wipe-card.is-smooth .tr-wipe-beam {
-  transition: left 0.5s var(--sr-ease);
+.tr-wipe-stage.is-smooth .tr-wipe-beam {
+  transition: left 0.55s var(--sr-ease);
 }
 
+/* Subtile Glas-Badges direkt im Foto (analog Hero Panorama .hr-glass-pill) */
 .tr-wipe-badge {
   position: absolute;
-  top: 1rem;
+  top: 1.25rem;
   z-index: 4;
-  padding: 0.42rem 0.9rem;
+  padding: 0.44rem 0.96rem;
   border-radius: var(--sr-radius-pill);
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   pointer-events: none;
   transition: opacity 0.25s ease;
 }
 
 .tr-badge-before {
-  left: 1rem;
-  background: rgba(15, 20, 30, 0.76);
+  left: 1.25rem;
+  background: rgba(15, 20, 30, 0.72);
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.16);
 }
 
 .tr-badge-after {
-  right: 1rem;
-  background: rgba(255, 255, 255, 0.9);
+  right: 1.25rem;
+  background: rgba(255, 255, 255, 0.88);
   color: var(--sr-ink);
-  border: 1px solid rgba(17, 24, 39, 0.1);
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  box-shadow: 0 8px 20px rgba(15, 20, 30, 0.1);
 }
 
 .tr-wipe-beam {
@@ -204,7 +136,7 @@
   width: 2px;
   transform: translateX(-50%);
   background: rgba(255, 255, 255, 0.96);
-  box-shadow: 0 0 18px rgba(255, 255, 255, 0.85), 0 0 6px rgba(15, 20, 30, 0.35);
+  box-shadow: 0 0 22px rgba(255, 255, 255, 0.9), 0 0 6px rgba(15, 20, 30, 0.35);
   pointer-events: none;
 }
 
@@ -216,10 +148,12 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.94);
   color: var(--sr-ink);
-  border: 1px solid rgba(17, 24, 39, 0.14);
-  box-shadow: 0 10px 26px rgba(15, 20, 30, 0.28);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  box-shadow: 0 10px 28px rgba(15, 20, 30, 0.28);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -227,111 +161,61 @@
   font-weight: 700;
   pointer-events: auto;
   cursor: ew-resize;
-  transition: transform 0.2s var(--sr-ease), background-color 0.2s ease, color 0.2s ease;
+  transition: transform 0.22s var(--sr-ease), background-color 0.2s ease, color 0.2s ease;
 }
 
 .tr-wipe-stage.is-dragging .tr-wipe-knob,
 .tr-wipe-knob:hover {
-  transform: translate(-50%, -50%) scale(1.09);
+  transform: translate(-50%, -50%) scale(1.1);
   background: var(--sr-ink);
   color: #ffffff;
 }
 
-.tr-wipe-footnote {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.5rem 1rem;
-  padding: 0.85rem 0.35rem 0.15rem;
-  font-size: 0.84rem;
-  color: var(--sr-ink-muted);
-}
-
-/* ==========================================================================
-   Transition 2: Feierabend-Licht -> Serreos Nachtblau (#process -> #contact)
-   ========================================================================== */
-
-.hr-process-sec {
-  --tr-dusk: 0;
-  position: relative;
-  overflow: hidden;
-  padding-bottom: 3.5rem;
-}
-
-.tr-process-dusk-wash {
+/* Diskreter Auto-Wisch-Button nur sichtbar nach manuellem Ziehen */
+.tr-reattach-btn {
   position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: linear-gradient(
-    180deg,
-    rgba(15, 20, 30, 0) 0%,
-    rgba(15, 20, 30, 0.08) 38%,
-    rgba(15, 20, 30, 0.72) 72%,
-    #0f141e 98%
-  );
-  opacity: var(--tr-dusk);
-  will-change: opacity;
-}
-
-.hr-process-sec .hr-container {
-  position: relative;
-  z-index: 2;
-}
-
-.tr-dusk-cue {
-  margin-top: 3.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  font-size: 0.86rem;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 6;
+  padding: 0.44rem 0.95rem;
+  border-radius: var(--sr-radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(15, 20, 30, 0.78);
+  color: #ffffff;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font-family: var(--sr-font);
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  color: #4b5563;
-  transition: color 0.4s ease;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity 0.28s ease, transform 0.28s var(--sr-ease), background-color 0.2s ease;
 }
 
-.hr-process-sec.is-dusk-cue .tr-dusk-cue {
-  color: rgba(255, 255, 255, 0.86);
+.tr-reattach-btn.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
-.tr-dusk-line {
-  flex: 1 1 80px;
-  max-width: 180px;
-  height: 1px;
-  background: rgba(17, 24, 39, 0.16);
-  transition: background-color 0.4s ease;
-}
-
-.hr-process-sec.is-dusk-cue .tr-dusk-line {
-  background: rgba(255, 255, 255, 0.24);
-}
-
-.tr-dusk-img-overlay {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: calc(var(--tr-contact-dusk, 0.35) * 0.46);
-  transition: opacity 0.25s linear;
+.tr-reattach-btn:hover {
+  background: var(--sr-ink);
 }
 
 /* ==========================================================================
-   Responsive Mobile Feinschliff
+   Responsive Mobile
    ========================================================================== */
 
 @media (max-width: 820px) {
-  .tr-wipe-card {
-    padding: 0.85rem;
-    border-radius: var(--sr-radius-md);
+  .tr-wipe-section {
+    padding: 3.4rem 0 0.5rem;
   }
 
   .tr-wipe-stage {
     aspect-ratio: 4 / 3;
-    border-radius: 16px;
+    border-radius: var(--sr-radius-md);
   }
 }
 
@@ -345,55 +229,29 @@
   }
 
   .tr-wipe-section {
-    padding: 3rem 0 0.5rem;
+    padding: 2.9rem 0 0.4rem;
   }
 
   .tr-wipe-section + .hr-gallery-sec {
-    padding-top: 1.75rem;
+    padding-top: 1.85rem;
   }
 
-  .tr-wipe-card {
-    padding: 0.65rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .tr-wipe-toolbar {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.65rem;
-    padding: 0.15rem 0.15rem 0.8rem;
-  }
-
-  .tr-wipe-meta {
-    justify-content: center;
-    font-size: 0.82rem;
-  }
-
-  .tr-wipe-controls {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    width: 100%;
-    border-radius: 14px;
-  }
-
-  .tr-wipe-btn {
-    padding: 0.44rem 0.25rem;
-    font-size: 0.72rem;
-    text-align: center;
+  .tr-wipe-stage {
+    border-radius: 20px;
   }
 
   .tr-wipe-badge {
-    top: 0.6rem;
-    padding: 0.26rem 0.58rem;
-    font-size: 0.66rem;
+    top: 0.65rem;
+    padding: 0.28rem 0.64rem;
+    font-size: 0.68rem;
   }
 
   .tr-badge-before {
-    left: 0.6rem;
+    left: 0.65rem;
   }
 
   .tr-badge-after {
-    right: 0.6rem;
+    right: 0.65rem;
   }
 
   .tr-wipe-knob {
@@ -402,24 +260,17 @@
     font-size: 0.82rem;
   }
 
-  .tr-wipe-footnote {
-    font-size: 0.76rem;
-    padding: 0.65rem 0.2rem 0.1rem;
-  }
-
-  .tr-dusk-cue {
-    margin-top: 2.3rem;
-    font-size: 0.78rem;
-  }
-
-  .tr-dusk-line {
-    display: none;
+  .tr-reattach-btn {
+    right: 0.65rem;
+    bottom: 0.65rem;
+    padding: 0.34rem 0.74rem;
+    font-size: 0.7rem;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .tr-wipe-card.is-smooth .tr-wipe-before-layer,
-  .tr-wipe-card.is-smooth .tr-wipe-beam {
+  .tr-wipe-stage.is-smooth .tr-wipe-before-layer,
+  .tr-wipe-stage.is-smooth .tr-wipe-beam {
     transition: none;
   }
 }
