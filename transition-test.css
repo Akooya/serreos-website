@@ -42,8 +42,17 @@
    Transition 1: Vorher -> Streifenfrei Scroll- & Zieh-Wischlinie (#gallery)
    ========================================================================== */
 
+.tr-wipe-section {
+  background: var(--sr-white);
+  padding: 4.5rem 0 0.75rem;
+}
+
+.tr-wipe-section + .hr-gallery-sec {
+  padding-top: 2.25rem;
+}
+
 .tr-wipe-card {
-  margin-bottom: 3rem;
+  margin-bottom: 0.75rem;
   background: #ffffff;
   border: 1px solid var(--sr-border-strong);
   border-radius: var(--sr-radius-lg);
@@ -72,6 +81,7 @@
 .tr-wipe-dot {
   width: 9px;
   height: 9px;
+  flex-shrink: 0;
   border-radius: 50%;
   background: var(--sr-ink);
   box-shadow: 0 0 0 4px var(--sr-badge-bg);
@@ -334,9 +344,17 @@
     gap: 0.4rem 0.65rem;
   }
 
+  .tr-wipe-section {
+    padding: 3rem 0 0.5rem;
+  }
+
+  .tr-wipe-section + .hr-gallery-sec {
+    padding-top: 1.75rem;
+  }
+
   .tr-wipe-card {
     padding: 0.65rem;
-    margin-bottom: 2.2rem;
+    margin-bottom: 0.5rem;
   }
 
   .tr-wipe-toolbar {
