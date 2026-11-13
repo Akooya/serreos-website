@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
   <meta name="theme-color" content="#f4f5f8" />
-  <title>Serreos Raumpflegeservice | Übergangs-Vorschau</title>
+  <title>Serreos Raumpflegeservice | Hero-Übergang Vorschau</title>
   <meta name="description" content="Ihr zuverlässiger Partner für Büroreinigung, Praxisreinigung, Glasreinigung, Unterhaltsreinigung &amp; Grundreinigung in Aschaffenburg &amp; Umgebung." />
 
   <link rel="icon" type="image/png" href="assets/favicon.png" />
@@ -25,7 +25,7 @@
   <meta name="twitter:image" content="https://akooya.github.io/serreos-website/assets/og-preview.jpg" />
 
   <link rel="stylesheet" href="style.css?v=20261113-11" />
-  <link rel="stylesheet" href="transition-test.css?v=20261113-3" />
+  <link rel="stylesheet" href="transition-test.css?v=20261113-4" />
 
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
@@ -105,45 +105,78 @@
   <div class="hr-nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
 
   <main>
-    <!-- 1. Hero Section (Serreos Designfarben + Wappen-Präsenz + Großes Panorama) -->
-    <section id="home" class="hr-hero">
-      <div class="hr-hero-crest-ambient" aria-hidden="true">
-        <svg viewBox="0 0 32 32"><use href="#serreos-crest"></use></svg>
-      </div>
+    <!-- 1. Silo × Serreos Opening: Großes Architektur-Bild + Zentrales Wappen + Scroll-Übergang -->
+    <section id="home" class="tr-opening-section">
+      <div class="tr-opening-frame">
+        <div class="tr-opening-topbar">
+          <a href="index.html" class="tr-preview-banner">
+            <span>Vorschau-Variante &middot; Großer Logo-Einstieg mit Scroll-Übergang</span>
+            <span class="tr-preview-back">&larr; Zur aktuellen Live-Seite</span>
+          </a>
+        </div>
 
+        <div class="tr-opening-stage" id="trOpeningStage">
+          <div class="tr-opening-media" aria-hidden="true">
+            <img
+              src="assets/images/transitions/lobby-after.webp"
+              alt="Lichtdurchfluteter Büro- und Glaseingang in Aschaffenburg"
+              class="tr-opening-slide is-active"
+            />
+            <img
+              src="assets/images/buero.jpg"
+              alt="Gepflegte Bürolandschaft nach der Reinigung"
+              class="tr-opening-slide"
+            />
+            <img
+              src="assets/images/glas.jpg"
+              alt="Streifenfreie Glasarchitektur im Sonnenlicht"
+              class="tr-opening-slide"
+            />
+          </div>
+
+          <div class="tr-opening-scrim" aria-hidden="true"></div>
+
+          <div class="tr-opening-center">
+            <svg class="tr-opening-crest" viewBox="0 0 32 32" aria-hidden="true">
+              <use href="#serreos-crest"></use>
+            </svg>
+            <span class="tr-opening-wordmark">Serreos</span>
+            <span class="tr-opening-tag">Raumpflegeservice &middot; Aschaffenburg</span>
+          </div>
+
+          <div class="tr-opening-bottom">
+            <span class="tr-open-meta-pill">Inhabergeführt &middot; Feste Teams &middot; Mo&ndash;Sa 07&ndash;19 Uhr</span>
+            <div class="tr-open-actions">
+              <a href="#heroStatement" class="tr-open-action tr-open-glass">Entdecken &darr;</a>
+              <a href="#contact" class="tr-open-action tr-open-solid">Angebot anfragen</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1b. Kernaussage, CTA & Vertrauensleiste direkt nach dem Öffnungs-Übergang -->
+    <section id="heroStatement" class="tr-statement-sec">
       <div class="hr-container">
         <div class="hr-hero-center">
-          <a href="index.html" class="tr-preview-banner">
-            <span>Vorschau-Variante &middot; Rahmenloser Vorher/Nachher-Vergleich</span>
-            <span class="tr-preview-back">&larr; Zur finalen Live-Seite</span>
-          </a>
-
-          <h1 class="hr-hero-h1">
-            <span class="hr-hero-line">
-              <span>Saubere</span>
-              <span class="hr-hero-capsule" id="hrHeroCapsule" title="Klicken für nächstes Objektfoto">
-                <img src="assets/images/buero.jpg" alt="Modernes Büro" class="is-active" />
-                <img src="assets/images/praxis.jpg" alt="Hygienische Arztpraxis" />
-                <img src="assets/images/glas.jpg" alt="Glänzende Glasfront" />
-              </span>
-              <span>Räume</span>
-            </span>
+          <h1 class="hr-hero-h1 hr-reveal">
+            <span class="hr-hero-line">Saubere Räume</span>
             <span class="hr-hero-line">in Aschaffenburg.</span>
           </h1>
 
-          <p class="hr-hero-lead">
+          <p class="hr-hero-lead hr-reveal">
             Inhabergeführter Raumpflegeservice mit festen Reinigungsteams, geprüften Öko-Mitteln und transparenten Festpreisen für Büros, Praxen und Privathaushalte.
           </p>
 
-          <div class="hr-hero-ctas">
+          <div class="hr-hero-ctas hr-reveal">
             <a href="#contact" class="hr-btn-emerald">Jetzt Angebot anfragen</a>
             <a href="#services" class="hr-btn-outline-pill">
               <span>Leistungen entdecken</span>
-              <span class="hr-btn-arrow-circle" aria-hidden="true">↗</span>
+              <span class="hr-btn-arrow-circle" aria-hidden="true">&#8599;</span>
             </a>
           </div>
 
-          <div class="hr-hero-rail">
+          <div class="hr-hero-rail hr-reveal">
             <a href="#contact" class="hr-rail-btn">
               <span class="hr-rail-icon" aria-hidden="true">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -157,62 +190,19 @@
             </a>
 
             <div class="hr-rail-trust">
-              <span><i class="hr-dot-emerald" aria-hidden="true"></i>0 € Erstbesichtigung</span>
+              <span><i class="hr-dot-emerald" aria-hidden="true"></i>0 &euro; Erstbesichtigung</span>
               <span><i class="hr-dot-emerald" aria-hidden="true"></i>24h Festpreis-Angebot</span>
               <span><i class="hr-dot-emerald" aria-hidden="true"></i>Ohne Callcenter</span>
             </div>
 
             <a href="#services" class="hr-rail-btn">
-              <span>Entdecken</span>
-              <span class="hr-rail-icon" aria-hidden="true">↓</span>
+              <span>Leistungen</span>
+              <span class="hr-rail-icon" aria-hidden="true">&darr;</span>
             </a>
-          </div>
-        </div>
-
-        <!-- Großes interaktives Panorama-Visual -->
-        <div class="hr-panorama-wrap" id="hrPanorama">
-          <div class="hr-panorama-stage">
-            <div class="hr-panorama-slide is-active" data-title="Büros & Empfangsbereiche" data-sub="Diskrete Reinigung außerhalb Ihrer Arbeitszeiten – für motivierte Teams und repräsentativen Empfang.">
-              <img src="assets/images/buero.jpg" alt="Lichtdurchflutetes Büro in Aschaffenburg" />
-            </div>
-            <div class="hr-panorama-slide" data-title="Arztpraxen & sensible Bereiche" data-sub="Verlässliche Hygiene nach klaren Plänen und geprüften, materialschonenden Öko-Reinigungsmitteln.">
-              <img src="assets/images/praxis.jpg" alt="Heller Praxisempfang mit Holzlamellen" />
-            </div>
-            <div class="hr-panorama-slide" data-title="Glasfronten & Fensterflächen" data-sub="Streifenfreie Durchsicht für Schaufenster, Praxiseingänge und moderne Glasarchitektur.">
-              <img src="assets/images/glas.jpg" alt="Streifenfreie Glasfassade im Sonnenlicht" />
-            </div>
-            <div class="hr-panorama-slide" data-title="Grundpflege & Werterhalt" data-sub="Intensive Tiefenreinigung und Pflege für Naturstein, Böden und stark frequentierte Flure.">
-              <img src="assets/images/grund.jpg" alt="Gepflegter Eingangsbereich mit Naturstein" />
-            </div>
-
-            <div class="hr-panorama-scrim" aria-hidden="true"></div>
-
-            <div class="hr-panorama-top-chips">
-              <span class="hr-glass-pill">
-                <svg width="16" height="16" viewBox="0 0 32 32" aria-hidden="true"><use href="#serreos-crest"></use></svg>
-                <span>Qualitätsstandard Serreos · Mo–Sa 07–19 Uhr</span>
-              </span>
-              <span class="hr-glass-pill">Aschaffenburg &amp; direkte Umgebung</span>
-            </div>
-
-            <div class="hr-panorama-bottom">
-              <div class="hr-panorama-caption">
-                <h2 id="hrPanoTitle">Büros &amp; Empfangsbereiche</h2>
-                <p id="hrPanoSub">Diskrete Reinigung außerhalb Ihrer Arbeitszeiten – für motivierte Teams und repräsentativen Empfang.</p>
-              </div>
-
-              <div class="hr-panorama-tabs" role="tablist" aria-label="Einsatzbereiche umschalten">
-                <button type="button" class="hr-pano-tab is-active" role="tab" aria-selected="true">Büro</button>
-                <button type="button" class="hr-pano-tab" role="tab" aria-selected="false">Praxis</button>
-                <button type="button" class="hr-pano-tab" role="tab" aria-selected="false">Glas</button>
-                <button type="button" class="hr-pano-tab" role="tab" aria-selected="false">Grundpflege</button>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </section>
-
     <!-- 2. Leistungen („What We Do“ mit State-Flip Hover Cards) -->
     <section id="services" class="hr-services-sec">
       <div class="hr-container">
@@ -380,56 +370,6 @@
         <path d="M0,90 C380,8 1060,8 1440,90 L1440,90 L0,90 Z" fill="#ffffff"></path>
       </svg>
     </div>
-
-    <!-- 3b. Rahmenlose Vorher-Nachher Scroll- & Zieh-Bühne (Sichtbare Präzision) -->
-    <section id="comparison" class="tr-wipe-section">
-      <div class="hr-container">
-        <div class="hr-section-head hr-reveal">
-          <div>
-            <span class="hr-badge">Sichtbare Präzision</span>
-            <h2 class="hr-section-title">Von Alltagsspuren zu streifenfreiem Glanz</h2>
-            <p class="hr-section-sub">Scrollen Sie einfach weiter – die Lichtlinie wischt Schlieren und Staub auf exakt demselben Büro- und Glaseingang sauber frei.</p>
-          </div>
-        </div>
-
-        <div
-          class="tr-wipe-stage hr-reveal"
-          id="trWipeStage"
-          role="slider"
-          aria-label="Vorher-Nachher-Vergleichsregler"
-          aria-valuemin="4"
-          aria-valuemax="96"
-          aria-valuenow="50"
-          tabindex="0"
-        >
-          <img
-            src="assets/images/transitions/lobby-after.webp"
-            alt="Sonnendurchflutete Glasfronten und gepflegter Travertinboden nach dem Serreos-Einsatz"
-            class="tr-wipe-img-after"
-          />
-          <div class="tr-wipe-before-layer" id="trWipeBefore">
-            <img
-              src="assets/images/transitions/lobby-before.webp"
-              alt="Glasfronten mit Schlieren und leicht verschmutzter Natursteinboden vor der Reinigung"
-            />
-          </div>
-
-          <span class="tr-wipe-badge tr-badge-before">Vorher &middot; Nach Arbeitstag</span>
-          <span class="tr-wipe-badge tr-badge-after">Nachher &middot; Streifenfrei</span>
-
-          <div class="tr-wipe-beam" id="trWipeDivider" aria-hidden="true">
-            <span class="tr-wipe-knob" id="trWipeKnob">&harr;</span>
-          </div>
-
-          <button
-            type="button"
-            class="tr-reattach-btn"
-            id="trReattachBtn"
-            aria-label="Scroll-Wischbewegung wieder aktivieren"
-          >&#8635; Auto-Wisch</button>
-        </div>
-      </div>
-    </section>
 
     <!-- 4. „Einblicke“ – HopeRise Bogenfenster-Karten Karussell (große vertikale Arch-Cards) -->
     <section id="gallery" class="hr-gallery-sec">
@@ -840,7 +780,7 @@
   </div>
 
   <script src="main.js?v=20261113-11"></script>
-  <script src="transition-test.js?v=20261113-3"></script>
+  <script src="transition-test.js?v=20261113-4"></script>
 </body>
 
 </html>

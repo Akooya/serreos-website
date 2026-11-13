@@ -5,111 +5,30 @@
   const prefersReducedMotion =
     window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  const wipeStage = document.getElementById('trWipeStage');
-  const badgeBefore = document.querySelector('.tr-badge-before');
-  const badgeAfter = document.querySelector('.tr-badge-after');
-  const reattachBtn = document.getElementById('trReattachBtn');
+  const navShell = document.getElementById('hrNavShell');
+  const openingStage = document.getElementById('trOpeningStage');
+  const slides = Array.from(document.querySelectorAll('.tr-opening-slide'));
 
-  let scrollSyncActive = !prefersReducedMotion;
-  let currentSplit = 0.5;
-  let isDragging = false;
+  let activeSlide = 0;
+  if (slides.length > 1 && !prefersReducedMotion) {
+    window.setInterval(() => {
+      activeSlide = (activeSlide + 1) % slides.length;
+      slides.forEach((img, idx) => img.classList.toggle('is-active', idx === activeSlide));
+    }, 6200);
+  }
 
-  function applySplit(ratio, smooth) {
-    const safeRatio = clamp(ratio, 0.04, 0.96);
-    currentSplit = safeRatio;
-    if (!wipeStage) return;
+  function updateOpeningTransition() {
+    if (!openingStage) return;
+    const y = window.scrollY || window.pageYOffset || 0;
+    const stageHeight = Math.max(320, openingStage.offsetHeight);
+    const p = prefersReducedMotion ? 0 : clamp(y / (stageHeight * 0.62), 0, 1);
 
-    wipeStage.classList.toggle('is-smooth', Boolean(smooth) && !prefersReducedMotion);
-    wipeStage.style.setProperty('--tr-split', `${(safeRatio * 100).toFixed(2)}%`);
-    wipeStage.setAttribute('aria-valuenow', String(Math.round(safeRatio * 100)));
+    openingStage.style.setProperty('--tr-hero-p', p.toFixed(3));
 
-    // Gently fade corner badge when wipe line reaches its edge
-    if (badgeBefore) {
-      badgeBefore.style.opacity = safeRatio < 0.16 ? '0.25' : '1';
+    if (navShell) {
+      const navLogoOpacity = prefersReducedMotion ? 1 : clamp((p - 0.35) / 0.5, 0, 1);
+      navShell.style.setProperty('--tr-nav-logo', navLogoOpacity.toFixed(3));
     }
-    if (badgeAfter) {
-      badgeAfter.style.opacity = safeRatio > 0.84 ? '0.25' : '1';
-    }
-  }
-
-  function showReattachPill(visible) {
-    if (reattachBtn) {
-      reattachBtn.classList.toggle('is-visible', visible && !prefersReducedMotion);
-    }
-  }
-
-  function updateScrollDrivenWipe() {
-    if (!wipeStage || !scrollSyncActive || isDragging) return;
-    const rect = wipeStage.getBoundingClientRect();
-    const vh = Math.max(1, window.innerHeight);
-    const stageCenter = rect.top + rect.height * 0.5;
-    const p = clamp((vh * 0.9 - stageCenter) / (vh * 0.76), 0, 1);
-    const split = 0.84 - p * 0.68;
-    applySplit(split, false);
-  }
-
-  function setSplitFromClientX(clientX) {
-    if (!wipeStage) return;
-    const rect = wipeStage.getBoundingClientRect();
-    if (rect.width <= 0) return;
-    const ratio = (clientX - rect.left) / rect.width;
-    applySplit(ratio, false);
-  }
-
-  if (wipeStage) {
-    wipeStage.addEventListener('pointerdown', (e) => {
-      if (e.target === reattachBtn || (e.button !== undefined && e.button !== 0)) return;
-      isDragging = true;
-      scrollSyncActive = false;
-      showReattachPill(true);
-      wipeStage.classList.add('is-dragging');
-      setSplitFromClientX(e.clientX);
-      if (wipeStage.setPointerCapture && e.pointerId !== undefined) {
-        try {
-          wipeStage.setPointerCapture(e.pointerId);
-        } catch (err) {
-          // Optional capture
-        }
-      }
-    });
-
-    wipeStage.addEventListener('pointermove', (e) => {
-      if (!isDragging) return;
-      setSplitFromClientX(e.clientX);
-    });
-
-    const stopDrag = () => {
-      if (!isDragging) return;
-      isDragging = false;
-      wipeStage.classList.remove('is-dragging');
-    };
-
-    wipeStage.addEventListener('pointerup', stopDrag);
-    wipeStage.addEventListener('pointercancel', stopDrag);
-
-    wipeStage.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft') {
-        e.preventDefault();
-        scrollSyncActive = false;
-        showReattachPill(true);
-        applySplit(currentSplit - 0.08, true);
-      } else if (e.key === 'ArrowRight') {
-        e.preventDefault();
-        scrollSyncActive = false;
-        showReattachPill(true);
-        applySplit(currentSplit + 0.08, true);
-      }
-    });
-  }
-
-  if (reattachBtn) {
-    reattachBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      scrollSyncActive = true;
-      showReattachPill(false);
-      if (wipeStage) wipeStage.classList.add('is-smooth');
-      updateScrollDrivenWipe();
-    });
   }
 
   let rafPending = false;
@@ -118,7 +37,7 @@
     rafPending = true;
     window.requestAnimationFrame(() => {
       rafPending = false;
-      updateScrollDrivenWipe();
+      updateOpeningTransition();
     });
   };
 
@@ -126,5 +45,5 @@
   window.addEventListener('resize', requestUpdate, { passive: true });
   window.addEventListener('load', requestUpdate, { passive: true });
 
-  updateScrollDrivenWipe();
+  updateOpeningTransition();
 })();
