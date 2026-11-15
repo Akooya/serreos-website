@@ -765,9 +765,15 @@ body.nav-open .hr-nav-backdrop {
 }
 
 .hr-services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
+}
+
+.hr-services-grid .hr-service-card {
+  flex: 0 0 calc((100% - 3rem) / 3);
+  max-width: calc((100% - 3rem) / 3);
 }
 
 .hr-service-card {
@@ -1894,8 +1900,9 @@ body.nav-open .hr-nav-backdrop {
    Responsive Breakpoints
    ========================================================================== */
 @media (max-width: 1024px) {
-  .hr-services-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .hr-services-grid .hr-service-card {
+    flex: 0 0 calc((100% - 1.5rem) / 2);
+    max-width: calc((100% - 1.5rem) / 2);
   }
 
   .hr-arch-track {
@@ -2043,7 +2050,11 @@ body.nav-open .hr-nav-backdrop {
     align-items: flex-start;
   }
 
-  .hr-services-grid,
+  .hr-services-grid .hr-service-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
   .hr-steps-wrap,
   .hr-form-grid {
     grid-template-columns: 1fr;

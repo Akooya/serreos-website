@@ -256,11 +256,11 @@ document.addEventListener('DOMContentLoaded', () => {
       sub: 'Gleichbleibende Mitarbeiter statt ständigem Personalwechsel sowie professionelle Markenprodukte für empfindliche Oberflächen.'
     },
     {
-      num: 6,
+      num: 5,
       prefix: '',
       suffix: '',
       label: 'Spezialisierte Fachbereiche aus einer Hand',
-      sub: 'Von regelmäßiger Büro- & Praxisreinigung bis zu Glasfronten, Grundreinigung und flexiblen Sonderaufgaben für Gewerbe.'
+      sub: 'Von regelmäßiger Büro-, Praxis- & Unterhaltsreinigung bis zur Grundreinigung und flexiblen Sonderaufgaben für Gewerbe.'
     }
   ];
 
