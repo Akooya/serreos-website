@@ -239,28 +239,28 @@ document.addEventListener('DOMContentLoaded', () => {
       prefix: '',
       suffix: 'h',
       label: 'Bis zum transparenten Festpreis-Angebot',
-      sub: 'Nach Ihrer kurzen Besichtigung vor Ort in Aschaffenburg erhalten Sie am nächsten Werktag alle Konditionen schriftlich.'
+      sub: 'Nach Besichtigung vor Ort oder Prüfung Ihrer Objektdaten erhalten Sie am nächsten Werktag alle Konditionen schriftlich.'
     },
     {
       num: 0,
       prefix: '',
       suffix: ' €',
       label: 'Für Ihre unverbindliche Erstbesichtigung',
-      sub: 'Wir schauen uns Ihre Räumlichkeiten persönlich an und beraten ehrlich zu Turnus, Aufwand und ökologischen Mitteln.'
+      sub: 'Wir prüfen jede Anfrage individuell – ab Standort Aschaffenburg auch darüber hinaus – und beraten ehrlich zu Turnus und Aufwand.'
     },
     {
       num: 100,
       prefix: '',
       suffix: ' %',
-      label: 'Geprüfte Öko-Mittel & festes Reinigungsteam',
-      sub: 'Gleichbleibende Mitarbeiter statt ständigem Personalwechsel sowie biologisch abbaubare Pflege für empfindliche Flächen.'
+      label: 'Sorgfalt & festes Reinigungsteam',
+      sub: 'Gleichbleibende Mitarbeiter statt ständigem Personalwechsel sowie professionelle Markenprodukte für empfindliche Oberflächen.'
     },
     {
       num: 6,
       prefix: '',
       suffix: '',
       label: 'Spezialisierte Fachbereiche aus einer Hand',
-      sub: 'Von regelmäßiger Büro- & Praxisreinigung bis zu Glasfronten, Grundreinigung und flexiblen Sonderaufgaben.'
+      sub: 'Von regelmäßiger Büro- & Praxisreinigung bis zu Glasfronten, Grundreinigung und flexiblen Sonderaufgaben für Gewerbe.'
     }
   ];
 
